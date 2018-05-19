@@ -7,6 +7,7 @@ Authentication
 * Not Required
 
 Input parameters
+
 | Parameter  | Type   | Required | Description                                            |
 |------------|--------|----------|--------------------------------------------------------|
 | name       | string | no       | Name of the food centre (e.g. Amoy Street Food Centre) |
