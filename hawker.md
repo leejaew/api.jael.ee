@@ -1,6 +1,6 @@
 List of Food Centres in Singapore
 
-API base URL
+Hawker API base URL
 * https://api.jael.ee/datasets/hawker
 
 Authentication
@@ -32,3 +32,4 @@ Authentication
 | lat              | double  | Latitude (GPS coordinates)                                               |
 | lng              | double  | Longitude (GPS coordinates)                                              |
 
+Hawker API via https://api.jael.ee/datasets/hawker contains information from List of Government Markets Hawker Centres accessed on October 15, 2017 from https://data.gov.sg/dataset/list-of-government-markets-hawker-centres which is made available under the terms of the Singapore Open Data Licence version 1.0 https://data.gov.sg/open-data-licence
