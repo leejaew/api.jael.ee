@@ -6,6 +6,9 @@ Hawker API base URL
 Authentication
 * Not Required
 
+Supported Response Formats
+* JSON, XML
+* For XML output, https://api.jael.ee/datasets/hawker.xml
 
 **Input parameters**
 
