@@ -6,7 +6,7 @@
   "specificationVersion": "0.14",
   "apis": [
     {
-      "name": "Hawker API",
+      "name": "Hawker Search API",
       "description": "List of Food Centres in Singapore",
       "image": "https://raw.githubusercontent.com/leejaew/api.jael.ee/master/hawker.png",
       "baseURL": "https://api.jael.ee/datasets/hawker.json",
