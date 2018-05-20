@@ -1,7 +1,8 @@
 ## Hawker
 
-| Name           | Description                                                         |
 |----------------|---------------------------------------------------------------------|
+| Name           | Description                                                         |
+| description    | List of Food Centres in Singapore                                   |
 | title          | Hawker API                                                          |
 | base           | https://api.jael.ee/datasets/hawker                                 |
 | format         | JSON, XML (For XML output, https://api.jael.ee/datasets/hawker.xml) |
