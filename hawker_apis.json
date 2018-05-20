@@ -1,0 +1,16 @@
+{
+  "name": "Hawker API",
+  "description": "List of Food Centres in Singapore",
+  "url": "https://api.jael.ee/datasets/hawker.json",
+  "image": "https://github.com/leejaew/api.jael.ee/blob/master/hawker.png?raw=true",
+  "specificationVersion": "0.14",
+  "maintainers": [
+    {
+      "FN": ""
+    }
+  ],
+  "tags": [],
+  "include": [],
+  "created": "2018-05-20",
+  "modified": "2018-05-20"
+}
