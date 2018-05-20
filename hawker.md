@@ -1,14 +1,15 @@
 ## List of Food Centres in Singapore
 
-Hawker API base URL
+**Hawker API base URL**
 * https://api.jael.ee/datasets/hawker
 
-Authentication
-* Not Required
-
-Supported Response Formats
+**Supported Response Formats**
 * JSON, XML
 * For XML output, https://api.jael.ee/datasets/hawker.xml
+
+**Authentication**
+* Not Required
+
 
 **Input parameters**
 
