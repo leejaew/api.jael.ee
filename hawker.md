@@ -1,7 +1,7 @@
 ## Hawker
 
 Title: Hawker API\
-Base: https://api.jael.ee/datasets/hawker\
+Base: https://api.jael.ee/datasets/hawker \
 Description: List of Food Centres in Singapore\
 Authentication: Not Required\
 Version: 1.0\
