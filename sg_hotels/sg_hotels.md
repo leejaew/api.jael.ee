@@ -1,5 +1,7 @@
 # Singapore Hotels
 
+![Hotel icon](sg_hotels.png)
+
 ![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![records 468](https://img.shields.io/badge/records-468-lightgrey)
 
 Hotels and hostels licensed by the Hotels Licensing Board in Singapore. Each row is one property with its type, room count, address, phone, coordinates and, where known, Instagram and Facebook pages.

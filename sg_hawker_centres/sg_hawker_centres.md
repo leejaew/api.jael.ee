@@ -1,5 +1,7 @@
 # Singapore Hawker Centres
 
+![Hawker centre icon](sg_hawker_centres.png)
+
 ![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![records 107](https://img.shields.io/badge/records-107-lightgrey)
 
 Hawker centres and markets run by the Singapore government. Each row is one centre with its address, postal code, centre type, owner, the number of stalls (cooked food and market produce) and a list of dishes sold there.
