@@ -16,7 +16,9 @@ Residents Committee (RC) and Residents Network (RN) centres in Singapore run by 
 
 ## Query parameters
 
-Required: none. Optional: 11 fields. Disallowed: none.
+Required: none. Optional: 10 fields. Disallowed: 1 field.
+
+Disallowed means the field is returned in the output but cannot be used as a filter.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
@@ -27,10 +29,10 @@ Required: none. Optional: 11 fields. Disallowed: none.
 | `address[street]` | Optional | Yes | No | Optional filter for the street name, such as Punggol Field; wildcards work. |
 | `address[level]` | Optional | No | No | Optional exact filter for the floor, such as #01 or #B1; blank when the source has none. |
 | `address[unit]` | Optional | No | No | Optional exact filter for the unit number, such as 47; blank when the source has none. |
-| `address[building]` | Optional | Yes | No | Optional filter for the building name; blank for every row in this dataset. |
 | `address[postalcode]` | Optional | No | No | Exact six digit postal code, kept as text so leading zeros stay. |
 | `location[latitude]` | Optional | No | Yes | Optional filter for latitude in decimal degrees (WGS84); use a range to search a box. Values run from 1.272 to 1.456. |
 | `location[longitude]` | Optional | No | Yes | Optional filter for longitude in decimal degrees (WGS84); use a range to search a box. Values run from 103.6897 to 103.9625. |
+| `address[building]` | Disallowed | No | No | The building name; blank for every row in this dataset. |
 
 * Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
@@ -108,7 +110,7 @@ Another call:
 Residents Network centres in the Eunos zones.
 
 ```bash
-curl -sg "https://api.jael.ee/JLEE/sg_rc_rn_centres?name=Eunos*&tag=rn"
+curl -s "https://api.jael.ee/JLEE/sg_rc_rn_centres?name=Eunos*&tag=rn"
 ```
 
 Returns 10 rows.
