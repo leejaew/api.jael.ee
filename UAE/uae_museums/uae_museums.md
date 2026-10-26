@@ -16,29 +16,29 @@ Museums across the United Arab Emirates, 82 rows from OpenStreetMap and Wikidata
 
 ## Query parameters
 
-Required: none. Optional: 17 fields. Disallowed: 1 field.
+Required: 1 field. Optional: 12 fields. Disallowed: 5 fields.
 
 Disallowed means the field is returned in the output but cannot be used as a filter.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
+| `address[emirate]` | Required | Yes | No | Required. Allowed values: Dubai (30); Sharjah (23); Abu Dhabi (19); Ras Al Khaimah (4); Fujairah (3); Ajman (2); Umm Al Quwain (1). Use * to list all rows. |
 | `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
 | `name` | Optional | Yes | No | Optional filter for the museum name, such as Louvre Museum Abu Dhabi or Dubai Museum. |
 | `name_ar` | Optional | Yes | No | Optional filter for the Arabic name, such as متحف أحمد بن ماجد or متحف عجمان; blank for 51 of 82 rows. |
 | `museum_type` | Optional | Yes | No | Optional filter for the theme or type from OSM or Wikidata; values are history (5), art museum (4), archaeological museum (2), national museum (2); blank for 61 of 82 rows. |
-| `address[street]` | Optional | Yes | No | Optional filter for the street from OSM address tags, such as شارع حصة بنت محمد or Maraya Art Centre, Al Qasba; blank for 73 of 82 rows. |
 | `address[area]` | Optional | Yes | No | Optional filter for the neighbourhood, derived by reverse geocoding the point, such as Al Mairid or Al Bustan; blank for 12 of 82 rows. |
 | `address[city]` | Optional | Yes | No | Optional filter for the city; values are Dubai (29), Sharjah (20), Abu Dhabi (12), Al Ain (6); blank for 1 of 82 rows. |
-| `address[emirate]` | Optional | No | No | Optional exact filter for the emirate; values are Dubai (30), Sharjah (23), Abu Dhabi (19), Ras Al Khaimah (4). |
 | `opened_year` | Optional | No | Yes | Optional filter for the opening year from OSM start_date or Wikidata; values run from 1937 to 2025; blank for 65 of 82 rows. |
 | `fee_required` | Optional | No | No | Optional exact filter for the OSM fee flag (yes or no); values are yes (10), no (5); blank for 67 of 82 rows. |
-| `ticket_price` | Optional | Yes | No | Optional filter for the ticket price text where tagged, such as 10 AED or 70 AED; blank for 80 of 82 rows. |
-| `opening_hours` | Optional | Yes | No | Optional filter for the OSM opening hours text, such as Tu-Th, Sa-Su 08:30-19:30; Fr 15:00-19:30 or Mo-Su closed "Temporary closed"; blank for 63 of 82 rows. |
 | `location[latitude]` | Optional | No | Yes | Optional filter for latitude in decimal degrees (WGS84); use a range to search a box; values run from 24.088187 to 25.808247. |
 | `location[longitude]` | Optional | No | Yes | Optional filter for longitude in decimal degrees (WGS84); use a range to search a box; values run from 52.30455 to 56.361431. |
-| `source` | Optional | Yes | No | Optional filter for which sources fed the row; values are OpenStreetMap (45), OpenStreetMap; Wikidata (28), Wikidata (9). |
 | `wikidata_id` | Optional | No | No | Optional exact filter for the Wikidata item id, such as Q12238661 or Q25036006; blank for 45 of 82 rows. |
 | `osm_id` | Optional | No | No | Optional exact filter for the OSM object id, such as way/338757954 or way/239711162; blank for 9 of 82 rows. |
+| `address[street]` | Disallowed | No | No | The street from OSM address tags, such as شارع حصة بنت محمد or Maraya Art Centre, Al Qasba; blank for 73 of 82 rows. |
+| `ticket_price` | Disallowed | No | No | The ticket price text where tagged, such as 10 AED or 70 AED; blank for 80 of 82 rows. |
+| `opening_hours` | Disallowed | No | No | The OSM opening hours text, such as Tu-Th, Sa-Su 08:30-19:30; Fr 15:00-19:30 or Mo-Su closed "Temporary closed"; blank for 63 of 82 rows. |
+| `source` | Disallowed | No | No | Which sources fed the row; values are OpenStreetMap (45), OpenStreetMap; Wikidata (28), Wikidata (9). |
 | `website` | Disallowed | No | No | Museum website link; returned in results, not used as a filter, such as https://etihadmuseum.dubaiculture.ae/ or https://www.louvreabudhabi.ae/; blank for 71 of 82 rows. |
 
 * Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
@@ -75,7 +75,7 @@ Nested objects are shown with dots, for example `address.street` is the `street`
 The 23 museums in Sharjah.
 
 ```bash
-curl -s "https://api.jael.ee/JLEE/uae_museums?address%5Bemirate%5D=Sharjah"
+curl -sg "https://api.jael.ee/JLEE/uae_museums?address[emirate]=Sharjah"
 ```
 
 Response (23 rows, first 2 shown):
@@ -138,7 +138,7 @@ Another call:
 Louvre Museum Abu Dhabi by name.
 
 ```bash
-curl -sg "https://api.jael.ee/JLEE/uae_museums?name=*Louvre*"
+curl -sg "https://api.jael.ee/JLEE/uae_museums?address[emirate]=*&name=*Louvre*"
 ```
 
 Returns 1 row.
