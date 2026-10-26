@@ -16,7 +16,9 @@ Community clubs and PAssion WaVe outlets run by the People's Association in Sing
 
 ## Query parameters
 
-Required: none. Optional: 11 fields. Disallowed: none.
+Required: none. Optional: 10 fields. Disallowed: 1 field.
+
+Disallowed means the field is returned in the output but cannot be used as a filter.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
@@ -27,10 +29,10 @@ Required: none. Optional: 11 fields. Disallowed: none.
 | `address[street]` | Optional | Yes | No | Optional filter for the street name, such as Punggol Field; wildcards work. |
 | `address[level]` | Optional | No | No | Optional exact filter for the floor, such as #01 or #B1; blank when the source has none. |
 | `address[unit]` | Optional | No | No | Optional exact filter for the unit number, such as 47; blank when the source has none. |
-| `address[building]` | Optional | Yes | No | Optional filter for the building or mall name; wildcards work; often blank. |
 | `address[postalcode]` | Optional | No | No | Exact six digit postal code, kept as text so leading zeros stay. |
 | `location[latitude]` | Optional | No | Yes | Optional filter for latitude in decimal degrees (WGS84); use a range to search a box. Values run from 1.2749 to 1.459. |
 | `location[longitude]` | Optional | No | Yes | Optional filter for longitude in decimal degrees (WGS84); use a range to search a box. Values run from 103.6923 to 103.9592. |
+| `address[building]` | Disallowed | No | No | The building or mall name. |
 
 * Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
@@ -108,7 +110,7 @@ Another call:
 Outlets whose name starts with Punggol.
 
 ```bash
-curl -sg "https://api.jael.ee/JLEE/sg_community_clubs?name=Punggol*"
+curl -s "https://api.jael.ee/JLEE/sg_community_clubs?name=Punggol*"
 ```
 
 Returns 5 rows.
