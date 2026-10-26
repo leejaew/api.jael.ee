@@ -18,7 +18,7 @@ Hotels and hostels licensed by the Hotels Licensing Board in Singapore. Each row
 
 ## Query parameters
 
-Required: none. Optional: 4 fields. Disallowed: 11 fields.
+Required: none. Optional: 8 fields. Disallowed: 7 fields.
 
 Disallowed means the field is returned in the output but cannot be used as a filter.
 
@@ -28,13 +28,13 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `tag` | Optional | No | No | `hotel` or `hostel`. |
 | `address[postalcode]` | Optional | No | No | Six digit postal code. |
 | `phone` | Optional | No | No | Phone number as stored, for example `+65 6373 6988`. |
-| `address[street]` | Disallowed | No | No | Street address. Null for about half of the rows. |
+| `address[street]` | Optional | Yes | No | Street address. Null for about half of the rows. |
+| `totalrooms` | Optional | No | No | Number of rooms, as text. Range search does not work on text. |
+| `location[latitude]` | Optional | No | Yes | Latitude in decimal degrees. |
+| `location[longitude]` | Optional | No | Yes | Longitude in decimal degrees. |
 | `address[city]` | Disallowed | No | No | Always `Singapore`. |
 | `address[state]` | Disallowed | No | No | Always `Singapore`. |
 | `country` | Disallowed | No | No | Always `Singapore`. |
-| `totalrooms` | Disallowed | No | No | Number of rooms, as text. |
-| `location[latitude]` | Disallowed | No | No | Latitude in decimal degrees. |
-| `location[longitude]` | Disallowed | No | No | Longitude in decimal degrees. |
 | `social[instagram]` | Disallowed | No | No | Instagram page. Null when not known. |
 | `social[facebook]` | Disallowed | No | No | Facebook page. Null when not known. |
 | `source` | Disallowed | No | No | Name of the source data set, its coverage and licence. |
@@ -98,7 +98,7 @@ Response (2 rows):
       "instagram": null,
       "facebook": null
     },
-    "source": "HLB Licensed Hotels (GEOJSON), data.gov.sg https://data.gov.sg/datasets/d_654e22f14e5bb...",
+    "source": "HLB Licensed Hotels (GEOJSON), data.gov.sg https://data.gov.sg/datasets/d_654e22f14e5bb817423f0e0c9ac4f632/view. Coverage: Data from Jul 2025. Singapore Open Data Licence.",
     "sourceupdated": "2025-07-11T00:00:00+00:00"
   },
   {
@@ -121,11 +121,21 @@ Response (2 rows):
       "instagram": "https://www.instagram.com/grandcopthornewaterfront/",
       "facebook": "https://www.facebook.com/GrandCopthorneWaterfrontHotel/"
     },
-    "source": "HLB Licensed Hotels (GEOJSON), data.gov.sg https://data.gov.sg/datasets/d_654e22f14e5bb...",
+    "source": "HLB Licensed Hotels (GEOJSON), data.gov.sg https://data.gov.sg/datasets/d_654e22f14e5bb817423f0e0c9ac4f632/view. Coverage: Data from Jul 2025. Singapore Open Data Licence.",
     "sourceupdated": "2025-07-11T00:00:00+00:00"
   }
 ]
 ```
+
+Another call:
+
+Hotels on Orchard Road.
+
+```bash
+curl -sg "https://api.jael.ee/JLEE/sg_hotels?address[street]=*Orchard*"
+```
+
+Returns 4 rows.
 
 ## Data source
 
