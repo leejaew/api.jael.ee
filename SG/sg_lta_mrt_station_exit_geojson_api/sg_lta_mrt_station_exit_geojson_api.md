@@ -16,7 +16,7 @@ Entrance and exit points of Singapore MRT stations. Each row is one exit, in a G
 
 ## Query parameters
 
-Required: none. Optional: 2 fields. Disallowed: 7 fields.
+Required: none. Optional: 3 fields. Disallowed: 6 fields.
 
 Disallowed means the field is returned in the output but cannot be used as a filter.
 
@@ -24,11 +24,11 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 |---|---|---|---|---|
 | `properties[STATION_NA]` | Optional | Yes | No | Station name in capital letters, for example `*ORCHARD*`. |
 | `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
+| `properties[EXIT_CODE]` | Optional | No | No | Exit label, for example `Exit 1` or `Exit A`. |
 | `feature` | Disallowed | No | No | GeoJSON object type. Always `Feature`. |
 | `geometry[type]` | Disallowed | No | No | GeoJSON geometry type. Always `Point`. |
 | `geometry[coordinates]` | Disallowed | No | No | Longitude and latitude of the exit, as one text value in the form `"longitude, latitude"`. |
 | `properties[OBJECT_ID]` | Disallowed | No | No | Object ID from the source layer. |
-| `properties[EXIT_CODE]` | Disallowed | No | No | Exit label, for example `Exit 1` or `Exit A`. |
 | `properties[INC_CRC]` | Disallowed | No | No | Checksum code of the source record. |
 | `properties[FMEL_UPD_D]` | Disallowed | No | No | Date the source record was updated, in `YYYYMMDDhhmmss` form with a decimal part. |
 
@@ -57,10 +57,10 @@ Nested objects are shown with dots, for example `address.street` is the `street`
 All exits of stations with BRIGHT in the name.
 
 ```bash
-curl -s -g "https://api.jael.ee/JLEE/sg_lta_mrt_station_exit_geojson_api?properties[STATION_NA]=*BRIGHT*"
+curl -sg "https://api.jael.ee/JLEE/sg_lta_mrt_station_exit_geojson_api?properties[STATION_NA]=*BRIGHT*"
 ```
 
-Response, showing 2 of 4 rows:
+Response (4 rows, first 2 shown):
 
 ```json
 [
@@ -93,8 +93,7 @@ Response, showing 2 of 4 rows:
       "INC_CRC": "F273E9D550B06062",
       "FMEL_UPD_D": 20251200000000.0
     }
-  },
-  ...
+  }
 ]
 ```
 
