@@ -30,7 +30,7 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `address[street]` | Optional | Yes | No | Street address. |
 | `address[city]` | Optional | Yes | No | Local city or town, which can be more specific than `city`. |
 | `address[state]` | Optional | No | No | State, or `Singapore`. |
-| `address[postalcode]` | Optional | No | No | Postal code, as a number. Leading zeros are not kept. |
+| `address[postalcode]` | Optional | No | No | Postal code, as text. Singapore codes have six digits and Malaysian codes have five. Leading zeros are kept. |
 | `phone` | Optional | No | No | Phone number with country code. Null when unknown. |
 | `website` | Disallowed | No | No | School website. |
 | `source` | Disallowed | No | No | Where the row came from, such as a ministry list or the school site. |
@@ -54,7 +54,7 @@ Nested objects are shown with dots, for example `address.street` is the `street`
 | `address.street` | string | Street address. |
 | `address.city` | string | Local city or town, which can be more specific than `city`. |
 | `address.state` | string | State, or `Singapore`. |
-| `address.postalcode` | integer | Postal code, as a number. Leading zeros are not kept. |
+| `address.postalcode` | string | Postal code, as text. Singapore codes have six digits and Malaysian codes have five. Leading zeros are kept. |
 | `phone` | string, null | Phone number with country code. Null when unknown. |
 | `website` | string | School website. |
 | `source` | string | Where the row came from, such as a ministry list or the school site. |
@@ -82,7 +82,7 @@ Response (14 rows, first 2 shown):
       "street": "No. 2077 Jalan Kulim, No. 1682 Jalan Kulim, Gereja Jalan Kulim Bukit Mertajam",
       "city": "Penang",
       "state": "Pulau Pinang",
-      "postalcode": 14000
+      "postalcode": "14000"
     },
     "phone": "+60 12 500 6830",
     "website": "https://assumption.edu.my",
@@ -99,7 +99,7 @@ Response (14 rows, first 2 shown):
       "street": "Jalan Tanjung Bungah",
       "city": "Tanjung Bungah",
       "state": "Pulau Pinang",
-      "postalcode": 11200
+      "postalcode": "11200"
     },
     "phone": "+60 4 685 2100",
     "website": "https://dalat.org",
