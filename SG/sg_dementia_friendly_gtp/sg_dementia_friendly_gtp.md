@@ -25,7 +25,7 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `tag` | Required | Yes | No | Required. Allowed values: other (522); transit (194); aac (93); cc (15); care_home (7). Use * to list all rows. |
 | `name` | Optional | Yes | No | Name of the place. |
 | `address[street]` | Optional | Yes | No | Street address, with the unit number where there is one. |
-| `address[postalcode]` | Optional | No | No | Six digit postal code, as a number. Leading zeros are not kept. |
+| `address[postalcode]` | Optional | No | No | Six digit postal code, as text. Leading zeros are kept. |
 | `phone[main]` | Optional | No | No | Main phone number. Null when not given. |
 | `location[latitude]` | Optional | No | Yes | Latitude in decimal degrees. |
 | `location[longitude]` | Optional | No | Yes | Longitude in decimal degrees. |
@@ -47,7 +47,7 @@ Nested objects are shown with dots, for example `address.street` is the `street`
 | `name` | string | Name of the place. |
 | `tag` | string | Type of place: `transit` (mostly MRT stations), `aac` (active ageing centres), `cc` (community clubs), `care_home` or `other`. |
 | `address.street` | string | Street address, with the unit number where there is one. |
-| `address.postalcode` | integer | Six digit postal code, as a number. Leading zeros are not kept. |
+| `address.postalcode` | string | Six digit postal code, as text. Leading zeros are kept. |
 | `phone.main` | string, null | Main phone number. Null when not given. |
 | `phone.alternative` | string, null | Second phone number. Null for most rows. |
 | `hours` | string, null | Opening hours as text. Null when not given. |
@@ -73,7 +73,7 @@ Response (93 rows, first 2 shown):
     "tag": "aac",
     "address": {
       "street": "410 Sin Ming Avenue, #01-119",
-      "postalcode": 570410
+      "postalcode": "570410"
     },
     "phone": {
       "main": "+65 6251 5010",
@@ -92,7 +92,7 @@ Response (93 rows, first 2 shown):
     "tag": "aac",
     "address": {
       "street": "Blk 15 Toa Payoh Lorong 7 #01-579",
-      "postalcode": 310015
+      "postalcode": "310015"
     },
     "phone": {
       "main": "+65 6251 6504",
