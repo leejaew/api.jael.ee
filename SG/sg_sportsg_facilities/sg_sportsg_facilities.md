@@ -25,7 +25,7 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `tag` | Required | Yes | No | Required. Allowed values: pickleball (31); sport_centre (27); padel (11); pool (6); gym (6); stadium (2); gym_pool (1); sport_park (1); clubhouse (1); playfield (1). Use * to list all rows. |
 | `name` | Optional | Yes | No | Facility name. |
 | `address[street]` | Optional | Yes | No | Street address. Null for about a third of the rows. |
-| `address[postalcode]` | Optional | No | No | Six digit postal code, as a number. Leading zeros are not kept. |
+| `address[postalcode]` | Optional | No | No | Six digit postal code, as text. Leading zeros are kept. |
 | `location[latitude]` | Optional | No | Yes | Latitude in decimal degrees. |
 | `location[longitude]` | Optional | No | Yes | Longitude in decimal degrees. |
 | `source` | Disallowed | No | No | Name of the source data set, its coverage and licence. |
@@ -44,7 +44,7 @@ Nested objects are shown with dots, for example `address.street` is the `street`
 | `name` | string | Facility name. |
 | `tag` | string | Facility type: `pickleball`, `sport_centre`, `padel`, `pool`, `gym`, `stadium`, `gym_pool`, `sport_park`, `clubhouse` or `playfield`. |
 | `address.street` | string, null | Street address. Null for about a third of the rows. |
-| `address.postalcode` | integer | Six digit postal code, as a number. Leading zeros are not kept. |
+| `address.postalcode` | string | Six digit postal code, as text. Leading zeros are kept. |
 | `location.latitude` | number | Latitude in decimal degrees. |
 | `location.longitude` | number | Longitude in decimal degrees. |
 | `source` | string | Name of the source data set, its coverage and licence. |
@@ -67,7 +67,7 @@ Response (11 rows, first 2 shown):
     "tag": "padel",
     "address": {
       "street": "22 Camden Park",
-      "postalcode": 299814
+      "postalcode": "299814"
     },
     "location": {
       "latitude": 1.33,
@@ -81,7 +81,7 @@ Response (11 rows, first 2 shown):
     "tag": "padel",
     "address": {
       "street": "392 Havelock Road",
-      "postalcode": 169663
+      "postalcode": "169663"
     },
     "location": {
       "latitude": 1.29,
