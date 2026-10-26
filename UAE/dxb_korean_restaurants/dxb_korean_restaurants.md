@@ -16,7 +16,7 @@ Korean restaurants, fast food places and cafes in the emirate of Dubai that Open
 
 ## Query parameters
 
-Required: none. Optional: 13 fields. Disallowed: 1 field.
+Required: none. Optional: 11 fields. Disallowed: 3 fields.
 
 Disallowed means the field is returned in the output but cannot be used as a filter.
 
@@ -26,15 +26,15 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `name` | Optional | Yes | No | Optional filter for the venue name, such as Kyochon or Hanok Korean Restaurant. |
 | `cuisine` | Optional | Yes | No | Optional filter for the OSM cuisine tags, separated by semicolons; values are korean (8), barbecue; korean (1), korean; sushi (1), grill; korean (1); blank for 3 of 15 rows. |
 | `place_type` | Optional | No | No | Optional exact filter for the kind of venue; values are restaurant (12), fast food (2), cafe (1). |
-| `address[street]` | Optional | Yes | No | Optional filter for the street name from OSM address tags, such as Oud Metha Road or Sheikh Zayed Road; blank for 13 of 15 rows. |
 | `address[area]` | Optional | Yes | No | Optional filter for the neighbourhood, derived by reverse geocoding the point, such as Oud Metha or Al Safa 1. |
 | `address[city]` | Optional | Yes | No | Optional filter for the city; always Dubai here, such as Dubai. |
 | `address[emirate]` | Optional | No | No | Optional exact filter for the emirate; always Dubai here, such as Dubai. |
 | `phone` | Optional | No | No | Optional exact filter for the phone number as published, kept as text; some rows hold two numbers separated by a semicolon, such as +97143344294 or +971 4 491 9633 ; +971 58 548 0089; blank for 11 of 15 rows. |
-| `opening_hours` | Optional | Yes | No | Optional filter for the OSM opening hours text, such as Mo-Su 11:00-15:00, 18:00-23:00 or Mo-Su 09:30-00:00; blank for 9 of 15 rows. |
 | `location[latitude]` | Optional | No | Yes | Optional filter for latitude in decimal degrees (WGS84); use a range to search a box; values run from 25.076795 to 25.289827. |
 | `location[longitude]` | Optional | No | Yes | Optional filter for longitude in decimal degrees (WGS84); use a range to search a box; values run from 55.146348 to 55.403511. |
 | `osm_id` | Optional | No | No | Optional exact filter for the OSM object id, such as node/4500044689 or node/4919128715. |
+| `address[street]` | Disallowed | No | No | The street name from OSM address tags, such as Oud Metha Road or Sheikh Zayed Road; blank for 13 of 15 rows. |
+| `opening_hours` | Disallowed | No | No | The OSM opening hours text, such as Mo-Su 11:00-15:00, 18:00-23:00 or Mo-Su 09:30-00:00; blank for 9 of 15 rows. |
 | `website` | Disallowed | No | No | Venue website link; returned in results, not used as a filter, such as https://order.radyes.co/nene_chicken or https://koreandxb.com; blank for 12 of 15 rows. |
 
 * Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
@@ -122,7 +122,7 @@ Another call:
 Korean venues that also serve sushi.
 
 ```bash
-curl -sg "https://api.jael.ee/JLEE/dxb_korean_restaurants?cuisine=*sushi*"
+curl -s "https://api.jael.ee/JLEE/dxb_korean_restaurants?cuisine=*sushi*"
 ```
 
 Returns 1 row.
