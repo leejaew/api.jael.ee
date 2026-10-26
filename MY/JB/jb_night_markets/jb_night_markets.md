@@ -36,8 +36,8 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `coordinate_precision` | Optional | No | No | Optional exact filter for how good the coordinates are: road (6 rows, matched to the named road), area (16 rows, a point in the named neighborhood or village), area approximate (4 rows, one of several possible roads or places) or blank (3 rows with no coordinates). |
 | `location[latitude]` | Optional | No | Yes | Optional latitude range filter in decimal degrees (WGS84), from 1.4807 to 1.5588. Blank for 3 rows. These are approximate points, not the exact market ground. |
 | `location[longitude]` | Optional | No | Yes | Optional longitude range filter in decimal degrees (WGS84), from 103.6860 to 103.8691. Blank for 3 rows. These are approximate points, not the exact market ground. |
-| `permitted_start_time` | Disallowed | No | No | Optional exact filter for the earliest legal opening time, 24 hour text. It is 16:00 for all 29 rows because the 2003 MBJB night market by-law defines a night market as 4.00 pm to midnight. Real opening times may differ. |
-| `permitted_end_time` | Disallowed | No | No | Optional exact filter for the latest legal closing time, 24 hour text. It is 00:00 (midnight) for all 29 rows, taken from the same by-law. |
+| `permitted_start_time` | Disallowed | No | No | The earliest legal opening time, 24 hour text. It is 16:00 for all 29 rows because the 2003 MBJB night market by-law defines a night market as 4.00 pm to midnight. Real opening times may differ. |
+| `permitted_end_time` | Disallowed | No | No | The latest legal closing time, 24 hour text. It is 00:00 (midnight) for all 29 rows, taken from the same by-law. |
 
 * Parameters are combined with AND. Text matches ignore case. See [How filters work](../../../README.md#how-filters-work) for the wildcard and range syntax.
 
