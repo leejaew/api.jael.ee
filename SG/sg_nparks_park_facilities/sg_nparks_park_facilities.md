@@ -16,12 +16,12 @@ Facility points in Singapore parks and nature areas from NParks, one row per poi
 
 ## Query parameters
 
-Required: none. Optional: 4 fields. Disallowed: none.
+Required: 1 field. Optional: 3 fields. Disallowed: none.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
+| `class` | Required | Yes | No | Required. Allowed values: CARPARK (9285); NOTICEBOARD (2619); ACCESS POINT (601); MAPBOARD (528); FITNESS AREA (475); PLAYGROUND (387); BBQ PIT (225); FOOT RELAX (164); TOILET (132); DRINKING FOUNTAIN (113); SHELTER (47); ALLOTMENT GARDEN (34); JETTY (25); BICYCLE PARKING (21); THERAPEUTIC GARDEN (21); MULTIPURPOSE COURT (16); BICYCLE RENTAL SHOP (16); F&B (15); CAMPSITE (8); LOOKOUT POINT (7); AMPHITHEATRE (7); DOG-AREA (3); DROP-OFF/PICK-UP POINT (3); BABY (2). Use * to list all rows. |
 | `name` | Optional | Yes | No | Optional filter for the facility name, such as adult fitness or Toilet near West Entrance; blank for most rows (13,172 of 14,754); wildcards work. |
-| `class` | Optional | No | No | Optional exact filter for the facility kind in capitals, such as CARPARK, TOILET, PLAYGROUND, BBQ PIT or FITNESS AREA (24 kinds). |
 | `location[latitude]` | Optional | No | Yes | Optional filter for latitude in decimal degrees (WGS84); use a range to search a box. Values run from 1.2136 to 1.4632. |
 | `location[longitude]` | Optional | No | Yes | Optional filter for longitude in decimal degrees (WGS84); use a range to search a box. Values run from 103.6897 to 104.0167. |
 
@@ -76,7 +76,7 @@ Another call:
 Playgrounds with Hill in the name.
 
 ```bash
-curl -sg "https://api.jael.ee/JLEE/sg_nparks_park_facilities?class=PLAYGROUND&name=*Hill*"
+curl -s "https://api.jael.ee/JLEE/sg_nparks_park_facilities?class=PLAYGROUND&name=*Hill*"
 ```
 
 Returns 1 row.
