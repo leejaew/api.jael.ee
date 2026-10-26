@@ -2,7 +2,7 @@
 
 Free public JSON APIs for open and curated data sets: transport, places, sport, food and baseball. Every API is a plain `GET` request. No sign up and no API key.
 
-![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 17](https://img.shields.io/badge/APIs-17-lightgrey)
+![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 19](https://img.shields.io/badge/APIs-19-lightgrey)
 
 **Base URL:** `https://api.jael.ee/JLEE/`
 
@@ -64,8 +64,10 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 | [`sg_hotels`](SG/sg_hotels/sg_hotels.md) | Licensed hotels and hostels in Singapore with room counts, phone, address and coordinates. | Singapore | 468 |
 | [`sg_korean_restaurants`](SG/sg_korean_restaurants/sg_korean_restaurants.md) | Korean restaurants in Singapore with menu highlights, atmosphere and contact details. | Singapore | 42 |
 | [`sg_lta_mrt_station_exit_geojson_api`](SG/sg_lta_mrt_station_exit_geojson_api/sg_lta_mrt_station_exit_geojson_api.md) | Exit points of Singapore MRT stations as GeoJSON style features, with coordinates. | Singapore | 597 |
+| [`sg_national_monuments`](SG/sg_national_monuments/sg_national_monuments.md) | The 77 national monuments of Singapore, with short history, address, photo link and coordinates. | Singapore | 77 |
 | [`sg_retail_pharmacies`](SG/sg_retail_pharmacies/sg_retail_pharmacies.md) | Licensed retail pharmacies in Singapore with brand, address and coordinates. | Singapore | 249 |
 | [`sg_social_service_agencies`](SG/sg_social_service_agencies/sg_social_service_agencies.md) | Member agencies of the National Council of Social Service in Singapore, tagged by service type. | Singapore | 908 |
+| [`sg_student_care_centres`](SG/sg_student_care_centres/sg_student_care_centres.md) | Registered student care centres in Singapore, with operator type, audit grade, monthly fee, enrolment and coordinates. | Singapore | 336 |
 | [`sg_sportsg_facilities`](SG/sg_sportsg_facilities/sg_sportsg_facilities.md) | Sport facilities listed by Sport Singapore: sport centres, pools, gyms, stadiums and pickleball and padel courts. | Singapore | 87 |
 | [`sg_my_international_schools`](SG/sg_my_international_schools/sg_my_international_schools.md) | International schools in Singapore, Kuala Lumpur, Johor Bahru and Penang, with curriculum and contact details. | Singapore and Malaysia | 126 |
 | [`jb_korean_restaurants`](JB/jb_korean_restaurants/jb_korean_restaurants.md) | Korean restaurants in Johor Bahru and Iskandar Puteri with menu highlights and contact details. | Malaysia | 46 |
@@ -77,7 +79,7 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 
 Browse by region:
 
-* **Singapore:** [`sg_community_clubs`](SG/sg_community_clubs/sg_community_clubs.md), [`sg_dementia_friendly_gtp`](SG/sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md), [`sg_family_service_centres`](SG/sg_family_service_centres/sg_family_service_centres.md), [`sg_hawker_centres`](SG/sg_hawker_centres/sg_hawker_centres.md), [`sg_hotels`](SG/sg_hotels/sg_hotels.md), [`sg_korean_restaurants`](SG/sg_korean_restaurants/sg_korean_restaurants.md), [`sg_lta_mrt_station_exit_geojson_api`](SG/sg_lta_mrt_station_exit_geojson_api/sg_lta_mrt_station_exit_geojson_api.md), [`sg_retail_pharmacies`](SG/sg_retail_pharmacies/sg_retail_pharmacies.md), [`sg_social_service_agencies`](SG/sg_social_service_agencies/sg_social_service_agencies.md), [`sg_sportsg_facilities`](SG/sg_sportsg_facilities/sg_sportsg_facilities.md)
+* **Singapore:** [`sg_community_clubs`](SG/sg_community_clubs/sg_community_clubs.md), [`sg_dementia_friendly_gtp`](SG/sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md), [`sg_family_service_centres`](SG/sg_family_service_centres/sg_family_service_centres.md), [`sg_hawker_centres`](SG/sg_hawker_centres/sg_hawker_centres.md), [`sg_hotels`](SG/sg_hotels/sg_hotels.md), [`sg_korean_restaurants`](SG/sg_korean_restaurants/sg_korean_restaurants.md), [`sg_lta_mrt_station_exit_geojson_api`](SG/sg_lta_mrt_station_exit_geojson_api/sg_lta_mrt_station_exit_geojson_api.md), [`sg_national_monuments`](SG/sg_national_monuments/sg_national_monuments.md), [`sg_retail_pharmacies`](SG/sg_retail_pharmacies/sg_retail_pharmacies.md), [`sg_social_service_agencies`](SG/sg_social_service_agencies/sg_social_service_agencies.md), [`sg_student_care_centres`](SG/sg_student_care_centres/sg_student_care_centres.md), [`sg_sportsg_facilities`](SG/sg_sportsg_facilities/sg_sportsg_facilities.md)
 * **Singapore and Malaysia:** [`sg_my_international_schools`](SG/sg_my_international_schools/sg_my_international_schools.md)
 * **Malaysia:** [`jb_korean_restaurants`](JB/jb_korean_restaurants/jb_korean_restaurants.md), [`kl_korean_restaurants`](KL/kl_korean_restaurants/kl_korean_restaurants.md)
 * **United Arab Emirates:** [`dxb_metro_tram_stations`](DXB/dxb_metro_tram_stations/dxb_metro_tram_stations.md)
