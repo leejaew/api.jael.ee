@@ -14,7 +14,6 @@ An API URL is the base URL plus the API name, for example `https://api.jael.ee/J
 * [All APIs](#all-apis)
 * [How filters work](#how-filters-work)
 * [Errors](#errors)
-* [Repository layout](#repository-layout)
 
 ## Quick start
 
@@ -121,29 +120,3 @@ An error body looks like this:
   "message": "Your request is missing the following required parameters: tag. You did not supply any."
 }
 ```
-
-## Repository layout
-
-```text
-README.md                  This file
-python_world_series/python_world_series.md
-us_stadiums/us_stadiums.md
-us_milb_ballparks/us_milb_ballparks.md
-dxb_metro_tram_stations/dxb_metro_tram_stations.md
-sg_hawker_centres/sg_hawker_centres.md
-sg_hawker_centres/sg_hawker_centres.png
-sg_hotels/sg_hotels.md
-sg_hotels/sg_hotels.png
-sg_lta_mrt_station_exit_geojson_api/sg_lta_mrt_station_exit_geojson_api.md
-sg_my_international_schools/sg_my_international_schools.md
-sg_retail_pharmacies/sg_retail_pharmacies.md
-sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md
-sg_family_service_centres/sg_family_service_centres.md
-sg_social_service_agencies/sg_social_service_agencies.md
-sg_sportsg_facilities/sg_sportsg_facilities.md
-sg_korean_restaurants/sg_korean_restaurants.md
-kl_korean_restaurants/kl_korean_restaurants.md
-jb_korean_restaurants/jb_korean_restaurants.md
-```
-
-Each API has its own folder with one page named after the API. The page lists the URL, the query parameters, every response field, and a working `curl` example with a real response.
