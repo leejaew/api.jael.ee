@@ -49,7 +49,7 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `fee_note` | Disallowed | No | No | The fee notes, such as the KTM rates and hours or the note that the owner sets the charges. Blank for 7 rows. |
 | `data_source` | Disallowed | No | No | Where the row came from: MyRapid Park N' Ride page (40 rows), MRT Corp Park N' Ride page (27), KTM Parking website, page dated 2016 (9) or a Railway Assets Corporation statement for Klang (1). |
 
-* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../../README.md#how-filters-work) for the wildcard and range syntax.
+* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
 Bracket parameters such as `location[latitude]` need `curl -g` (or `%5B` and `%5D`) so that curl does not read the brackets as a glob.
 
@@ -179,4 +179,4 @@ Returns 15 rows.
 
 Station coordinates from the Prasarana Malaysia and KTMB GTFS feeds on data.gov.my ([CC BY 4.0](https://developer.data.gov.my/faq)). Bay counts, operators and fees are facts from public operator pages. Addresses: Data © OpenStreetMap contributors, available under the [Open Database License](https://www.openstreetmap.org/copyright).
 
-[Back to all APIs](../../../README.md)
+[Back to all APIs](../../README.md)

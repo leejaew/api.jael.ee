@@ -41,7 +41,7 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `socialmedia` | Disallowed | No | No | Instagram or Facebook page. Null when not given. |
 | `recordupdated` | Disallowed | No | No | Date the row was last updated, in ISO 8601 format. |
 
-* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../../README.md#how-filters-work) for the wildcard and range syntax.
+* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
 Bracket parameters such as `address[postalcode]` need `curl -g` (or `%5B` and `%5D`) so that curl does not read the brackets as a glob.
 
@@ -137,4 +137,4 @@ curl -s "https://api.jael.ee/JLEE/kl_korean_restaurants?category=Korean%20BBQ&na
 
 Returns 3 rows.
 
-[Back to all APIs](../../../README.md)
+[Back to all APIs](../../README.md)

@@ -39,7 +39,7 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `permitted_start_time` | Disallowed | No | No | The earliest legal opening time, 24 hour text. It is 16:00 for all 29 rows because the 2003 MBJB night market by-law defines a night market as 4.00 pm to midnight. Real opening times may differ. |
 | `permitted_end_time` | Disallowed | No | No | The latest legal closing time, 24 hour text. It is 00:00 (midnight) for all 29 rows, taken from the same by-law. |
 
-* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../../README.md#how-filters-work) for the wildcard and range syntax.
+* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
 Bracket parameters such as `location[latitude]` need `curl -g` (or `%5B` and `%5D`) so that curl does not read the brackets as a glob.
 
@@ -139,4 +139,4 @@ Returns 2 rows.
 
 Weekly pasar malam locations and permitted hours from the public notice of Majlis Bandaraya Johor Bahru (MBJB). Coordinates and postal codes: Data © OpenStreetMap contributors, available under the [Open Database License](https://www.openstreetmap.org/copyright). Nominatim reverse lookups make some area names approximate.
 
-[Back to all APIs](../../../README.md)
+[Back to all APIs](../../README.md)
