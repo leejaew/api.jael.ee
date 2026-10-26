@@ -43,11 +43,11 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `address[postalcode]` | Optional | No | No | Optional exact filter for the five digit postal code looked up from the coordinates, such as 50000 or 47650. Always check it, since it comes from the nearest mapped road. |
 | `location[latitude]` | Optional | No | Yes | Optional latitude range filter for the station coordinates in decimal degrees (WGS84), from 2.95 to 3.23. |
 | `location[longitude]` | Optional | No | Yes | Optional longitude range filter for the station coordinates in decimal degrees (WGS84), from 101.44 to 101.79. |
-| `parking_authority` | Disallowed | Yes | No | Optional filter for the local authority that runs the parking when the rail operator lists no bays: Dewan Bandaraya Kuala Lumpur (4 rows), Majlis Bandaraya Petaling Jaya (2) or Majlis Sukan Negara (1). Blank for 70 rows. |
-| `oku_bays` | Disallowed | No | Yes | Optional filter for bays reserved for disabled drivers (OKU), from 2 to 24. Published for only 11 rows, so blank for 66. |
-| `women_bays` | Disallowed | No | Yes | Optional filter for bays reserved for women, from 40 to 200. Published for only 5 rows, so blank for 72. |
-| `fee_note` | Disallowed | Yes | No | Optional filter for the fee notes, such as the KTM rates and hours or the note that the owner sets the charges. Blank for 7 rows. |
-| `data_source` | Disallowed | Yes | No | Optional filter for where the row came from: MyRapid Park N' Ride page (40 rows), MRT Corp Park N' Ride page (27), KTM Parking website, page dated 2016 (9) or a Railway Assets Corporation statement for Klang (1). |
+| `parking_authority` | Disallowed | No | No | The local authority that runs the parking when the rail operator lists no bays: Dewan Bandaraya Kuala Lumpur (4 rows), Majlis Bandaraya Petaling Jaya (2) or Majlis Sukan Negara (1). Blank for 70 rows. |
+| `oku_bays` | Disallowed | No | No | The bays reserved for disabled drivers (OKU), from 2 to 24. Published for only 11 rows, so blank for 66. |
+| `women_bays` | Disallowed | No | No | The bays reserved for women, from 40 to 200. Published for only 5 rows, so blank for 72. |
+| `fee_note` | Disallowed | No | No | The fee notes, such as the KTM rates and hours or the note that the owner sets the charges. Blank for 7 rows. |
+| `data_source` | Disallowed | No | No | Where the row came from: MyRapid Park N' Ride page (40 rows), MRT Corp Park N' Ride page (27), KTM Parking website, page dated 2016 (9) or a Railway Assets Corporation statement for Klang (1). |
 
 * Parameters are combined with AND. Text matches ignore case. See [How filters work](../../../README.md#how-filters-work) for the wildcard and range syntax.
 
