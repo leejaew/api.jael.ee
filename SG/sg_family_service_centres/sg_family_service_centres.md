@@ -44,7 +44,7 @@ Nested objects are shown with dots, for example `address.street` is the `street`
 |---|---|---|
 | `name` | string | Centre name, with the operator and area. |
 | `address.street` | string | Street address with unit number. |
-| `address.postalcode` | integer | Six digit postal code, as a number. Leading zeros are not kept. |
+| `address.postalcode` | string | Six digit postal code, as text. Leading zeros are kept. |
 | `phone` | string | Phone number with country code. |
 | `email` | string | Contact email address. |
 | `location.latitude` | number | Latitude in decimal degrees. |
@@ -68,7 +68,7 @@ Response (1 row):
     "name": "Montfort Care Family Service (Marine Parade)",
     "address": {
       "street": "53 Marine Terrace, #01-227",
-      "postalcode": 440053
+      "postalcode": "440053"
     },
     "phone": "+65 6445 0100",
     "email": "familyservice@montfortcare.org.sg",
