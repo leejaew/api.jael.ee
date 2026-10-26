@@ -35,7 +35,7 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `address[postalcode]` | Optional | Yes | No | ZIP or postal code of the stadium. |
 | `location[latitude]` | Optional | No | Yes | Latitude in decimal degrees. Range example: `40..42`. |
 | `location[longitude]` | Optional | No | Yes | Longitude in decimal degrees. Range example: `-90..-80`. |
-| `__id` | Optional | No | No | Row ID. |
+| `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. Numbers are not sequential across leagues. |
 | `address[street]` | Disallowed | No | No | Street address of the stadium. |
 | `address[city]` | Disallowed | No | No | City. |
 | `address[state]` | Disallowed | No | No | State or province, spelled out. |
