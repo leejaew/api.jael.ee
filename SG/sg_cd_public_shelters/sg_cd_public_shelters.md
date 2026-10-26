@@ -16,13 +16,13 @@ Civil Defence public shelters in Singapore from SCDF, 589 rows, with host site n
 
 ## Query parameters
 
-Required: none. Optional: 10 fields. Disallowed: none.
+Required: 1 field. Optional: 9 fields. Disallowed: none.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
+| `type` | Required | Yes | No | Required. Allowed values: HDB (446); MRT Station (59); School (58); Community Club/Centre (19); Public Development (7). Use * to list all rows. |
 | `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
 | `name` | Optional | Yes | No | Optional filter for the host site name, such as Telok Blangah CC; 144 distinct names; wildcards work. |
-| `type` | Optional | No | No | Optional exact filter for the host kind: HDB, MRT Station, School, Community Club/Centre or Public Development. |
 | `address[block]` | Optional | Yes | No | Optional filter for the block or house number, such as 80 or 259C; text, so wildcards work. |
 | `address[street]` | Optional | Yes | No | Optional filter for the street name, such as Punggol Field; wildcards work. |
 | `address[level]` | Optional | No | No | Optional exact filter for the floor, such as #01 or #B1; blank for 140 rows. |
