@@ -16,13 +16,13 @@ Paths in Singapore parks and park connectors from NParks, one row per line, with
 
 ## Query parameters
 
-Required: none. Optional: 12 fields. Disallowed: none.
+Required: 1 field. Optional: 11 fields. Disallowed: none.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
+| `park_type` | Required | Yes | No | Required. Allowed values: Park (12660); Park Connector (2765). Use * to list all rows. |
 | `park` | Optional | Yes | No | Optional filter for the park or connector name, such as PUNGGOL WATERWAY PK or Telok Blangah Hill Park; blank for 279 rows; wildcards work. |
 | `type` | Optional | No | No | Optional exact filter for the path kind: Footpath, Staircase, Cycle Track, Service Track/Road, Boardwalk/Trail, Bridge/Drain Crossing, Pedestrian Overhead Bridge or Underpass. |
-| `park_type` | Optional | No | No | Optional exact filter: Park or Park Connector. |
 | `path_width` | Optional | No | No | Optional exact filter for the width band as text: <2.5 or >2.5 but <4 (meters). |
 | `ama_category` | Optional | No | No | Optional exact filter for who may use the path, such as Walkers + Cyclists or Cyclists Only; blank for 23 rows. |
 | `allow_walking` | Optional | No | No | Optional exact filter, Y or N: walking allowed; blank for 23 rows. |
@@ -61,7 +61,7 @@ Nested objects are shown with dots, for example `address.street` is the `street`
 Cycle tracks that allow personal mobility devices.
 
 ```bash
-curl -s "https://api.jael.ee/JLEE/sg_nparks_tracks?type=Cycle%20Track&allow_pmd=Y"
+curl -s "https://api.jael.ee/JLEE/sg_nparks_tracks?park_type=*&type=Cycle%20Track&allow_pmd=Y"
 ```
 
 Response (950 rows, first 2 shown):
@@ -108,7 +108,7 @@ Another call:
 Boardwalks and trails in East Coast Park.
 
 ```bash
-curl -sg "https://api.jael.ee/JLEE/sg_nparks_tracks?park=*East%20Coast*&type=Boardwalk/Trail"
+curl -s "https://api.jael.ee/JLEE/sg_nparks_tracks?park_type=Park&park=*East%20Coast*&type=Boardwalk/Trail"
 ```
 
 Returns 12 rows.
