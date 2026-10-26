@@ -29,7 +29,7 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `address[postalcode]` | Optional | No | No | Six digit postal code. |
 | `phone` | Optional | No | No | Phone number as stored, for example `+65 6373 6988`. |
 | `address[street]` | Optional | Yes | No | Street address. Null for about half of the rows. |
-| `totalrooms` | Optional | No | No | Number of rooms, as text. Range search does not work on text. |
+| `totalrooms` | Optional | No | Yes | Number of rooms, as a whole number. Range supported, for example `totalrooms=100..300`. |
 | `location[latitude]` | Optional | No | Yes | Latitude in decimal degrees. |
 | `location[longitude]` | Optional | No | Yes | Longitude in decimal degrees. |
 | `address[city]` | Disallowed | No | No | Always `Singapore`. |
@@ -58,7 +58,7 @@ Nested objects are shown with dots, for example `address.street` is the `street`
 | `address.postalcode` | string | Six digit postal code, as text. |
 | `country` | string | Always `Singapore`. |
 | `phone` | string, null | Phone number with country code. Null when not given. |
-| `totalrooms` | string | Number of rooms, as text. |
+| `totalrooms` | integer | Number of rooms. |
 | `location.latitude` | number | Latitude in decimal degrees. |
 | `location.longitude` | number | Longitude in decimal degrees. |
 | `social.instagram` | string, null | Instagram page. Null when not known. |
@@ -89,7 +89,7 @@ Response (2 rows):
     },
     "country": "Singapore",
     "phone": null,
-    "totalrooms": "313",
+    "totalrooms": 313,
     "location": {
       "latitude": 1.28825959921985,
       "longitude": 103.83664249676404
@@ -112,7 +112,7 @@ Response (2 rows):
     },
     "country": "Singapore",
     "phone": "+65 6733 0880",
-    "totalrooms": "573",
+    "totalrooms": 573,
     "location": {
       "latitude": 1.2902819270049377,
       "longitude": 103.83514795784397
@@ -136,6 +136,14 @@ curl -sg "https://api.jael.ee/JLEE/sg_hotels?address[street]=*Orchard*"
 ```
 
 Returns 4 rows.
+
+Large properties, with 1,000 to 2,000 rooms.
+
+```bash
+curl -s "https://api.jael.ee/JLEE/sg_hotels?totalrooms=1000..2000"
+```
+
+Returns 4 rows: Hilton Singapore Orchard (1080), Hotel Boss (1500), Marina Bay Sands Singapore (1838) and Swissotel The Stamford, Singapore (1252).
 
 ## Data source
 
