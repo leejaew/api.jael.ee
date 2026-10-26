@@ -23,7 +23,7 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
 | `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
-| `name` | Optional | Yes | No | Optional filter for the centre name, such as `*Toa` `Payoh*`; wildcards work. All 93 rows have a name. |
+| `name` | Optional | Yes | No | Optional filter for the centre name, such as `*Toa Payoh*`; wildcards work. All 93 rows have a name. |
 | `operator` | Optional | Yes | No | Optional filter for the operator brand taken from the start of the name, such as THK (18 rows), NTUC Health (10), Lions Befrienders (10), Fei Yue (9); 1 row is blank. |
 | `address[block]` | Optional | Yes | No | Optional filter for the block number, such as 117 or 509B; text, so wildcards work. |
 | `address[street]` | Optional | Yes | No | Optional filter for the street name as written in the source, such as Ang Mo Kio Ave 10 or Lor 1 Toa Payoh; wildcards work. |
@@ -33,7 +33,7 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `phone` | Optional | No | No | Exact phone number as text in the form +65 6681 4928; every row has one, and a few centres share a number. |
 | `location[latitude]` | Optional | No | Yes | Optional filter for latitude in decimal degrees (WGS84); use a range to search a box. Values run from 1.271472 to 1.454208. |
 | `location[longitude]` | Optional | No | Yes | Optional filter for longitude in decimal degrees (WGS84); use a range to search a box. Values run from 103.708986 to 103.960173. |
-| `opening_hours` | Disallowed | Yes | No | Optional filter for the opening hours text, such as `*Saturday*`; 2 rows start with Temporary closed for renovation works. |
+| `opening_hours` | Disallowed | No | No | The opening hours text, such as `*Saturday*`; 2 rows start with Temporary closed for renovation works. |
 
 * Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
@@ -46,7 +46,7 @@ Nested objects are shown with dots, for example `address.street` is the `street`
 | Field | Type | Description |
 |---|---|---|
 | `__id` | integer | Row ID. |
-| `name` | string | The centre name, such as `*Toa` `Payoh*`. |
+| `name` | string | The centre name, such as `*Toa Payoh*`. |
 | `operator` | string | The operator brand taken from the start of the name, such as THK (18 rows), NTUC Health (10), Lions Befrienders (10), Fei Yue (9); 1 row is blank. |
 | `address.block` | string | The block number, such as 117 or 509B; text, so wildcards work. |
 | `address.street` | string | The street name as written in the source, such as Ang Mo Kio Ave 10 or Lor 1 Toa Payoh. |
