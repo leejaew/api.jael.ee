@@ -16,14 +16,14 @@ State land sites in Singapore that can be used by the community, one row per sit
 
 ## Query parameters
 
-Required: none. Optional: 8 fields. Disallowed: none.
+Required: 1 field. Optional: 7 fields. Disallowed: none.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
+| `agency` | Required | Yes | No | Required. Allowed values: HDB (134); SLA (106). Use * to list all rows. |
 | `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
 | `name` | Optional | Yes | No | Optional filter for the site name, mostly in capitals, such as SUNSET WAY; wildcards work. |
 | `site_area_sqm` | Optional | No | Yes | Optional filter for the site area in square meters (assumed); from 281.3 to 137,526.5. |
-| `agency` | Optional | No | No | Optional exact filter for the managing agency: HDB (134 rows) or SLA (106 rows). |
 | `phone` | Optional | No | No | Optional exact filter for the agency phone, +65 6490 1111 (HDB) or +65 6323 9829 (SLA). |
 | `email` | Optional | Yes | No | Optional filter for the agency email, hdbmailbox@hdb.gov.sg or sla_enquiry@sla.gov.sg. |
 | `location[latitude]` | Optional | No | Yes | Optional filter for latitude in decimal degrees (WGS84); use a range to search a box. Values run from 1.2702 to 1.4613. |
@@ -92,7 +92,7 @@ Another call:
 SLA sites with ROAD in the name.
 
 ```bash
-curl -sg "https://api.jael.ee/JLEE/sg_community_use_sites?agency=SLA&name=*ROAD*"
+curl -s "https://api.jael.ee/JLEE/sg_community_use_sites?agency=SLA&name=*ROAD*"
 ```
 
 Returns 35 rows.
