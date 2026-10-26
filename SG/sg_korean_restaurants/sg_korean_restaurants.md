@@ -18,15 +18,30 @@ XML output (`.xml`) is not available for this API because the keys `name` and `n
 
 ## Query parameters
 
+Required: none. Optional: 4 fields. Disallowed: 12 fields.
+
+Disallowed means the field is returned in the output but cannot be used as a filter.
+
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
 | `name` | Optional | No | No | Exact restaurant name in English. |
 | `name[kr]` | Optional | No | No | Exact restaurant name in Korean. |
 | `address[postalcode]` | Optional | No | No | Postal code. |
-| `phone` | Optional | No | No | Phone number as stored, for example `+60 3 3093 0089`. |
+| `phone` | Optional | No | No | Phone number as stored, for example `+65 6324 3120`. |
+| `category` | Disallowed | No | No | Type of restaurant, such as `Korean BBQ`, `Korean Fried Chicken` or `Korean Restaurant`. |
+| `menu` | Disallowed | No | No | Comma separated list of popular dishes. |
+| `atmosphere` | Disallowed | No | No | Short comma separated notes on the setting, such as `casual` or `good for groups`. |
+| `address[street]` | Disallowed | No | No | Street address. |
+| `address[city]` | Disallowed | No | No | Always `Singapore`. |
+| `address[state]` | Disallowed | No | No | Not used in Singapore. Always null. |
+| `address[countrycode]` | Disallowed | No | No | Always `SG`. |
+| `location[latitude]` | Disallowed | No | No | Latitude in decimal degrees. |
+| `location[longitude]` | Disallowed | No | No | Longitude in decimal degrees. |
+| `websiteurl` | Disallowed | No | No | Restaurant or chain website. Null when not given. |
+| `socialmedia` | Disallowed | No | No | Instagram or Facebook page. Null when not given. |
+| `recordupdated` | Disallowed | No | No | Date the row was last updated, in ISO 8601 format. |
 
-* Parameters are combined with AND. Text matches ignore case. See [How filters work](../README.md#how-filters-work) for the wildcard and range syntax.
-* Any field that is not in this table is returned in the output but cannot be used as a filter. Sending one returns an error.
+* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
 Bracket parameters such as `address[postalcode]` need `curl -g` (or `%5B` and `%5D`) so that curl does not read the brackets as a glob.
 
@@ -90,4 +105,4 @@ Response (1 row):
 ]
 ```
 
-[Back to all APIs](../README.md)
+[Back to all APIs](../../README.md)

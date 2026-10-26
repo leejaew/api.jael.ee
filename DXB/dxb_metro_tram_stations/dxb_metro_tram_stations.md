@@ -16,15 +16,22 @@ Stations on the Dubai Metro Red Line, the Dubai Metro Green Line and the Dubai T
 
 ## Query parameters
 
+Required: none. Optional: 4 fields. Disallowed: 4 fields.
+
+Disallowed means the field is returned in the output but cannot be used as a filter.
+
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
 | `station_name` | Optional | Yes | No | Station name, for example `*Mall*`. |
 | `line_name` | Optional | Yes | No | `Red Metro Line`, `Green Metro Line` or `Tram Line`. |
 | `exits` | Optional | Yes | No | Text search in the exit descriptions, for example `*Dubai Mall*`. |
 | `__id` | Optional | No | No | Row ID. |
+| `station_location[longitude]` | Disallowed | No | No | Longitude in decimal degrees. |
+| `station_location[latitude]` | Disallowed | No | No | Latitude in decimal degrees. |
+| `loading_date` | Disallowed | No | No | Date the row was loaded, as a number in `YYYYMMDD` format. |
+| `ingestion_id` | Disallowed | No | No | Internal load batch number. |
 
-* Parameters are combined with AND. Text matches ignore case. See [How filters work](../README.md#how-filters-work) for the wildcard and range syntax.
-* Any field that is not in this table is returned in the output but cannot be used as a filter. Sending one returns an error.
+* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
 Bracket parameters such as `address[postalcode]` need `curl -g` (or `%5B` and `%5D`) so that curl does not read the brackets as a glob.
 
@@ -83,4 +90,4 @@ Response, showing 2 of 11 rows:
 ]
 ```
 
-[Back to all APIs](../README.md)
+[Back to all APIs](../../README.md)
