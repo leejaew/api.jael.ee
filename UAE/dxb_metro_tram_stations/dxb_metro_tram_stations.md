@@ -25,7 +25,7 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `station_name` | Optional | Yes | No | Station name, for example `*Mall*`. |
 | `line_name` | Optional | Yes | No | `Red Metro Line`, `Green Metro Line` or `Tram Line`. |
 | `exits` | Optional | Yes | No | Text search in the exit descriptions, for example `*Dubai Mall*`. |
-| `__id` | Optional | No | No | Row ID. |
+| `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
 | `station_location[longitude]` | Disallowed | No | No | Longitude in decimal degrees. |
 | `station_location[latitude]` | Disallowed | No | No | Latitude in decimal degrees. |
 | `loading_date` | Disallowed | No | No | Date the row was loaded, as a number in `YYYYMMDD` format. |
