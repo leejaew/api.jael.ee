@@ -2,9 +2,9 @@
 
 Free public JSON APIs for open and curated data sets: transport, places, sport, food and baseball. Every API is a plain `GET` request. No sign up and no API key.
 
-![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 31](https://img.shields.io/badge/APIs-31-lightgrey)
+![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 34](https://img.shields.io/badge/APIs-34-lightgrey)
 
-**Total APIs: 31** across Singapore, Malaysia, United Arab Emirates and United States (counts update with every new API)
+**Total APIs: 34** across Singapore, Malaysia, United Arab Emirates and United States (counts update with every new API)
 
 **Base URL:** `https://api.jael.ee/JLEE/`
 
@@ -86,7 +86,10 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 | [`sg_my_international_schools`](SG/sg_my_international_schools/sg_my_international_schools.md) | International schools in Singapore, Kuala Lumpur, Johor Bahru and Penang, with curriculum and contact details. | Singapore and Malaysia | 126 |
 | [`jb_korean_restaurants`](MY/JB/jb_korean_restaurants/jb_korean_restaurants.md) | Korean restaurants in Johor Bahru and Iskandar Puteri with menu highlights and contact details. | Malaysia | 46 |
 | [`kl_korean_restaurants`](MY/KL/kl_korean_restaurants/kl_korean_restaurants.md) | Korean restaurants in Kuala Lumpur with menu highlights, atmosphere and contact details. | Malaysia | 122 |
+| [`auh_shopping_malls`](UAE/auh_shopping_malls/auh_shopping_malls.md) | Shopping malls and shopping centres in the emirate of Abu Dhabi, with region, Arabic name, address, store count, phone, website and coordinates. | United Arab Emirates | 43 |
+| [`dxb_korean_restaurants`](UAE/dxb_korean_restaurants/dxb_korean_restaurants.md) | Korean restaurants, fast food places and cafes in Dubai, with cuisine, area, phone, website, opening hours and coordinates. | United Arab Emirates | 15 |
 | [`dxb_metro_tram_stations`](UAE/dxb_metro_tram_stations/dxb_metro_tram_stations.md) | Stations on the Dubai Metro Red and Green lines and the Dubai Tram, with coordinates and exit descriptions. | United Arab Emirates | 66 |
+| [`dxb_shopping_malls`](UAE/dxb_shopping_malls/dxb_shopping_malls.md) | Shopping malls, centres and souks in Dubai, with Arabic name, area, opening year, store count, leasable area, phone, website and coordinates. | United Arab Emirates | 106 |
 | [`python_world_series`](python_world_series/python_world_series.md) | Winner, loser and final game score of the MLB World Series, 1903 to 2022. | United States | 118 |
 | [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md) | Ballparks of 120 Minor League Baseball clubs from Single A to Triple A, with capacity and year opened. | United States | 120 |
 | [`us_stadiums`](US/us_stadiums/us_stadiums.md) | Home stadiums of 154 clubs in the NFL, MLB, NBA, NHL and MLS, with address and coordinates. | United States | 154 |
@@ -96,7 +99,7 @@ Browse by region:
 * **Singapore:** [`sg_cd_public_shelters`](SG/sg_cd_public_shelters/sg_cd_public_shelters.md), [`sg_cnr_amenities`](SG/sg_cnr_amenities/sg_cnr_amenities.md), [`sg_community_clubs`](SG/sg_community_clubs/sg_community_clubs.md), [`sg_community_use_sites`](SG/sg_community_use_sites/sg_community_use_sites.md), [`sg_dementia_friendly_gtp`](SG/sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md), [`sg_family_service_centres`](SG/sg_family_service_centres/sg_family_service_centres.md), [`sg_hawker_centres`](SG/sg_hawker_centres/sg_hawker_centres.md), [`sg_heritage_trees`](SG/sg_heritage_trees/sg_heritage_trees.md), [`sg_historic_sites`](SG/sg_historic_sites/sg_historic_sites.md), [`sg_hotels`](SG/sg_hotels/sg_hotels.md), [`sg_korean_restaurants`](SG/sg_korean_restaurants/sg_korean_restaurants.md), [`sg_lta_mrt_station_exit_geojson_api`](SG/sg_lta_mrt_station_exit_geojson_api/sg_lta_mrt_station_exit_geojson_api.md), [`sg_national_monuments`](SG/sg_national_monuments/sg_national_monuments.md), [`sg_nature_ways`](SG/sg_nature_ways/sg_nature_ways.md), [`sg_nparks_park_facilities`](SG/sg_nparks_park_facilities/sg_nparks_park_facilities.md), [`sg_nparks_parks`](SG/sg_nparks_parks/sg_nparks_parks.md), [`sg_nparks_tracks`](SG/sg_nparks_tracks/sg_nparks_tracks.md), [`sg_park_connector_segments`](SG/sg_park_connector_segments/sg_park_connector_segments.md), [`sg_rc_rn_centres`](SG/sg_rc_rn_centres/sg_rc_rn_centres.md), [`sg_retail_pharmacies`](SG/sg_retail_pharmacies/sg_retail_pharmacies.md), [`sg_social_service_agencies`](SG/sg_social_service_agencies/sg_social_service_agencies.md), [`sg_social_service_offices`](SG/sg_social_service_offices/sg_social_service_offices.md), [`sg_student_care_centres`](SG/sg_student_care_centres/sg_student_care_centres.md), [`sg_sportsg_facilities`](SG/sg_sportsg_facilities/sg_sportsg_facilities.md)
 * **Singapore and Malaysia:** [`sg_my_international_schools`](SG/sg_my_international_schools/sg_my_international_schools.md)
 * **Malaysia:** [`jb_korean_restaurants`](MY/JB/jb_korean_restaurants/jb_korean_restaurants.md), [`kl_korean_restaurants`](MY/KL/kl_korean_restaurants/kl_korean_restaurants.md)
-* **United Arab Emirates:** [`dxb_metro_tram_stations`](UAE/dxb_metro_tram_stations/dxb_metro_tram_stations.md)
+* **United Arab Emirates:** [`auh_shopping_malls`](UAE/auh_shopping_malls/auh_shopping_malls.md), [`dxb_korean_restaurants`](UAE/dxb_korean_restaurants/dxb_korean_restaurants.md), [`dxb_metro_tram_stations`](UAE/dxb_metro_tram_stations/dxb_metro_tram_stations.md), [`dxb_shopping_malls`](UAE/dxb_shopping_malls/dxb_shopping_malls.md)
 * **United States:** [`python_world_series`](python_world_series/python_world_series.md), [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md), [`us_stadiums`](US/us_stadiums/us_stadiums.md)
 
 ## How filters work
