@@ -28,7 +28,7 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `address` | Optional | Yes | No | Address text, for example `*Bedok*`. |
 | `postal_code` | Optional | Yes | No | Six digit postal code, for example `069111`. |
 | `menu` | Optional | Yes | No | Dish search, for example `*laksa*`. |
-| `__id` | Optional | No | No | Row ID. |
+| `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
 | `type[type_of_centre]` | Disallowed | No | No | Centre type: `HC` is a hawker centre, `MHC` is a market and hawker centre, `MK` is a market. |
 | `type[owner]` | Disallowed | No | No | Owner of the centre, for example `Government`. |
 | `stall_count[no_of_stalls]` | Disallowed | No | No | Total number of stalls. |

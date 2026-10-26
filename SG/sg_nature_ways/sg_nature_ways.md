@@ -20,7 +20,7 @@ Required: none. Optional: 5 fields. Disallowed: none.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
-| `__id` | Optional | No | No | Row ID. |
+| `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
 | `name` | Optional | Yes | No | Optional filter for the nature way name, such as Punggol Nature Way; wildcards work. |
 | `length_m` | Optional | No | Yes | Optional filter for the total length in meters, computed from the line shape; from 582.9 to 20,763.1. |
 | `location[latitude]` | Optional | No | Yes | Optional filter for latitude in decimal degrees (WGS84); use a range to search a box. Values run from 1.271 to 1.4586. |

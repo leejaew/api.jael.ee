@@ -22,7 +22,7 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
-| `__id` | Optional | No | No | Row ID. |
+| `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
 | `name` | Optional | Yes | No | Optional filter for the historic site name; wildcards work, for example `*church*`. |
 | `description` | Optional | Yes | No | Optional keyword search in the short history text; use `*kw*` to find a word anywhere. |
 | `address[block]` | Optional | Yes | No | Optional filter for the block or house number, such as 30-B; blank for many rows. |

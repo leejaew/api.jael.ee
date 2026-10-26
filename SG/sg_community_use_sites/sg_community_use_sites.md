@@ -20,7 +20,7 @@ Required: none. Optional: 8 fields. Disallowed: none.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
-| `__id` | Optional | No | No | Row ID. |
+| `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
 | `name` | Optional | Yes | No | Optional filter for the site name, mostly in capitals, such as SUNSET WAY; wildcards work. |
 | `site_area_sqm` | Optional | No | Yes | Optional filter for the site area in square meters (assumed); from 281.3 to 137,526.5. |
 | `agency` | Optional | No | No | Optional exact filter for the managing agency: HDB (134 rows) or SLA (106 rows). |

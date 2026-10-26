@@ -23,7 +23,7 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
 | `properties[STATION_NA]` | Optional | Yes | No | Station name in capital letters, for example `*ORCHARD*`. |
-| `__id` | Optional | No | No | Row ID. |
+| `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
 | `feature` | Disallowed | No | No | GeoJSON object type. Always `Feature`. |
 | `geometry[type]` | Disallowed | No | No | GeoJSON geometry type. Always `Point`. |
 | `geometry[coordinates]` | Disallowed | No | No | Longitude and latitude of the exit, as one text value in the form `"longitude, latitude"`. |

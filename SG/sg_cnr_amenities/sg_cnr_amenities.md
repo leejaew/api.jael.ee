@@ -20,7 +20,7 @@ Required: none. Optional: 5 fields. Disallowed: none.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
-| `__id` | Optional | No | No | Row ID. |
+| `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
 | `name` | Optional | Yes | No | Optional filter for the amenity name, such as Sunbird Hut or Toilet; blank for 265 of 449 rows; wildcards work. |
 | `type_code` | Optional | No | No | Optional exact filter for the source build type code, a whole number from 1 to 12 (no 10); the source gives no legend, but 4 holds toilets and 5 holds carparks in the names seen. |
 | `location[latitude]` | Optional | No | Yes | Optional filter for latitude in decimal degrees (WGS84); use a range to search a box. Values run from 1.2624 to 1.4056. |

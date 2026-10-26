@@ -20,7 +20,7 @@ Required: none. Optional: 10 fields. Disallowed: none.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
-| `__id` | Optional | No | No | Row ID. |
+| `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
 | `name` | Optional | Yes | No | Optional filter for the office name, written Social Service Office @ town; wildcards work. |
 | `address[block]` | Optional | Yes | No | Optional filter for the block or house number, such as 80 or 259C; text, so wildcards work. |
 | `address[street]` | Optional | Yes | No | Optional filter for the street name, such as Punggol Field; wildcards work. |

@@ -20,7 +20,7 @@ Required: none. Optional: 10 fields. Disallowed: none.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
-| `__id` | Optional | No | No | Row ID. |
+| `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
 | `name` | Optional | Yes | No | Optional filter for the host site name, such as Telok Blangah CC; 144 distinct names; wildcards work. |
 | `type` | Optional | No | No | Optional exact filter for the host kind: HDB, MRT Station, School, Community Club/Centre or Public Development. |
 | `address[block]` | Optional | Yes | No | Optional filter for the block or house number, such as 80 or 259C; text, so wildcards work. |

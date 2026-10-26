@@ -22,7 +22,7 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
-| `__id` | Optional | No | No | Row ID. |
+| `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
 | `park` | Optional | Yes | No | Optional filter for the park or connector name, such as East Coast Park or Whampoa Park Connector; wildcards work. |
 | `loop` | Optional | No | No | Optional exact filter for the route loop, such as Northern Explorer Loop or Central Urban Loop (7 loops). |
 | `length_m` | Optional | No | Yes | Optional filter for the segment length in meters, computed from the line shape; from 0.1 to 14,010.2. |

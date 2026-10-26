@@ -20,7 +20,7 @@ Required: none. Optional: 11 fields. Disallowed: none.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
-| `__id` | Optional | No | No | Row ID. |
+| `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
 | `name` | Optional | Yes | No | Optional filter for the centre name, such as Eunos Zone 3 RN; wildcards work. |
 | `tag` | Optional | No | No | Optional exact filter for the centre kind: rn (Residents Network, 655 rows) or rc (Residents Committee, 59 rows). |
 | `address[block]` | Optional | Yes | No | Optional filter for the block or house number, such as 80 or 259C; text, so wildcards work. |
