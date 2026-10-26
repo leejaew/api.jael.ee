@@ -18,22 +18,20 @@ Hawker centres and markets run by the Singapore government. Each row is one cent
 
 ## Query parameters
 
-Required: none. Optional: 5 fields. Disallowed: 5 fields.
-
-Disallowed means the field is returned in the output but cannot be used as a filter.
+Required: 1 field. Optional: 9 fields. Disallowed: none.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
+| `type[type_of_centre]` | Required | Yes | No | Required. Allowed values: MHC (77); HC (27); MK (3). Use * to list all rows. |
 | `name_of_centre` | Optional | Yes | No | Name of the centre, for example `*Food Centre*`. |
 | `address` | Optional | Yes | No | Address text, for example `*Bedok*`. |
 | `postal_code` | Optional | Yes | No | Six digit postal code, for example `069111`. |
 | `menu` | Optional | Yes | No | Dish search, for example `*laksa*`. |
 | `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
-| `type[type_of_centre]` | Disallowed | No | No | Centre type: `HC` is a hawker centre, `MHC` is a market and hawker centre, `MK` is a market. |
-| `type[owner]` | Disallowed | No | No | Owner of the centre, for example `Government`. |
-| `stall_count[no_of_stalls]` | Disallowed | No | No | Total number of stalls. |
-| `stall_count[no_of_cooked_food_stalls]` | Disallowed | No | No | Number of cooked food stalls. |
-| `stall_count[no_of_mkt_produce_stalls]` | Disallowed | No | No | Number of market produce stalls. |
+| `type[owner]` | Optional | No | No | Owner of the centre, for example `Government`. |
+| `stall_count[no_of_stalls]` | Optional | No | Yes | Total number of stalls. |
+| `stall_count[no_of_cooked_food_stalls]` | Optional | No | Yes | Number of cooked food stalls. |
+| `stall_count[no_of_mkt_produce_stalls]` | Optional | No | Yes | Number of market produce stalls. |
 
 * Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
@@ -61,7 +59,7 @@ Nested objects are shown with dots, for example `address.street` is the `street`
 Find a centre by part of its name.
 
 ```bash
-curl -s "https://api.jael.ee/JLEE/sg_hawker_centres?name_of_centre=*Amoy*"
+curl -sg "https://api.jael.ee/JLEE/sg_hawker_centres?type[type_of_centre]=*&name_of_centre=*Amoy*"
 ```
 
 Response (1 row):
@@ -82,10 +80,20 @@ Response (1 row):
       "no_of_cooked_food_stalls": 134,
       "no_of_mkt_produce_stalls": 1
     },
-    "menu": "Fish Soup, Balinese Gyudon Egg Bowl, Kway Chap, Prawn Noodles, Nasi Lemak Ayam Goreng, ..."
+    "menu": "Fish Soup, Balinese Gyudon Egg Bowl, Kway Chap, Prawn Noodles, Nasi Lemak Ayam Goreng, Roast Beef Don, Sliced Fish Porridge, Fish and Prawn Soup, Braised Belly Rice, Roti Prata, Chendol With, Prawn Vadai, Pork Ribs Lamian, South Indian Meals, Yuan Chun Famous Lor Mee, Hainanese chicken rice, Iced coffee, Nasi lemak, Roti canai, Char kway teow, Wonton noodles"
   }
 ]
 ```
+
+Another call:
+
+Hawker centres with 100 to 200 stalls.
+
+```bash
+curl -sg "https://api.jael.ee/JLEE/sg_hawker_centres?type[type_of_centre]=HC&stall_count[no_of_stalls]=100..200"
+```
+
+Returns 3 rows.
 
 ## Data source
 
