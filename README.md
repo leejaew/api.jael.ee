@@ -2,7 +2,7 @@
 
 Free public JSON APIs for open and curated data sets: transport, places, sport, food and baseball. Every API is a plain `GET` request. No sign up and no API key.
 
-![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 19](https://img.shields.io/badge/APIs-19-lightgrey)
+![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 22](https://img.shields.io/badge/APIs-22-lightgrey)
 
 **Base URL:** `https://api.jael.ee/JLEE/`
 
@@ -61,10 +61,13 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 | [`sg_dementia_friendly_gtp`](SG/sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md) | Places in Singapore that are set up to help people with dementia, such as MRT stations, care homes and community clubs. | Singapore | 831 |
 | [`sg_family_service_centres`](SG/sg_family_service_centres/sg_family_service_centres.md) | Family Service Centres in Singapore that offer counselling and support to families. | Singapore | 55 |
 | [`sg_hawker_centres`](SG/sg_hawker_centres/sg_hawker_centres.md) | Government hawker centres and markets in Singapore, with stall counts and popular dishes. | Singapore | 107 |
+| [`sg_heritage_trees`](SG/sg_heritage_trees/sg_heritage_trees.md) | The 255 trees on the NParks Heritage Trees register in Singapore, with names, location text and coordinates. | Singapore | 255 |
+| [`sg_historic_sites`](SG/sg_historic_sites/sg_historic_sites.md) | The 100 historic sites of Singapore marked by the National Heritage Board, with history, address and coordinates. | Singapore | 100 |
 | [`sg_hotels`](SG/sg_hotels/sg_hotels.md) | Licensed hotels and hostels in Singapore with room counts, phone, address and coordinates. | Singapore | 468 |
 | [`sg_korean_restaurants`](SG/sg_korean_restaurants/sg_korean_restaurants.md) | Korean restaurants in Singapore with menu highlights, atmosphere and contact details. | Singapore | 42 |
 | [`sg_lta_mrt_station_exit_geojson_api`](SG/sg_lta_mrt_station_exit_geojson_api/sg_lta_mrt_station_exit_geojson_api.md) | Exit points of Singapore MRT stations as GeoJSON style features, with coordinates. | Singapore | 597 |
 | [`sg_national_monuments`](SG/sg_national_monuments/sg_national_monuments.md) | The 77 national monuments of Singapore, with short history, address, photo link and coordinates. | Singapore | 77 |
+| [`sg_nparks_park_facilities`](SG/sg_nparks_park_facilities/sg_nparks_park_facilities.md) | Facility points in Singapore parks from NParks, such as carparks, toilets, playgrounds and BBQ pits, with coordinates. | Singapore | 14754 |
 | [`sg_retail_pharmacies`](SG/sg_retail_pharmacies/sg_retail_pharmacies.md) | Licensed retail pharmacies in Singapore with brand, address and coordinates. | Singapore | 249 |
 | [`sg_social_service_agencies`](SG/sg_social_service_agencies/sg_social_service_agencies.md) | Member agencies of the National Council of Social Service in Singapore, tagged by service type. | Singapore | 908 |
 | [`sg_student_care_centres`](SG/sg_student_care_centres/sg_student_care_centres.md) | Registered student care centres in Singapore, with operator type, audit grade, monthly fee, enrolment and coordinates. | Singapore | 336 |
@@ -79,7 +82,7 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 
 Browse by region:
 
-* **Singapore:** [`sg_community_clubs`](SG/sg_community_clubs/sg_community_clubs.md), [`sg_dementia_friendly_gtp`](SG/sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md), [`sg_family_service_centres`](SG/sg_family_service_centres/sg_family_service_centres.md), [`sg_hawker_centres`](SG/sg_hawker_centres/sg_hawker_centres.md), [`sg_hotels`](SG/sg_hotels/sg_hotels.md), [`sg_korean_restaurants`](SG/sg_korean_restaurants/sg_korean_restaurants.md), [`sg_lta_mrt_station_exit_geojson_api`](SG/sg_lta_mrt_station_exit_geojson_api/sg_lta_mrt_station_exit_geojson_api.md), [`sg_national_monuments`](SG/sg_national_monuments/sg_national_monuments.md), [`sg_retail_pharmacies`](SG/sg_retail_pharmacies/sg_retail_pharmacies.md), [`sg_social_service_agencies`](SG/sg_social_service_agencies/sg_social_service_agencies.md), [`sg_student_care_centres`](SG/sg_student_care_centres/sg_student_care_centres.md), [`sg_sportsg_facilities`](SG/sg_sportsg_facilities/sg_sportsg_facilities.md)
+* **Singapore:** [`sg_community_clubs`](SG/sg_community_clubs/sg_community_clubs.md), [`sg_dementia_friendly_gtp`](SG/sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md), [`sg_family_service_centres`](SG/sg_family_service_centres/sg_family_service_centres.md), [`sg_hawker_centres`](SG/sg_hawker_centres/sg_hawker_centres.md), [`sg_heritage_trees`](SG/sg_heritage_trees/sg_heritage_trees.md), [`sg_historic_sites`](SG/sg_historic_sites/sg_historic_sites.md), [`sg_hotels`](SG/sg_hotels/sg_hotels.md), [`sg_korean_restaurants`](SG/sg_korean_restaurants/sg_korean_restaurants.md), [`sg_lta_mrt_station_exit_geojson_api`](SG/sg_lta_mrt_station_exit_geojson_api/sg_lta_mrt_station_exit_geojson_api.md), [`sg_national_monuments`](SG/sg_national_monuments/sg_national_monuments.md), [`sg_nparks_park_facilities`](SG/sg_nparks_park_facilities/sg_nparks_park_facilities.md), [`sg_retail_pharmacies`](SG/sg_retail_pharmacies/sg_retail_pharmacies.md), [`sg_social_service_agencies`](SG/sg_social_service_agencies/sg_social_service_agencies.md), [`sg_student_care_centres`](SG/sg_student_care_centres/sg_student_care_centres.md), [`sg_sportsg_facilities`](SG/sg_sportsg_facilities/sg_sportsg_facilities.md)
 * **Singapore and Malaysia:** [`sg_my_international_schools`](SG/sg_my_international_schools/sg_my_international_schools.md)
 * **Malaysia:** [`jb_korean_restaurants`](MY/JB/jb_korean_restaurants/jb_korean_restaurants.md), [`kl_korean_restaurants`](MY/KL/kl_korean_restaurants/kl_korean_restaurants.md)
 * **United Arab Emirates:** [`dxb_metro_tram_stations`](UAE/DXB/dxb_metro_tram_stations/dxb_metro_tram_stations.md)
