@@ -2,7 +2,7 @@
 
 ![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![records 106](https://img.shields.io/badge/records-106-lightgrey)
 
-Shopping malls, shopping centres and souks in the emirate of Dubai, 106 rows from OpenStreetMap with a few Wikipedia figures, with Arabic name, address text, opening year, store count, gross leasable area, phone, website and coordinates. Filter by name, area, opened_year, number_of_stores or gross_leasable_area_sqm, or use a latitude and longitude range.
+Shopping malls, shopping centres and souks in the emirate of Dubai, 106 rows from OpenStreetMap with a few Wikipedia figures, with Arabic name, address text, opening year, store count, gross leasable area, phone, website and coordinates. Filter by name or area, or use a latitude and longitude range.
 
 ## Endpoint
 
@@ -16,7 +16,7 @@ Shopping malls, shopping centres and souks in the emirate of Dubai, 106 rows fro
 
 ## Query parameters
 
-Required: none. Optional: 15 fields. Disallowed: 1 field.
+Required: none. Optional: 11 fields. Disallowed: 5 fields.
 
 Disallowed means the field is returned in the output but cannot be used as a filter.
 
@@ -29,14 +29,14 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `address[area]` | Optional | Yes | No | Optional filter for the neighbourhood, derived by reverse geocoding the point, such as Al Mankhool or Al Karama. |
 | `address[city]` | Optional | Yes | No | Optional filter for the city; Dubai for every row; values are Dubai (106). |
 | `address[emirate]` | Optional | No | No | Optional exact filter for the emirate; Dubai for every row; values are Dubai (106). |
-| `opened_year` | Optional | No | Yes | Optional filter for the opening year taken from OSM start_date or Wikipedia; values run from 1991 to 2022; blank for 97 of 106 rows. |
-| `number_of_stores` | Optional | No | Yes | Optional filter for the number of stores as stated by Wikipedia or OSM; values run from 20 to 1200; blank for 96 of 106 rows. |
-| `gross_leasable_area_sqm` | Optional | No | Yes | Optional filter for gross leasable area in square meters as stated by Wikipedia; values run from 3716 to 350000; blank for 99 of 106 rows. |
 | `phone` | Optional | No | No | Optional exact filter for the phone number as published, kept as text, such as 044557151 or +971 4 329 8000; blank for 90 of 106 rows. |
 | `location[latitude]` | Optional | No | Yes | Optional filter for latitude in decimal degrees (WGS84); use a range to search a box; values run from 24.912673 to 25.291991. |
 | `location[longitude]` | Optional | No | Yes | Optional filter for longitude in decimal degrees (WGS84); use a range to search a box; values run from 55.010897 to 55.473662. |
-| `source` | Optional | Yes | No | Optional filter for which sources fed the row; values are OpenStreetMap (93), OpenStreetMap; Wikipedia (13). |
 | `osm_id` | Optional | No | No | Optional exact filter for the OSM object id, such as way/110242011 or way/242009759. |
+| `opened_year` | Disallowed | No | No | The opening year taken from OSM start_date or Wikipedia; values run from 1991 to 2022; blank for 97 of 106 rows. |
+| `number_of_stores` | Disallowed | No | No | The number of stores as stated by Wikipedia or OSM; values run from 20 to 1200; blank for 96 of 106 rows. |
+| `gross_leasable_area_sqm` | Disallowed | No | No | Gross leasable area in square meters as stated by Wikipedia; values run from 3716 to 350000; blank for 99 of 106 rows. |
+| `source` | Disallowed | No | No | Which sources fed the row; values are OpenStreetMap (93), OpenStreetMap; Wikipedia (13). |
 | `website` | Disallowed | No | No | Mall website link; returned in results, not used as a filter, such as https://www.albarshamall.ae/ or https://www.arabiancenter.com/; blank for 74 of 106 rows. |
 
 * Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
@@ -130,7 +130,7 @@ Another call:
 Malls whose derived area is in Mirdif.
 
 ```bash
-curl -sg "https://api.jael.ee/JLEE/dxb_shopping_malls?address%5Barea%5D=*Mirdif*"
+curl -sg "https://api.jael.ee/JLEE/dxb_shopping_malls?address[area]=*Mirdif*"
 ```
 
 Returns 7 rows.
