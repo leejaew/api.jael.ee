@@ -18,25 +18,25 @@ XML output (`.xml`) is not available for this API because the keys `name` and `n
 
 ## Query parameters
 
-Required: none. Optional: 4 fields. Disallowed: 12 fields.
+Required: none. Optional: 9 fields. Disallowed: 7 fields.
 
 Disallowed means the field is returned in the output but cannot be used as a filter.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
-| `name` | Optional | No | No | Exact restaurant name in English. |
-| `name[kr]` | Optional | No | No | Exact restaurant name in Korean. |
+| `name` | Optional | Yes | No | Restaurant name in English. |
+| `name[kr]` | Optional | Yes | No | Restaurant name in Korean. |
 | `address[postalcode]` | Optional | No | No | Postal code. |
 | `phone` | Optional | No | No | Phone number as stored, for example `+65 6324 3120`. |
-| `category` | Disallowed | No | No | Type of restaurant, such as `Korean BBQ`, `Korean Fried Chicken` or `Korean Restaurant`. |
-| `menu` | Disallowed | No | No | Comma separated list of popular dishes. |
+| `category` | Optional | No | No | Type of restaurant, such as `Korean BBQ`, `Korean Fried Chicken` or `Korean Restaurant`. |
+| `menu` | Optional | Yes | No | Comma separated list of popular dishes. |
+| `address[street]` | Optional | Yes | No | Street address. |
+| `location[latitude]` | Optional | No | Yes | Latitude in decimal degrees. |
+| `location[longitude]` | Optional | No | Yes | Longitude in decimal degrees. |
 | `atmosphere` | Disallowed | No | No | Short comma separated notes on the setting, such as `casual` or `good for groups`. |
-| `address[street]` | Disallowed | No | No | Street address. |
 | `address[city]` | Disallowed | No | No | Always `Singapore`. |
 | `address[state]` | Disallowed | No | No | Not used in Singapore. Always null. |
 | `address[countrycode]` | Disallowed | No | No | Always `SG`. |
-| `location[latitude]` | Disallowed | No | No | Latitude in decimal degrees. |
-| `location[longitude]` | Disallowed | No | No | Longitude in decimal degrees. |
 | `websiteurl` | Disallowed | No | No | Restaurant or chain website. Null when not given. |
 | `socialmedia` | Disallowed | No | No | Instagram or Facebook page. Null when not given. |
 | `recordupdated` | Disallowed | No | No | Date the row was last updated, in ISO 8601 format. |
@@ -73,7 +73,7 @@ Nested objects are shown with dots, for example `address.street` is the `street`
 Restaurants at one postal code.
 
 ```bash
-curl -s -g "https://api.jael.ee/JLEE/sg_korean_restaurants?address[postalcode]=079903"
+curl -sg "https://api.jael.ee/JLEE/sg_korean_restaurants?address[postalcode]=079903"
 ```
 
 Response (1 row):
@@ -84,7 +84,7 @@ Response (1 row):
     "name": "Ko Ryo Jeong Korean Restaurant",
     "name[kr]": "고려정 한국식당",
     "category": "Korean Restaurant",
-    "menu": "Pork Bulgogi Set, Chicken Bulgogi Set, Ramyun, Gimbap, Stew Lunch Set, Mini Pancake, Ba...",
+    "menu": "Pork Bulgogi Set, Chicken Bulgogi Set, Ramyun, Gimbap, Stew Lunch Set, Mini Pancake, Banchan",
     "atmosphere": "casual, cbd lunch",
     "address": {
       "street": "10 Anson Road #02-59, International Plaza",
@@ -104,5 +104,15 @@ Response (1 row):
   }
 ]
 ```
+
+Another call:
+
+Restaurants with BBQ in the name.
+
+```bash
+curl -s "https://api.jael.ee/JLEE/sg_korean_restaurants?name=*BBQ*"
+```
+
+Returns 9 rows.
 
 [Back to all APIs](../../README.md)
