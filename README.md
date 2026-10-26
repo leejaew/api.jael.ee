@@ -2,9 +2,9 @@
 
 Free public JSON APIs for open and curated data sets: transport, places, sport, food and baseball. Every API is a plain `GET` request. No sign up and no API key.
 
-![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 25](https://img.shields.io/badge/APIs-25-lightgrey)
+![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 28](https://img.shields.io/badge/APIs-28-lightgrey)
 
-**Total APIs: 25** across Singapore, Malaysia, United Arab Emirates, United States and Canada (counts update with every new API)
+**Total APIs: 28** across Singapore, Malaysia, United Arab Emirates, United States and Canada (counts update with every new API)
 
 **Base URL:** `https://api.jael.ee/JLEE/`
 
@@ -59,6 +59,7 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 
 | API | Description | Region | Records |
 |---|---|---|---:|
+| [`sg_cnr_amenities`](SG/sg_cnr_amenities/sg_cnr_amenities.md) | Amenities in the Central Catchment Nature Reserve in Singapore, such as huts, toilets and carparks, with type code and coordinates. | Singapore | 449 |
 | [`sg_community_clubs`](SG/sg_community_clubs/sg_community_clubs.md) | Community clubs and PAssion WaVe outlets run by the People's Association in Singapore, with address, postal code and coordinates. | Singapore | 128 |
 | [`sg_community_use_sites`](SG/sg_community_use_sites/sg_community_use_sites.md) | State land sites in Singapore open to community use, with agency, site area, contact and center point. | Singapore | 240 |
 | [`sg_dementia_friendly_gtp`](SG/sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md) | Places in Singapore that are set up to help people with dementia, such as MRT stations, care homes and community clubs. | Singapore | 831 |
@@ -72,9 +73,11 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 | [`sg_national_monuments`](SG/sg_national_monuments/sg_national_monuments.md) | The 77 national monuments of Singapore, with short history, address, photo link and coordinates. | Singapore | 77 |
 | [`sg_nparks_park_facilities`](SG/sg_nparks_park_facilities/sg_nparks_park_facilities.md) | Facility points in Singapore parks from NParks, such as carparks, toilets, playgrounds and BBQ pits, with coordinates. | Singapore | 14754 |
 | [`sg_nparks_parks`](SG/sg_nparks_parks/sg_nparks_parks.md) | The 462 NParks parks in Singapore as map points, with park name and coordinates. | Singapore | 462 |
+| [`sg_nparks_tracks`](SG/sg_nparks_tracks/sg_nparks_tracks.md) | Paths in Singapore parks and park connectors from NParks, with path type, width, allowed users, length and midpoint. | Singapore | 15425 |
 | [`sg_park_connector_segments`](SG/sg_park_connector_segments/sg_park_connector_segments.md) | Line segments of the NParks Park Connector Network in Singapore, with park, route loop, length and midpoint. | Singapore | 878 |
 | [`sg_retail_pharmacies`](SG/sg_retail_pharmacies/sg_retail_pharmacies.md) | Licensed retail pharmacies in Singapore with brand, address and coordinates. | Singapore | 249 |
 | [`sg_social_service_agencies`](SG/sg_social_service_agencies/sg_social_service_agencies.md) | Member agencies of the National Council of Social Service in Singapore, tagged by service type. | Singapore | 908 |
+| [`sg_social_service_offices`](SG/sg_social_service_offices/sg_social_service_offices.md) | The 24 Social Service Offices in Singapore, with address parts, postal code and coordinates. | Singapore | 24 |
 | [`sg_student_care_centres`](SG/sg_student_care_centres/sg_student_care_centres.md) | Registered student care centres in Singapore, with operator type, audit grade, monthly fee, enrolment and coordinates. | Singapore | 336 |
 | [`sg_sportsg_facilities`](SG/sg_sportsg_facilities/sg_sportsg_facilities.md) | Sport facilities listed by Sport Singapore: sport centres, pools, gyms, stadiums and pickleball and padel courts. | Singapore | 87 |
 | [`sg_my_international_schools`](SG/sg_my_international_schools/sg_my_international_schools.md) | International schools in Singapore, Kuala Lumpur, Johor Bahru and Penang, with curriculum and contact details. | Singapore and Malaysia | 126 |
@@ -87,7 +90,7 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 
 Browse by region:
 
-* **Singapore:** [`sg_community_clubs`](SG/sg_community_clubs/sg_community_clubs.md), [`sg_community_use_sites`](SG/sg_community_use_sites/sg_community_use_sites.md), [`sg_dementia_friendly_gtp`](SG/sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md), [`sg_family_service_centres`](SG/sg_family_service_centres/sg_family_service_centres.md), [`sg_hawker_centres`](SG/sg_hawker_centres/sg_hawker_centres.md), [`sg_heritage_trees`](SG/sg_heritage_trees/sg_heritage_trees.md), [`sg_historic_sites`](SG/sg_historic_sites/sg_historic_sites.md), [`sg_hotels`](SG/sg_hotels/sg_hotels.md), [`sg_korean_restaurants`](SG/sg_korean_restaurants/sg_korean_restaurants.md), [`sg_lta_mrt_station_exit_geojson_api`](SG/sg_lta_mrt_station_exit_geojson_api/sg_lta_mrt_station_exit_geojson_api.md), [`sg_national_monuments`](SG/sg_national_monuments/sg_national_monuments.md), [`sg_nparks_park_facilities`](SG/sg_nparks_park_facilities/sg_nparks_park_facilities.md), [`sg_nparks_parks`](SG/sg_nparks_parks/sg_nparks_parks.md), [`sg_park_connector_segments`](SG/sg_park_connector_segments/sg_park_connector_segments.md), [`sg_retail_pharmacies`](SG/sg_retail_pharmacies/sg_retail_pharmacies.md), [`sg_social_service_agencies`](SG/sg_social_service_agencies/sg_social_service_agencies.md), [`sg_student_care_centres`](SG/sg_student_care_centres/sg_student_care_centres.md), [`sg_sportsg_facilities`](SG/sg_sportsg_facilities/sg_sportsg_facilities.md)
+* **Singapore:** [`sg_cnr_amenities`](SG/sg_cnr_amenities/sg_cnr_amenities.md), [`sg_community_clubs`](SG/sg_community_clubs/sg_community_clubs.md), [`sg_community_use_sites`](SG/sg_community_use_sites/sg_community_use_sites.md), [`sg_dementia_friendly_gtp`](SG/sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md), [`sg_family_service_centres`](SG/sg_family_service_centres/sg_family_service_centres.md), [`sg_hawker_centres`](SG/sg_hawker_centres/sg_hawker_centres.md), [`sg_heritage_trees`](SG/sg_heritage_trees/sg_heritage_trees.md), [`sg_historic_sites`](SG/sg_historic_sites/sg_historic_sites.md), [`sg_hotels`](SG/sg_hotels/sg_hotels.md), [`sg_korean_restaurants`](SG/sg_korean_restaurants/sg_korean_restaurants.md), [`sg_lta_mrt_station_exit_geojson_api`](SG/sg_lta_mrt_station_exit_geojson_api/sg_lta_mrt_station_exit_geojson_api.md), [`sg_national_monuments`](SG/sg_national_monuments/sg_national_monuments.md), [`sg_nparks_park_facilities`](SG/sg_nparks_park_facilities/sg_nparks_park_facilities.md), [`sg_nparks_parks`](SG/sg_nparks_parks/sg_nparks_parks.md), [`sg_nparks_tracks`](SG/sg_nparks_tracks/sg_nparks_tracks.md), [`sg_park_connector_segments`](SG/sg_park_connector_segments/sg_park_connector_segments.md), [`sg_retail_pharmacies`](SG/sg_retail_pharmacies/sg_retail_pharmacies.md), [`sg_social_service_agencies`](SG/sg_social_service_agencies/sg_social_service_agencies.md), [`sg_social_service_offices`](SG/sg_social_service_offices/sg_social_service_offices.md), [`sg_student_care_centres`](SG/sg_student_care_centres/sg_student_care_centres.md), [`sg_sportsg_facilities`](SG/sg_sportsg_facilities/sg_sportsg_facilities.md)
 * **Singapore and Malaysia:** [`sg_my_international_schools`](SG/sg_my_international_schools/sg_my_international_schools.md)
 * **Malaysia:** [`jb_korean_restaurants`](MY/JB/jb_korean_restaurants/jb_korean_restaurants.md), [`kl_korean_restaurants`](MY/KL/kl_korean_restaurants/kl_korean_restaurants.md)
 * **United Arab Emirates:** [`dxb_metro_tram_stations`](UAE/dxb_metro_tram_stations/dxb_metro_tram_stations.md)
