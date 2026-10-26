@@ -1,9 +1,149 @@
-## api.jael.ee
+# api.jael.ee
 
-Hawker API 
-* API endpoint https://api.jael.ee/datasets/hawker
-* API readme https://github.com/leejaew/api.jael.ee/blob/master/hawker.md
+Free public JSON APIs for open and curated data sets: transport, places, sport, food and baseball. Every API is a plain `GET` request. No sign up and no API key.
 
-Hotels API
-* API endpoint https://api.jael.ee/datasets/hotels
-* API readme https://github.com/leejaew/api.jael.ee/blob/master/hotels.md
+![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 16](https://img.shields.io/badge/APIs-16-lightgrey)
+
+**Base URL:** `https://api.jael.ee/JLEE/`
+
+An API URL is the base URL plus the API name, for example `https://api.jael.ee/JLEE/python_world_series`.
+
+## Contents
+
+* [Quick start](#quick-start)
+* [All APIs](#all-apis)
+* [How filters work](#how-filters-work)
+* [Errors](#errors)
+* [Repository layout](#repository-layout)
+
+## Quick start
+
+Get every World Series the Yankees won against a team with Giants in its name:
+
+```bash
+curl -s "https://api.jael.ee/JLEE/python_world_series?winner=*Yankees*&loser=*Giants*"
+```
+
+The response is a JSON array:
+
+```json
+[
+  {
+    "id": 20,
+    "date": "1923-10-15T00:00:00+00:00",
+    "winner": "New York Yankees",
+    "loser": "New York Giants",
+    "winningruns": 6,
+    "losingruns": 4
+  },
+  {
+    "id": 33,
+    "date": "1936-10-06T00:00:00+00:00",
+    "winner": "New York Yankees",
+    "loser": "New York Giants",
+    "winningruns": 13,
+    "losingruns": 5
+  },
+  ...
+]
+```
+
+Filter by a number range, here Triple-A ballparks that seat 10,000 to 16,600 fans:
+
+```bash
+curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=10000..16600"
+```
+
+## All APIs
+
+| API | Description | Region | Records |
+|---|---|---|---:|
+| [`sg_dementia_friendly_gtp`](sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md) | Places in Singapore that are set up to help people with dementia, such as MRT stations, care homes and community clubs. | Singapore | 831 |
+| [`sg_family_service_centres`](sg_family_service_centres/sg_family_service_centres.md) | Family Service Centres in Singapore that offer counselling and support to families. | Singapore | 55 |
+| [`sg_hawker_centres`](sg_hawker_centres/sg_hawker_centres.md) | Government hawker centres and markets in Singapore, with stall counts and popular dishes. | Singapore | 107 |
+| [`sg_hotels`](sg_hotels/sg_hotels.md) | Licensed hotels and hostels in Singapore with room counts, phone, address and coordinates. | Singapore | 468 |
+| [`sg_korean_restaurants`](sg_korean_restaurants/sg_korean_restaurants.md) | Korean restaurants in Singapore with menu highlights, atmosphere and contact details. | Singapore | 42 |
+| [`sg_lta_mrt_station_exit_geojson_api`](sg_lta_mrt_station_exit_geojson_api/sg_lta_mrt_station_exit_geojson_api.md) | Exit points of Singapore MRT stations as GeoJSON style features, with coordinates. | Singapore | 597 |
+| [`sg_retail_pharmacies`](sg_retail_pharmacies/sg_retail_pharmacies.md) | Licensed retail pharmacies in Singapore with brand, address and coordinates. | Singapore | 249 |
+| [`sg_social_service_agencies`](sg_social_service_agencies/sg_social_service_agencies.md) | Member agencies of the National Council of Social Service in Singapore, tagged by service type. | Singapore | 908 |
+| [`sg_sportsg_facilities`](sg_sportsg_facilities/sg_sportsg_facilities.md) | Sport facilities listed by Sport Singapore: sport centres, pools, gyms, stadiums and pickleball and padel courts. | Singapore | 87 |
+| [`sg_my_international_schools`](sg_my_international_schools/sg_my_international_schools.md) | International schools in Singapore, Kuala Lumpur, Johor Bahru and Penang, with curriculum and contact details. | Singapore and Malaysia | 126 |
+| [`jb_korean_restaurants`](jb_korean_restaurants/jb_korean_restaurants.md) | Korean restaurants in Johor Bahru and Iskandar Puteri with menu highlights and contact details. | Malaysia | 46 |
+| [`kl_korean_restaurants`](kl_korean_restaurants/kl_korean_restaurants.md) | Korean restaurants in Kuala Lumpur with menu highlights, atmosphere and contact details. | Malaysia | 122 |
+| [`dxb_metro_tram_stations`](dxb_metro_tram_stations/dxb_metro_tram_stations.md) | Stations on the Dubai Metro Red and Green lines and the Dubai Tram, with coordinates and exit descriptions. | United Arab Emirates | 66 |
+| [`python_world_series`](python_world_series/python_world_series.md) | Winner, loser and final game score of the MLB World Series, 1903 to 2022. | United States | 118 |
+| [`us_milb_ballparks`](us_milb_ballparks/us_milb_ballparks.md) | Ballparks of 120 Minor League Baseball clubs from Single A to Triple A, with capacity and year opened. | United States and Canada | 120 |
+| [`us_stadiums`](us_stadiums/us_stadiums.md) | Home stadiums of 154 clubs in the NFL, MLB, NBA, NHL and MLS, with address and coordinates. | United States and Canada | 154 |
+
+Browse by region:
+
+* **Singapore:** [`sg_dementia_friendly_gtp`](sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md), [`sg_family_service_centres`](sg_family_service_centres/sg_family_service_centres.md), [`sg_hawker_centres`](sg_hawker_centres/sg_hawker_centres.md), [`sg_hotels`](sg_hotels/sg_hotels.md), [`sg_korean_restaurants`](sg_korean_restaurants/sg_korean_restaurants.md), [`sg_lta_mrt_station_exit_geojson_api`](sg_lta_mrt_station_exit_geojson_api/sg_lta_mrt_station_exit_geojson_api.md), [`sg_retail_pharmacies`](sg_retail_pharmacies/sg_retail_pharmacies.md), [`sg_social_service_agencies`](sg_social_service_agencies/sg_social_service_agencies.md), [`sg_sportsg_facilities`](sg_sportsg_facilities/sg_sportsg_facilities.md)
+* **Singapore and Malaysia:** [`sg_my_international_schools`](sg_my_international_schools/sg_my_international_schools.md)
+* **Malaysia:** [`jb_korean_restaurants`](jb_korean_restaurants/jb_korean_restaurants.md), [`kl_korean_restaurants`](kl_korean_restaurants/kl_korean_restaurants.md)
+* **United Arab Emirates:** [`dxb_metro_tram_stations`](dxb_metro_tram_stations/dxb_metro_tram_stations.md)
+* **United States:** [`python_world_series`](python_world_series/python_world_series.md)
+* **United States and Canada:** [`us_milb_ballparks`](us_milb_ballparks/us_milb_ballparks.md), [`us_stadiums`](us_stadiums/us_stadiums.md)
+
+## How filters work
+
+Each API page lists the query parameters it accepts. The rules below apply to all of them.
+
+| Rule | Syntax | Example |
+|---|---|---|
+| Exact match | `field=value`. Ignores case. | `?tag=nfl` |
+| Wildcard | `*` at the start, the end or both. Only on parameters marked Wildcard Yes. | `?winner=*Yankees*`, `?stadium=Soldier*`, `?stadium=*Field` |
+| Range | `min..max`, both bounds included. Only on parameters marked Range Yes. Both bounds are required. | `?capacity=5000..8000` |
+| Several filters | Joined with AND. | `?level=Triple-A&capacity=10000..16600` |
+| Nested field | Bracket notation. | `?address[postalcode]=440053` |
+| Spaces | Encode as `%20`. | `?address[city]=Mont%20Kiara` |
+
+Notes:
+
+* A wildcard or range on a parameter that does not allow it returns an empty array, `[]`.
+* Curl treats `[` and `]` as a glob pattern. Add `-g` to the command when a URL has brackets.
+* A parameter that is not on the API page is rejected with an error. The fields it returns can be more than the fields you can filter on.
+* Add `.xml` to the API name to get XML instead of JSON, for example `/JLEE/python_world_series.xml`. XML is not available for `us_stadiums` and the three Korean restaurant APIs, because some of their keys clash in XML.
+
+## Errors
+
+| Status | Meaning |
+|---|---|
+| `200` | Success. A search with no match returns `[]`. |
+| `400` | Bad request. The JSON body has a `message`, for example `Request includes unknown parameters: foo`, `Request attempts to filter on disallowed parameters: address[state]` or `Your request is missing the following required parameters: tag`. |
+| `404` | No API with that name. |
+
+An error body looks like this:
+
+```json
+{
+  "timestamp": "2026-10-26T17:34:29.850943814",
+  "status": "BAD_REQUEST",
+  "message": "Your request is missing the following required parameters: tag. You did not supply any."
+}
+```
+
+## Repository layout
+
+```text
+README.md                  This file
+python_world_series/python_world_series.md
+us_stadiums/us_stadiums.md
+us_milb_ballparks/us_milb_ballparks.md
+dxb_metro_tram_stations/dxb_metro_tram_stations.md
+sg_hawker_centres/sg_hawker_centres.md
+sg_hawker_centres/sg_hawker_centres.png
+sg_hotels/sg_hotels.md
+sg_hotels/sg_hotels.png
+sg_lta_mrt_station_exit_geojson_api/sg_lta_mrt_station_exit_geojson_api.md
+sg_my_international_schools/sg_my_international_schools.md
+sg_retail_pharmacies/sg_retail_pharmacies.md
+sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md
+sg_family_service_centres/sg_family_service_centres.md
+sg_social_service_agencies/sg_social_service_agencies.md
+sg_sportsg_facilities/sg_sportsg_facilities.md
+sg_korean_restaurants/sg_korean_restaurants.md
+kl_korean_restaurants/kl_korean_restaurants.md
+jb_korean_restaurants/jb_korean_restaurants.md
+```
+
+Each API has its own folder with one page named after the API. The page lists the URL, the query parameters, every response field, and a working `curl` example with a real response.
