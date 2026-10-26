@@ -16,18 +16,18 @@ Stations on the Dubai Metro Red Line, the Dubai Metro Green Line and the Dubai T
 
 ## Query parameters
 
-Required: none. Optional: 4 fields. Disallowed: 4 fields.
+Required: 1 field. Optional: 4 fields. Disallowed: 3 fields.
 
 Disallowed means the field is returned in the output but cannot be used as a filter.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
+| `line_name` | Required | Yes | No | Required. Allowed values: Red Metro Line (35); Green Metro Line (20); Tram Line (11). Use * to list all rows. |
 | `station_name` | Optional | Yes | No | Station name, for example `*Mall*`. |
-| `line_name` | Optional | Yes | No | `Red Metro Line`, `Green Metro Line` or `Tram Line`. |
-| `exits` | Optional | Yes | No | Text search in the exit descriptions, for example `*Dubai Mall*`. |
 | `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
-| `station_location[longitude]` | Disallowed | No | No | Longitude in decimal degrees. |
-| `station_location[latitude]` | Disallowed | No | No | Latitude in decimal degrees. |
+| `station_location[longitude]` | Optional | No | Yes | Longitude in decimal degrees. |
+| `station_location[latitude]` | Optional | No | Yes | Latitude in decimal degrees. |
+| `exits` | Disallowed | No | No | Exit numbers with a short description of where each exit leads, separated by semicolons. |
 | `loading_date` | Disallowed | No | No | Date the row was loaded, as a number in `YYYYMMDD` format. |
 | `ingestion_id` | Disallowed | No | No | Internal load batch number. |
 
@@ -58,7 +58,7 @@ All Dubai Tram stations.
 curl -s "https://api.jael.ee/JLEE/dxb_metro_tram_stations?line_name=*Tram*"
 ```
 
-Response, showing 2 of 11 rows:
+Response (11 rows, first 2 shown):
 
 ```json
 [
@@ -72,7 +72,7 @@ Response, showing 2 of 11 rows:
     },
     "loading_date": 20260420,
     "ingestion_id": 0,
-    "exits": "Located on Al Mamsha Street (King Salman Bin Abdulaziz Al Saud Street) in Jumeirah Beac..."
+    "exits": "Located on Al Mamsha Street (King Salman Bin Abdulaziz Al Saud Street) in Jumeirah Beach Residence, near the intersection with the road leading to InterContinental Dubai Marina and Rixos Premium Dubai JBR."
   },
   {
     "__id": 57,
@@ -84,10 +84,19 @@ Response, showing 2 of 11 rows:
     },
     "loading_date": 20260420,
     "ingestion_id": 0,
-    "exits": "Provides access to Al Mamsha Street (King Salman Bin Abdulaziz Al Saud Street) in Jumei..."
-  },
-  ...
+    "exits": "Provides access to Al Mamsha Street (King Salman Bin Abdulaziz Al Saud Street) in Jumeirah Beach Residence, near The Walk and the Dubai Marina waterfront."
+  }
 ]
 ```
+
+Another call:
+
+Stations of any line with Mall in the name.
+
+```bash
+curl -s "https://api.jael.ee/JLEE/dxb_metro_tram_stations?line_name=*&station_name=*Mall*"
+```
+
+Returns 3 rows.
 
 [Back to all APIs](../../README.md)
