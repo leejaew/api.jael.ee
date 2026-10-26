@@ -33,7 +33,7 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `phone` | Optional | No | No | Exact phone number as text in the form +65 6776 3450; blank for 27 rows. |
 | `location[latitude]` | Optional | No | Yes | Optional filter for latitude in decimal degrees (WGS84); use a range to search a box. Values run from 1.273259 to 1.426603. |
 | `location[longitude]` | Optional | No | Yes | Optional filter for longitude in decimal degrees (WGS84); use a range to search a box. Values run from 103.734544 to 103.922682. |
-| `opening_hours` | Disallowed | Yes | No | Optional filter for opening hours in OpenStreetMap notation, such as 24/7 or `*Mo`-`Fr*`; blank for 27 rows. |
+| `opening_hours` | Disallowed | No | No | The opening hours in OpenStreetMap notation, such as 24/7 or `*Mo-Fr*`; blank for 27 rows. |
 
 * Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
@@ -54,7 +54,7 @@ Nested objects are shown with dots, for example `address.street` is the `street`
 | `address.unit` | string | The unit number, such as 225 or 17/19; blank for 29 rows. |
 | `address.postalcode` | string | Six digit postal code, kept as text so leading zeros stay; blank for 14 rows. Nine were looked up from OneMap. |
 | `phone` | string | Phone number as text in the form +65 6776 3450; blank for 27 rows. |
-| `opening_hours` | string | Opening hours in OpenStreetMap notation, such as 24/7 or `*Mo`-`Fr*`; blank for 27 rows. |
+| `opening_hours` | string | Opening hours in OpenStreetMap notation, such as 24/7 or `*Mo-Fr*`; blank for 27 rows. |
 | `location.latitude` | number | Latitude in decimal degrees (WGS84). |
 | `location.longitude` | number | Longitude in decimal degrees (WGS84). |
 
