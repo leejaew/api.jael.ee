@@ -16,19 +16,19 @@ Social service agencies that are members of the National Council of Social Servi
 
 ## Query parameters
 
-Required: none. Optional: 3 fields. Disallowed: 6 fields.
+Required: 1 field. Optional: 5 fields. Disallowed: 3 fields.
 
 Disallowed means the field is returned in the output but cannot be used as a filter.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
-| `name` | Optional | No | No | Exact agency name. |
-| `tag` | Optional | No | No | Service type: `family`, `eldercare`, `youth`, `dialysis` or `other`. |
+| `tag` | Required | Yes | No | Required. Allowed values: other (767); family (53); eldercare (49); youth (29); dialysis (10). Use * to list all rows. |
+| `name` | Optional | Yes | No | Agency name. |
 | `address[postalcode]` | Optional | No | No | Six digit postal code. |
-| `address[street]` | Disallowed | No | No | Street address with unit number. |
+| `address[street]` | Optional | Yes | No | Street address with unit number. |
+| `location[latitude]` | Optional | No | Yes | Latitude in decimal degrees. |
+| `location[longitude]` | Optional | No | Yes | Longitude in decimal degrees. |
 | `website` | Disallowed | No | No | Agency website. Null when not given. |
-| `location[latitude]` | Disallowed | No | No | Latitude in decimal degrees. |
-| `location[longitude]` | Disallowed | No | No | Longitude in decimal degrees. |
 | `source` | Disallowed | No | No | Name of the source data set and its licence. |
 | `sourceupdated` | Disallowed | No | No | Date the data was last refreshed, in ISO 8601 format. |
 
@@ -60,7 +60,7 @@ All dialysis centres.
 curl -s "https://api.jael.ee/JLEE/sg_social_service_agencies?tag=dialysis"
 ```
 
-Response, showing 2 of 10 rows:
+Response (10 rows, first 2 shown):
 
 ```json
 [
@@ -76,7 +76,7 @@ Response, showing 2 of 10 rows:
       "latitude": 1.314431,
       "longitude": 103.766358
     },
-    "source": "NCSS member social service agencies (GEOJSON), data.gov.sg https://data.gov.sg/datasets...",
+    "source": "NCSS member social service agencies (GEOJSON), data.gov.sg https://data.gov.sg/datasets/d_736e30b5a0111242dfde98d7b32cfda2/view. Singapore Open Data Licence.",
     "sourceupdated": "2026-10-04T00:00:00+00:00"
   },
   {
@@ -91,12 +91,21 @@ Response, showing 2 of 10 rows:
       "latitude": 1.349921,
       "longitude": 103.716718
     },
-    "source": "NCSS member social service agencies (GEOJSON), data.gov.sg https://data.gov.sg/datasets...",
+    "source": "NCSS member social service agencies (GEOJSON), data.gov.sg https://data.gov.sg/datasets/d_736e30b5a0111242dfde98d7b32cfda2/view. Singapore Open Data Licence.",
     "sourceupdated": "2026-10-04T00:00:00+00:00"
-  },
-  ...
+  }
 ]
 ```
+
+Another call:
+
+Agencies of any type with Caregivers in the name.
+
+```bash
+curl -s "https://api.jael.ee/JLEE/sg_social_service_agencies?tag=*&name=*Caregivers*"
+```
+
+Returns 4 rows.
 
 ## Data source
 
