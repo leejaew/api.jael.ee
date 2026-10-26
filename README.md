@@ -2,7 +2,7 @@
 
 Free public JSON APIs for open and curated data sets: transport, places, sport, food and baseball. Every API is a plain `GET` request. No sign up and no API key.
 
-![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 16](https://img.shields.io/badge/APIs-16-lightgrey)
+![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 17](https://img.shields.io/badge/APIs-17-lightgrey)
 
 **Base URL:** `https://api.jael.ee/JLEE/`
 
@@ -57,6 +57,7 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 
 | API | Description | Region | Records |
 |---|---|---|---:|
+| [`sg_community_clubs`](SG/sg_community_clubs/sg_community_clubs.md) | Community clubs and PAssion WaVe outlets run by the People's Association in Singapore, with address, postal code and coordinates. | Singapore | 128 |
 | [`sg_dementia_friendly_gtp`](SG/sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md) | Places in Singapore that are set up to help people with dementia, such as MRT stations, care homes and community clubs. | Singapore | 831 |
 | [`sg_family_service_centres`](SG/sg_family_service_centres/sg_family_service_centres.md) | Family Service Centres in Singapore that offer counselling and support to families. | Singapore | 55 |
 | [`sg_hawker_centres`](SG/sg_hawker_centres/sg_hawker_centres.md) | Government hawker centres and markets in Singapore, with stall counts and popular dishes. | Singapore | 107 |
@@ -76,7 +77,7 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 
 Browse by region:
 
-* **Singapore:** [`sg_dementia_friendly_gtp`](SG/sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md), [`sg_family_service_centres`](SG/sg_family_service_centres/sg_family_service_centres.md), [`sg_hawker_centres`](SG/sg_hawker_centres/sg_hawker_centres.md), [`sg_hotels`](SG/sg_hotels/sg_hotels.md), [`sg_korean_restaurants`](SG/sg_korean_restaurants/sg_korean_restaurants.md), [`sg_lta_mrt_station_exit_geojson_api`](SG/sg_lta_mrt_station_exit_geojson_api/sg_lta_mrt_station_exit_geojson_api.md), [`sg_retail_pharmacies`](SG/sg_retail_pharmacies/sg_retail_pharmacies.md), [`sg_social_service_agencies`](SG/sg_social_service_agencies/sg_social_service_agencies.md), [`sg_sportsg_facilities`](SG/sg_sportsg_facilities/sg_sportsg_facilities.md)
+* **Singapore:** [`sg_community_clubs`](SG/sg_community_clubs/sg_community_clubs.md), [`sg_dementia_friendly_gtp`](SG/sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md), [`sg_family_service_centres`](SG/sg_family_service_centres/sg_family_service_centres.md), [`sg_hawker_centres`](SG/sg_hawker_centres/sg_hawker_centres.md), [`sg_hotels`](SG/sg_hotels/sg_hotels.md), [`sg_korean_restaurants`](SG/sg_korean_restaurants/sg_korean_restaurants.md), [`sg_lta_mrt_station_exit_geojson_api`](SG/sg_lta_mrt_station_exit_geojson_api/sg_lta_mrt_station_exit_geojson_api.md), [`sg_retail_pharmacies`](SG/sg_retail_pharmacies/sg_retail_pharmacies.md), [`sg_social_service_agencies`](SG/sg_social_service_agencies/sg_social_service_agencies.md), [`sg_sportsg_facilities`](SG/sg_sportsg_facilities/sg_sportsg_facilities.md)
 * **Singapore and Malaysia:** [`sg_my_international_schools`](SG/sg_my_international_schools/sg_my_international_schools.md)
 * **Malaysia:** [`jb_korean_restaurants`](JB/jb_korean_restaurants/jb_korean_restaurants.md), [`kl_korean_restaurants`](KL/kl_korean_restaurants/kl_korean_restaurants.md)
 * **United Arab Emirates:** [`dxb_metro_tram_stations`](DXB/dxb_metro_tram_stations/dxb_metro_tram_stations.md)
