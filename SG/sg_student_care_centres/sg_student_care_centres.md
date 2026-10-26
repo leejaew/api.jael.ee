@@ -16,7 +16,9 @@ Registered student care centres in Singapore from the Ministry of Social and Fam
 
 ## Query parameters
 
-Required: none. Optional: 17 fields. Disallowed: none.
+Required: none. Optional: 16 fields. Disallowed: 1 field.
+
+Disallowed means the field is returned in the output but cannot be used as a filter.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
@@ -31,12 +33,12 @@ Required: none. Optional: 17 fields. Disallowed: none.
 | `email` | Optional | Yes | No | Optional filter for the contact email; some rows hold two emails separated by a comma, so wildcards help. |
 | `business_profile` | Optional | No | No | Optional exact filter for the operator type: Commercial Companies (312 rows) or Social Service Agency (SSA) (24 rows). |
 | `audit_status` | Optional | No | No | Optional exact filter for the audit grade: Grade A, Grade B, Grade B- or Grade D; blank for 9 rows. |
-| `scfa` | Optional | No | No | Optional exact filter for the fee assistance flag; every row is Y. |
 | `monthly_fee` | Optional | No | Yes | Optional filter for the monthly fee in Singapore dollars; a number from 215 to 850. |
 | `enrolment` | Optional | No | Yes | Optional filter for the number of enrolled children; a number from 3 to 397. |
 | `centre_id` | Optional | No | Yes | Optional filter for the centre ID, a unique number from 23001 to 23337. |
 | `location[latitude]` | Optional | No | Yes | Optional filter for latitude in decimal degrees (WGS84); use a range to search a box. Values run from 1.2747 to 1.4567. |
 | `location[longitude]` | Optional | No | Yes | Optional filter for longitude in decimal degrees (WGS84); use a range to search a box. Values run from 103.6876 to 103.963. |
+| `scfa` | Disallowed | No | No | The fee assistance flag; every row is Y. |
 
 * Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
@@ -132,7 +134,7 @@ Another call:
 Centres with YMCA in the name.
 
 ```bash
-curl -sg "https://api.jael.ee/JLEE/sg_student_care_centres?name=*YMCA*"
+curl -s "https://api.jael.ee/JLEE/sg_student_care_centres?name=*YMCA*"
 ```
 
 Returns 23 rows.
