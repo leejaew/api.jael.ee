@@ -2,7 +2,7 @@
 
 ![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![records 183](https://img.shields.io/badge/records-183-lightgrey)
 
-Public parks, gardens, dog parks and nature reserves in the emirate of Dubai, 183 rows from OpenStreetMap, with area, park type, entry fee, opening hours, operator, access, wheelchair access and coordinates. Official Dubai Pulse park data could not be reached, so fee and hours are filled only where mappers tagged them. Filter by name, park_type, area or fee_required, or use a latitude and longitude range.
+Public parks, gardens, dog parks and nature reserves in the emirate of Dubai, 183 rows from OpenStreetMap, with area, park type, entry fee, opening hours, operator, access, wheelchair access and coordinates. Official Dubai Pulse park data could not be reached, so fee and hours are filled only where mappers tagged them. Filter by name, park_type or area, or use a latitude and longitude range.
 
 ## Endpoint
 
@@ -16,7 +16,9 @@ Public parks, gardens, dog parks and nature reserves in the emirate of Dubai, 18
 
 ## Query parameters
 
-Required: none. Optional: 16 fields. Disallowed: none.
+Required: none. Optional: 10 fields. Disallowed: 6 fields.
+
+Disallowed means the field is returned in the output but cannot be used as a filter.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
@@ -27,15 +29,15 @@ Required: none. Optional: 16 fields. Disallowed: none.
 | `address[area]` | Optional | Yes | No | Optional filter for the neighbourhood, derived by reverse geocoding the point, such as Jumeirah Village Circle or Hor Al Anz East; blank for 1 of 183 rows. |
 | `address[city]` | Optional | Yes | No | Optional filter for the city; Dubai or Hatta; values are Dubai (180), Hatta (3). |
 | `address[emirate]` | Optional | No | No | Optional exact filter for the emirate; Dubai for every row; values are Dubai (183). |
-| `fee_required` | Optional | No | No | Optional exact filter for whether an entry fee applies (yes or no) from the OSM fee tag; values are yes (6), no (1); blank for 176 of 183 rows. |
-| `entry_fee` | Optional | Yes | No | Optional filter for the fee text where tagged, such as 5 AED or 55 AED; blank for 178 of 183 rows. |
-| `opening_hours` | Optional | Yes | No | Optional filter for the OSM opening hours text, such as 24/7 or 07:00-22:00; blank for 167 of 183 rows. |
-| `operator` | Optional | Yes | No | Optional filter for the operator as tagged; mixed spelling and some Arabic; values are بلدية دبي (6), Cityland (2), Dubai Municipality (2), DUBAI MUNICIPALITY (1); blank for 168 of 183 rows. |
-| `access` | Optional | No | No | Optional exact filter for the OSM access tag; values are yes (8), customers (1); blank for 174 of 183 rows. |
-| `wheelchair` | Optional | No | No | Optional exact filter for the OSM wheelchair tag; values are yes (3), limited (2); blank for 178 of 183 rows. |
 | `location[latitude]` | Optional | No | Yes | Optional filter for latitude in decimal degrees (WGS84); use a range to search a box; values run from 24.76958 to 25.321864. |
 | `location[longitude]` | Optional | No | Yes | Optional filter for longitude in decimal degrees (WGS84); use a range to search a box; values run from 54.912146 to 56.132194. |
 | `osm_id` | Optional | No | No | Optional exact filter for the OSM object id, such as way/360082076 or way/1274077937. |
+| `fee_required` | Disallowed | No | No | Whether an entry fee applies (yes or no) from the OSM fee tag; values are yes (6), no (1); blank for 176 of 183 rows. |
+| `entry_fee` | Disallowed | No | No | The fee text where tagged, such as 5 AED or 55 AED; blank for 178 of 183 rows. |
+| `opening_hours` | Disallowed | No | No | The OSM opening hours text, such as 24/7 or 07:00-22:00; blank for 167 of 183 rows. |
+| `operator` | Disallowed | No | No | The operator as tagged; mixed spelling and some Arabic; values are بلدية دبي (6), Cityland (2), Dubai Municipality (2), DUBAI MUNICIPALITY (1); blank for 168 of 183 rows. |
+| `access` | Disallowed | No | No | The OSM access tag; values are yes (8), customers (1); blank for 174 of 183 rows. |
+| `wheelchair` | Disallowed | No | No | The OSM wheelchair tag; values are yes (3), limited (2); blank for 178 of 183 rows. |
 
 * Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
@@ -125,13 +127,13 @@ Response (3 rows, first 2 shown):
 
 Another call:
 
-Parks tagged as charging an entry fee.
+Parks in Business Bay.
 
 ```bash
-curl -sg "https://api.jael.ee/JLEE/dxb_public_parks?fee_required=yes"
+curl -sg "https://api.jael.ee/JLEE/dxb_public_parks?address[area]=*Business%20Bay*"
 ```
 
-Returns 6 rows.
+Returns 14 rows.
 
 ## Data source
 
