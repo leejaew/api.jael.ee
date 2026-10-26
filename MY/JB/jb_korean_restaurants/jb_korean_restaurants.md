@@ -18,25 +18,25 @@ XML output (`.xml`) is not available for this API because the keys `name` and `n
 
 ## Query parameters
 
-Required: none. Optional: 3 fields. Disallowed: 13 fields.
+Required: none. Optional: 10 fields. Disallowed: 6 fields.
 
 Disallowed means the field is returned in the output but cannot be used as a filter.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
-| `name` | Optional | No | No | Exact restaurant name in English. |
+| `name` | Optional | Yes | No | Restaurant name in English. |
 | `address[city]` | Optional | No | No | Area or city name, for example `Iskandar Puteri`. |
 | `phone` | Optional | No | No | Phone number as stored, for example `+60 7 207 3348`. |
-| `name[kr]` | Disallowed | No | No | Restaurant name in Korean. This is a literal key name that contains brackets. |
-| `category` | Disallowed | No | No | Type of restaurant, such as `Korean BBQ`, `Korean Fried Chicken` or `Korean Restaurant`. |
-| `menu` | Disallowed | No | No | Comma separated list of popular dishes. |
+| `name[kr]` | Optional | No | No | Restaurant name in Korean. This is a literal key name that contains brackets. |
+| `category` | Optional | No | No | Type of restaurant, such as `Korean BBQ`, `Korean Fried Chicken` or `Korean Restaurant`. |
+| `menu` | Optional | Yes | No | Comma separated list of popular dishes. |
+| `address[street]` | Optional | Yes | No | Street address. |
+| `address[postalcode]` | Optional | No | No | Postal code, as text. |
+| `location[latitude]` | Optional | No | Yes | Latitude in decimal degrees. |
+| `location[longitude]` | Optional | No | Yes | Longitude in decimal degrees. |
 | `atmosphere` | Disallowed | No | No | Short comma separated notes on the setting, such as `casual` or `good for groups`. |
-| `address[street]` | Disallowed | No | No | Street address. |
-| `address[postalcode]` | Disallowed | No | No | Postal code, as text. |
 | `address[state]` | Disallowed | No | No | Always `Johor`. |
 | `address[countrycode]` | Disallowed | No | No | Always `MY`. |
-| `location[latitude]` | Disallowed | No | No | Latitude in decimal degrees. |
-| `location[longitude]` | Disallowed | No | No | Longitude in decimal degrees. |
 | `websiteurl` | Disallowed | No | No | Restaurant or chain website. Null when not given. |
 | `socialmedia` | Disallowed | No | No | Instagram or Facebook page. Null when not given. |
 | `recordupdated` | Disallowed | No | No | Date the row was last updated, in ISO 8601 format. |
@@ -73,10 +73,10 @@ Nested objects are shown with dots, for example `address.street` is the `street`
 Restaurants in Iskandar Puteri.
 
 ```bash
-curl -s -g "https://api.jael.ee/JLEE/jb_korean_restaurants?address[city]=Iskandar%20Puteri"
+curl -sg "https://api.jael.ee/JLEE/jb_korean_restaurants?address[city]=Iskandar%20Puteri"
 ```
 
-Response, showing 2 of 3 rows:
+Response (3 rows, first 2 shown):
 
 ```json
 [
@@ -84,7 +84,7 @@ Response, showing 2 of 3 rows:
     "name": "MEETMEAT BBQ",
     "name[kr]": "미트미트숙성고깃집",
     "category": "Korean BBQ",
-    "menu": "Short Rib Steak, Seasoned Short Rib Steak, Boneless Short Rib, Bone Pork Belly, Pork Be...",
+    "menu": "Short Rib Steak, Seasoned Short Rib Steak, Boneless Short Rib, Bone Pork Belly, Pork Belly, Jowl, Spicy Pork Backbone Soup, Kimchi Stew, Soybean Stew, Cast Iron Fried Rice",
     "atmosphere": "staff grill for you, indoor dining, inconsistent service",
     "address": {
       "street": "Lot 71-01, Sunway Emerald Boulevard, 88, Persiaran Medini 3, Sunway Iskandar",
@@ -106,7 +106,7 @@ Response, showing 2 of 3 rows:
     "name": "Hong Dae Ip Gu Eco Botanic",
     "name[kr]": "홍대입구",
     "category": "Korean Restaurant",
-    "menu": "Grilled Beef with Mushrooms, Korean Ramen, Seafood Pancake, Crab Gimbap, Roe Bibimbap, ...",
+    "menu": "Grilled Beef with Mushrooms, Korean Ramen, Seafood Pancake, Crab Gimbap, Roe Bibimbap, Steamed Egg, Marinated Pork, Kimchi Stew",
     "atmosphere": "casual, cosy, groups, lively",
     "address": {
       "street": "69, Jalan Eko Botani 3/5, Eco Botani",
@@ -123,9 +123,18 @@ Response, showing 2 of 3 rows:
     "websiteurl": null,
     "socialmedia": null,
     "recordupdated": "2026-10-05T00:00:00+00:00"
-  },
-  ...
+  }
 ]
 ```
+
+Another call:
+
+Restaurants with Seoul in the name.
+
+```bash
+curl -s "https://api.jael.ee/JLEE/jb_korean_restaurants?name=*Seoul*"
+```
+
+Returns 5 rows.
 
 [Back to all APIs](../../../README.md)
