@@ -16,19 +16,19 @@ Family Service Centres in Singapore, which give counselling and practical help t
 
 ## Query parameters
 
-Required: none. Optional: 2 fields. Disallowed: 7 fields.
+Required: none. Optional: 7 fields. Disallowed: 2 fields.
 
 Disallowed means the field is returned in the output but cannot be used as a filter.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
-| `name` | Optional | No | No | Exact centre name. |
+| `name` | Optional | Yes | No | Centre name. |
 | `address[postalcode]` | Optional | No | No | Six digit postal code, for example `440053`. |
-| `address[street]` | Disallowed | No | No | Street address with unit number. |
-| `phone` | Disallowed | No | No | Phone number with country code. |
-| `email` | Disallowed | No | No | Contact email address. |
-| `location[latitude]` | Disallowed | No | No | Latitude in decimal degrees. |
-| `location[longitude]` | Disallowed | No | No | Longitude in decimal degrees. |
+| `address[street]` | Optional | Yes | No | Street address with unit number. |
+| `phone` | Optional | No | No | Phone number with country code. |
+| `email` | Optional | Yes | No | Contact email address. |
+| `location[latitude]` | Optional | No | Yes | Latitude in decimal degrees. |
+| `location[longitude]` | Optional | No | Yes | Longitude in decimal degrees. |
 | `source` | Disallowed | No | No | Name of the source data set and its licence. |
 | `sourceupdated` | Disallowed | No | No | Date the data was last refreshed, in ISO 8601 format. |
 
@@ -57,7 +57,7 @@ Nested objects are shown with dots, for example `address.street` is the `street`
 Find the centre at one postal code.
 
 ```bash
-curl -s -g "https://api.jael.ee/JLEE/sg_family_service_centres?address[postalcode]=440053"
+curl -sg "https://api.jael.ee/JLEE/sg_family_service_centres?address[postalcode]=440053"
 ```
 
 Response (1 row):
@@ -76,11 +76,21 @@ Response (1 row):
       "latitude": 1.30514,
       "longitude": 103.916337
     },
-    "source": "MSF Family Service Centres (GEOJSON), data.gov.sg https://data.gov.sg/datasets/d_add23c...",
+    "source": "MSF Family Service Centres (GEOJSON), data.gov.sg https://data.gov.sg/datasets/d_add23c06f7267e799185c79ccaa2099b/view. Singapore Open Data Licence.",
     "sourceupdated": "2026-10-04T00:00:00+00:00"
   }
 ]
 ```
+
+Another call:
+
+Centres with Fei Yue in the name.
+
+```bash
+curl -s "https://api.jael.ee/JLEE/sg_family_service_centres?name=*Fei%20Yue*"
+```
+
+Returns 6 rows.
 
 ## Data source
 
