@@ -16,6 +16,10 @@ Ballparks used by Minor League Baseball clubs at the four full season levels: Tr
 
 ## Query parameters
 
+Required: none. Optional: 15 fields. Disallowed: 2 fields.
+
+Disallowed means the field is returned in the output but cannot be used as a filter.
+
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
 | `stadium` | Optional | Yes | No | Ballpark name. |
@@ -33,9 +37,10 @@ Ballparks used by Minor League Baseball clubs at the four full season levels: Tr
 | `opened` | Optional | No | Yes | Year the ballpark opened. Range example: `2000..2010`. |
 | `location[latitude]` | Optional | No | Yes | Latitude in decimal degrees. |
 | `location[longitude]` | Optional | No | Yes | Longitude in decimal degrees. |
+| `websiteurl` | Disallowed | No | No | Club page on milb.com. |
+| `recordupdated` | Disallowed | No | No | Date the row was last updated, in ISO 8601 format. |
 
-* Parameters are combined with AND. Text matches ignore case. See [How filters work](../README.md#how-filters-work) for the wildcard and range syntax.
-* Any field that is not in this table is returned in the output but cannot be used as a filter. Sending one returns an error.
+* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
 Bracket parameters such as `address[postalcode]` need `curl -g` (or `%5B` and `%5D`) so that curl does not read the brackets as a glob.
 
@@ -125,4 +130,4 @@ Response, showing 2 of 21 rows:
 ]
 ```
 
-[Back to all APIs](../README.md)
+[Back to all APIs](../../README.md)

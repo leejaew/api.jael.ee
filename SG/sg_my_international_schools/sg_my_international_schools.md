@@ -16,15 +16,27 @@ International and private schools in Singapore and in three Malaysian cities: Ku
 
 ## Query parameters
 
+Required: none. Optional: 4 fields. Disallowed: 9 fields.
+
+Disallowed means the field is returned in the output but cannot be used as a filter.
+
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
 | `country` | Optional | No | No | `Singapore` or `Malaysia`. |
 | `city` | Optional | No | No | `Singapore`, `Kuala Lumpur`, `Johor Bahru` or `Penang`. |
 | `curriculum` | Optional | No | No | Curriculum label such as `British`, `American`, `IB`, `IB,British` or `mixed`. Exact match. |
 | `tag` | Optional | No | No | Lowercase version of `curriculum`, for example `ib,british`. |
+| `name` | Disallowed | No | No | School name. |
+| `address[street]` | Disallowed | No | No | Street address. |
+| `address[city]` | Disallowed | No | No | Local city or town, which can be more specific than `city`. |
+| `address[state]` | Disallowed | No | No | State, or `Singapore`. |
+| `address[postalcode]` | Disallowed | No | No | Postal code, as a number. Leading zeros are not kept. |
+| `phone` | Disallowed | No | No | Phone number with country code. Null when unknown. |
+| `website` | Disallowed | No | No | School website. |
+| `source` | Disallowed | No | No | Where the row came from, such as a ministry list or the school site. |
+| `sourceupdated` | Disallowed | No | No | Date the row was last checked, in ISO 8601 format. |
 
-* Parameters are combined with AND. Text matches ignore case. See [How filters work](../README.md#how-filters-work) for the wildcard and range syntax.
-* Any field that is not in this table is returned in the output but cannot be used as a filter. Sending one returns an error.
+* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
 Bracket parameters such as `address[postalcode]` need `curl -g` (or `%5B` and `%5D`) so that curl does not read the brackets as a glob.
 
@@ -98,4 +110,4 @@ Response, showing 2 of 14 rows:
 ]
 ```
 
-[Back to all APIs](../README.md)
+[Back to all APIs](../../README.md)

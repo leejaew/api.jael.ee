@@ -18,6 +18,10 @@ XML output (`.xml`) is not available for this API because the keys `league`, `le
 
 ## Query parameters
 
+Required: `tag`. Optional: 11 fields. Disallowed: 3 fields.
+
+Disallowed means the field is returned in the output but cannot be used as a filter.
+
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
 | `tag` | Required | No | No | League code. One of `NFL`, `MLB`, `NBA`, `NHL`, `MLS`. Required on every request. |
@@ -32,10 +36,12 @@ XML output (`.xml`) is not available for this API because the keys `league`, `le
 | `location[latitude]` | Optional | No | Yes | Latitude in decimal degrees. Range example: `40..42`. |
 | `location[longitude]` | Optional | No | Yes | Longitude in decimal degrees. Range example: `-90..-80`. |
 | `__id` | Optional | No | No | Row ID. |
+| `address[street]` | Disallowed | No | No | Street address of the stadium. |
+| `address[city]` | Disallowed | No | No | City. |
+| `address[state]` | Disallowed | No | No | State or province, spelled out. |
 
 * A request without the required parameter returns an error that names the missing parameter.
-* Parameters are combined with AND. Text matches ignore case. See [How filters work](../README.md#how-filters-work) for the wildcard and range syntax.
-* Any field that is not in this table is returned in the output but cannot be used as a filter. Sending one returns an error.
+* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
 Bracket parameters such as `address[postalcode]` need `curl -g` (or `%5B` and `%5D`) so that curl does not read the brackets as a glob.
 
@@ -63,60 +69,116 @@ Nested objects are shown with dots, for example `address.street` is the `street`
 
 ## Example
 
-All AFC clubs in the NFL.
+NFL stadiums with Field in the name. The `tag` parameter is required.
 
 ```bash
-curl -s -g "https://api.jael.ee/JLEE/us_stadiums?tag=NFL&league[conference]=AFC"
+curl -s -g "https://api.jael.ee/JLEE/us_stadiums?tag=NFL&stadium=*Field*"
 ```
 
-Response, showing 2 of 16 rows:
+Response, showing 2 of 7 rows:
 
 ```json
 [
   {
-    "__id": 74875,
-    "stadium": "Acrisure Stadium",
-    "category": "American Football",
-    "league": "National Football League",
-    "league[conference]": "AFC",
-    "league[division]": "North",
-    "tag": "NFL",
-    "club": "Pittsburgh Steelers",
-    "address": {
-      "street": "100 Art Rooney Avenue",
-      "city": "Pittsburgh",
-      "state": "Pennsylvania",
-      "postalcode": "15212"
-    },
-    "country": "United States",
-    "location": {
-      "latitude": 40.446717,
-      "longitude": -80.01572
-    }
-  },
-  {
-    "__id": 74876,
-    "stadium": "Allegiant Stadium",
+    "__id": 75035,
+    "stadium": "Empower Field at Mile High",
     "category": "American Football",
     "league": "National Football League",
     "league[conference]": "AFC",
     "league[division]": "West",
     "tag": "NFL",
-    "club": "Las Vegas Raiders",
+    "club": "Denver Broncos",
     "address": {
-      "street": "3333 Al Davis Way",
-      "city": "Las Vegas",
-      "state": "Nevada",
-      "postalcode": "89118"
+      "street": "1701 Bryant Street",
+      "city": "Denver",
+      "state": "Colorado",
+      "postalcode": "80204"
     },
     "country": "United States",
     "location": {
-      "latitude": 36.090736,
-      "longitude": -115.18333
+      "latitude": 39.743457,
+      "longitude": -105.013198
+    }
+  },
+  {
+    "__id": 75037,
+    "stadium": "Ford Field",
+    "category": "American Football",
+    "league": "National Football League",
+    "league[conference]": "NFC",
+    "league[division]": "North",
+    "tag": "NFL",
+    "club": "Detroit Lions",
+    "address": {
+      "street": "2000 Brush Street",
+      "city": "Detroit",
+      "state": "Michigan",
+      "postalcode": "48226"
+    },
+    "country": "United States",
+    "location": {
+      "latitude": 42.34,
+      "longitude": -83.045556
     }
   },
   ...
 ]
 ```
 
-[Back to all APIs](../README.md)
+MLB stadiums between 40 and 42 degrees north. This one uses a range on `location[latitude]`.
+
+```bash
+curl -s -g "https://api.jael.ee/JLEE/us_stadiums?tag=MLB&location[latitude]=40..42"
+```
+
+Response, showing 2 of 6 rows:
+
+```json
+[
+  {
+    "__id": 75095,
+    "stadium": "Citi Field",
+    "category": "Baseball",
+    "league": "Major League Baseball",
+    "league[conference]": "National League",
+    "league[division]": "East",
+    "tag": "MLB",
+    "club": "New York Mets",
+    "address": {
+      "street": "41 Seaver Way",
+      "city": "Queens",
+      "state": "New York",
+      "postalcode": "11368"
+    },
+    "country": "United States",
+    "location": {
+      "latitude": 40.757031,
+      "longitude": -73.845763
+    }
+  },
+  {
+    "__id": 75110,
+    "stadium": "PNC Park",
+    "category": "Baseball",
+    "league": "Major League Baseball",
+    "league[conference]": "National League",
+    "league[division]": "Central",
+    "tag": "MLB",
+    "club": "Pittsburgh Pirates",
+    "address": {
+      "street": "115 Federal Street",
+      "city": "Pittsburgh",
+      "state": "Pennsylvania",
+      "postalcode": "15212"
+    },
+    "country": "United States",
+    "location": {
+      "latitude": 40.446926,
+      "longitude": -80.005606
+    }
+  },
+  ...
+]
+```
+
+[Back to all APIs](../../README.md)

@@ -16,7 +16,24 @@ Sport facilities listed by Sport Singapore (SportSG). Each row is one facility w
 
 ## Query parameters
 
-This API has no query parameters. A `GET` request returns every row.
+Required: none. Optional: none. Disallowed: all 8 fields. No field can be used as a filter.
+
+Disallowed means the field is returned in the output but cannot be used as a filter.
+
+| Parameter | Filter | Wildcard | Range | Description |
+|---|---|---|---|---|
+| `name` | Disallowed | No | No | Facility name. |
+| `tag` | Disallowed | No | No | Facility type: `pickleball`, `sport_centre`, `padel`, `pool`, `gym`, `stadium`, `gym_pool`, `sport_park`, `clubhouse` or `playfield`. |
+| `address[street]` | Disallowed | No | No | Street address. Null for about a third of the rows. |
+| `address[postalcode]` | Disallowed | No | No | Six digit postal code, as a number. Leading zeros are not kept. |
+| `location[latitude]` | Disallowed | No | No | Latitude in decimal degrees. |
+| `location[longitude]` | Disallowed | No | No | Longitude in decimal degrees. |
+| `source` | Disallowed | No | No | Name of the source data set, its coverage and licence. |
+| `sourceupdated` | Disallowed | No | No | Date or period the data covers, such as `2025-07` or `2024`. |
+
+* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
+
+Bracket parameters such as `address[postalcode]` need `curl -g` (or `%5B` and `%5D`) so that curl does not read the brackets as a glob.
 
 ## Response fields
 
@@ -81,4 +98,4 @@ Response, showing 2 of 87 rows:
 
 SportSG Sport Facilities, data.gov.sg (https://data.gov.sg), Singapore Open Data Licence.
 
-[Back to all APIs](../README.md)
+[Back to all APIs](../../README.md)

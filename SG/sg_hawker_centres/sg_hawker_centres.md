@@ -18,6 +18,10 @@ Hawker centres and markets run by the Singapore government. Each row is one cent
 
 ## Query parameters
 
+Required: none. Optional: 5 fields. Disallowed: 5 fields.
+
+Disallowed means the field is returned in the output but cannot be used as a filter.
+
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
 | `name_of_centre` | Optional | Yes | No | Name of the centre, for example `*Food Centre*`. |
@@ -25,9 +29,13 @@ Hawker centres and markets run by the Singapore government. Each row is one cent
 | `postal_code` | Optional | Yes | No | Six digit postal code, for example `069111`. |
 | `menu` | Optional | Yes | No | Dish search, for example `*laksa*`. |
 | `__id` | Optional | No | No | Row ID. |
+| `type[type_of_centre]` | Disallowed | No | No | Centre type: `HC` is a hawker centre, `MHC` is a market and hawker centre, `MK` is a market. |
+| `type[owner]` | Disallowed | No | No | Owner of the centre, for example `Government`. |
+| `stall_count[no_of_stalls]` | Disallowed | No | No | Total number of stalls. |
+| `stall_count[no_of_cooked_food_stalls]` | Disallowed | No | No | Number of cooked food stalls. |
+| `stall_count[no_of_mkt_produce_stalls]` | Disallowed | No | No | Number of market produce stalls. |
 
-* Parameters are combined with AND. Text matches ignore case. See [How filters work](../README.md#how-filters-work) for the wildcard and range syntax.
-* Any field that is not in this table is returned in the output but cannot be used as a filter. Sending one returns an error.
+* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
 Bracket parameters such as `address[postalcode]` need `curl -g` (or `%5B` and `%5D`) so that curl does not read the brackets as a glob.
 
@@ -83,4 +91,4 @@ Response (1 row):
 
 List of Government Markets Hawker Centres, data.gov.sg (https://data.gov.sg), Singapore Open Data Licence version 1.0 (https://data.gov.sg/open-data-licence). Contains information accessed on October 15, 2017.
 
-[Back to all APIs](../README.md)
+[Back to all APIs](../../README.md)

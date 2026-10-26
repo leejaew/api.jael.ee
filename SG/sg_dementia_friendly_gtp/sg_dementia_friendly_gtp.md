@@ -16,7 +16,27 @@ Dementia Friendly Go To Points in Singapore. These are places where a person wit
 
 ## Query parameters
 
-This API has no query parameters. A `GET` request returns every row.
+Required: none. Optional: none. Disallowed: all 11 fields. No field can be used as a filter.
+
+Disallowed means the field is returned in the output but cannot be used as a filter.
+
+| Parameter | Filter | Wildcard | Range | Description |
+|---|---|---|---|---|
+| `name` | Disallowed | No | No | Name of the place. |
+| `tag` | Disallowed | No | No | Type of place: `transit` (mostly MRT stations), `aac` (active ageing centres), `cc` (community clubs), `care_home` or `other`. |
+| `address[street]` | Disallowed | No | No | Street address, with the unit number where there is one. |
+| `address[postalcode]` | Disallowed | No | No | Six digit postal code, as a number. Leading zeros are not kept. |
+| `phone[main]` | Disallowed | No | No | Main phone number. Null when not given. |
+| `phone[alternative]` | Disallowed | No | No | Second phone number. Null for most rows. |
+| `hours` | Disallowed | No | No | Opening hours as text. Null when not given. |
+| `location[latitude]` | Disallowed | No | No | Latitude in decimal degrees. |
+| `location[longitude]` | Disallowed | No | No | Longitude in decimal degrees. |
+| `source` | Disallowed | No | No | Name of the source data set and its licence. |
+| `sourceupdated` | Disallowed | No | No | Date the data was last refreshed, in ISO 8601 format. |
+
+* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
+
+Bracket parameters such as `address[postalcode]` need `curl -g` (or `%5B` and `%5D`) so that curl does not read the brackets as a glob.
 
 ## Response fields
 
@@ -94,4 +114,4 @@ Response, showing 2 of 831 rows:
 
 MOH Dementia Friendly Go To Points, data.gov.sg (https://data.gov.sg/datasets/d_e2d10e591bc8560b8946a0da24790fa5/view), Singapore Open Data Licence.
 
-[Back to all APIs](../README.md)
+[Back to all APIs](../../README.md)

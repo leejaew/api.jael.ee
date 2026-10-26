@@ -16,13 +16,20 @@ Results of the Major League Baseball World Series from 1903 to 2022. Each row is
 
 ## Query parameters
 
+Required: none. Optional: 2 fields. Disallowed: 4 fields.
+
+Disallowed means the field is returned in the output but cannot be used as a filter.
+
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
 | `winner` | Optional | Yes | No | Winning team, for example `*Yankees*`. |
 | `loser` | Optional | Yes | No | Losing team, for example `*Giants*`. |
+| `id` | Disallowed | No | No | Row number in date order, starting at 1. |
+| `date` | Disallowed | No | No | Date of the final game, in ISO 8601 format. |
+| `winningruns` | Disallowed | No | No | Runs scored by the winning team in the final game. |
+| `losingruns` | Disallowed | No | No | Runs scored by the losing team in the final game. |
 
 * Parameters are combined with AND. Text matches ignore case. See [How filters work](../README.md#how-filters-work) for the wildcard and range syntax.
-* Any field that is not in this table is returned in the output but cannot be used as a filter. Sending one returns an error.
 
 Bracket parameters such as `address[postalcode]` need `curl -g` (or `%5B` and `%5D`) so that curl does not read the brackets as a glob.
 

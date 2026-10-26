@@ -16,13 +16,23 @@ Entrance and exit points of Singapore MRT stations. Each row is one exit, in a G
 
 ## Query parameters
 
+Required: none. Optional: 2 fields. Disallowed: 7 fields.
+
+Disallowed means the field is returned in the output but cannot be used as a filter.
+
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
 | `properties[STATION_NA]` | Optional | Yes | No | Station name in capital letters, for example `*ORCHARD*`. |
 | `__id` | Optional | No | No | Row ID. |
+| `feature` | Disallowed | No | No | GeoJSON object type. Always `Feature`. |
+| `geometry[type]` | Disallowed | No | No | GeoJSON geometry type. Always `Point`. |
+| `geometry[coordinates]` | Disallowed | No | No | Longitude and latitude of the exit, as one text value in the form `"longitude, latitude"`. |
+| `properties[OBJECT_ID]` | Disallowed | No | No | Object ID from the source layer. |
+| `properties[EXIT_CODE]` | Disallowed | No | No | Exit label, for example `Exit 1` or `Exit A`. |
+| `properties[INC_CRC]` | Disallowed | No | No | Checksum code of the source record. |
+| `properties[FMEL_UPD_D]` | Disallowed | No | No | Date the source record was updated, in `YYYYMMDDhhmmss` form with a decimal part. |
 
-* Parameters are combined with AND. Text matches ignore case. See [How filters work](../README.md#how-filters-work) for the wildcard and range syntax.
-* Any field that is not in this table is returned in the output but cannot be used as a filter. Sending one returns an error.
+* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
 Bracket parameters such as `address[postalcode]` need `curl -g` (or `%5B` and `%5D`) so that curl does not read the brackets as a glob.
 
@@ -92,4 +102,4 @@ Response, showing 2 of 4 rows:
 
 Land Transport Authority (LTA) MRT station exit layer, Singapore.
 
-[Back to all APIs](../README.md)
+[Back to all APIs](../../README.md)

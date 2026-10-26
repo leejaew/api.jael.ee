@@ -16,15 +16,26 @@ Retail pharmacy locations in Singapore from the Health Sciences Authority. Each 
 
 ## Query parameters
 
+Required: none. Optional: 4 fields. Disallowed: 8 fields.
+
+Disallowed means the field is returned in the output but cannot be used as a filter.
+
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
 | `name` | Optional | No | No | Exact outlet name. |
 | `brand` | Optional | No | No | `guardian`, `unity`, `watsons` or `independent`. |
 | `tag` | Optional | No | No | Same values as `brand`. |
 | `address[postalcode]` | Optional | No | No | Six digit postal code. |
+| `address[block]` | Disallowed | No | No | Block or building number. |
+| `address[street]` | Disallowed | No | No | Street name. |
+| `address[level]` | Disallowed | No | No | Floor, for example `#02`. Null when not given. |
+| `address[unit]` | Disallowed | No | No | Unit number or numbers. Null when not given. |
+| `location[latitude]` | Disallowed | No | No | Latitude in decimal degrees. |
+| `location[longitude]` | Disallowed | No | No | Longitude in decimal degrees. |
+| `source` | Disallowed | No | No | Name of the source data set and its licence. |
+| `sourceupdated` | Disallowed | No | No | Date the data was last refreshed, in ISO 8601 format. |
 
-* Parameters are combined with AND. Text matches ignore case. See [How filters work](../README.md#how-filters-work) for the wildcard and range syntax.
-* Any field that is not in this table is returned in the output but cannot be used as a filter. Sending one returns an error.
+* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
 Bracket parameters such as `address[postalcode]` need `curl -g` (or `%5B` and `%5D`) so that curl does not read the brackets as a glob.
 
@@ -103,4 +114,4 @@ Response, showing 2 of 33 rows:
 
 HSA Retail pharmacy locations, data.gov.sg (https://data.gov.sg/datasets/d_bb92615f43de22933e4479558b1f6c36/view), Singapore Open Data Licence.
 
-[Back to all APIs](../README.md)
+[Back to all APIs](../../README.md)

@@ -18,15 +18,29 @@ Hotels and hostels licensed by the Hotels Licensing Board in Singapore. Each row
 
 ## Query parameters
 
+Required: none. Optional: 4 fields. Disallowed: 11 fields.
+
+Disallowed means the field is returned in the output but cannot be used as a filter.
+
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
 | `name` | Optional | Yes | No | Hotel name, for example `*Copthorne*`. |
 | `tag` | Optional | No | No | `hotel` or `hostel`. |
 | `address[postalcode]` | Optional | No | No | Six digit postal code. |
 | `phone` | Optional | No | No | Phone number as stored, for example `+65 6373 6988`. |
+| `address[street]` | Disallowed | No | No | Street address. Null for about half of the rows. |
+| `address[city]` | Disallowed | No | No | Always `Singapore`. |
+| `address[state]` | Disallowed | No | No | Always `Singapore`. |
+| `country` | Disallowed | No | No | Always `Singapore`. |
+| `totalrooms` | Disallowed | No | No | Number of rooms, as text. |
+| `location[latitude]` | Disallowed | No | No | Latitude in decimal degrees. |
+| `location[longitude]` | Disallowed | No | No | Longitude in decimal degrees. |
+| `social[instagram]` | Disallowed | No | No | Instagram page. Null when not known. |
+| `social[facebook]` | Disallowed | No | No | Facebook page. Null when not known. |
+| `source` | Disallowed | No | No | Name of the source data set, its coverage and licence. |
+| `sourceupdated` | Disallowed | No | No | Date the data was last refreshed, in ISO 8601 format. |
 
-* Parameters are combined with AND. Text matches ignore case. See [How filters work](../README.md#how-filters-work) for the wildcard and range syntax.
-* Any field that is not in this table is returned in the output but cannot be used as a filter. Sending one returns an error.
+* Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
 Bracket parameters such as `address[postalcode]` need `curl -g` (or `%5B` and `%5D`) so that curl does not read the brackets as a glob.
 
@@ -121,4 +135,4 @@ Hotels licensed by the Hotels Licensing Board (HLB), data.gov.sg (https://data.g
 
 The file `sg_hotels.png` in this folder is an icon made by Vectors Market from https://www.flaticon.com, licensed CC 3.0 BY.
 
-[Back to all APIs](../README.md)
+[Back to all APIs](../../README.md)
