@@ -16,22 +16,22 @@ Retail pharmacy locations in Singapore from the Health Sciences Authority. Each 
 
 ## Query parameters
 
-Required: none. Optional: 4 fields. Disallowed: 8 fields.
+Required: 1 field. Optional: 9 fields. Disallowed: 2 fields.
 
 Disallowed means the field is returned in the output but cannot be used as a filter.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
-| `name` | Optional | No | No | Exact outlet name. |
-| `brand` | Optional | No | No | `guardian`, `unity`, `watsons` or `independent`. |
+| `brand` | Required | Yes | No | Required. Allowed values: independent (96); guardian (73); unity (47); watsons (33). Use * to list all rows. |
+| `name` | Optional | Yes | No | Outlet name. |
 | `tag` | Optional | No | No | Same values as `brand`. |
 | `address[postalcode]` | Optional | No | No | Six digit postal code. |
-| `address[block]` | Disallowed | No | No | Block or building number. |
-| `address[street]` | Disallowed | No | No | Street name. |
-| `address[level]` | Disallowed | No | No | Floor, for example `#02`. Null when not given. |
-| `address[unit]` | Disallowed | No | No | Unit number or numbers. Null when not given. |
-| `location[latitude]` | Disallowed | No | No | Latitude in decimal degrees. |
-| `location[longitude]` | Disallowed | No | No | Longitude in decimal degrees. |
+| `address[block]` | Optional | Yes | No | Block or building number. |
+| `address[street]` | Optional | Yes | No | Street name. |
+| `address[level]` | Optional | No | No | Floor, for example `#02`. Null when not given. |
+| `address[unit]` | Optional | No | No | Unit number or numbers. Null when not given. |
+| `location[latitude]` | Optional | No | Yes | Latitude in decimal degrees. |
+| `location[longitude]` | Optional | No | Yes | Longitude in decimal degrees. |
 | `source` | Disallowed | No | No | Name of the source data set and its licence. |
 | `sourceupdated` | Disallowed | No | No | Date the data was last refreshed, in ISO 8601 format. |
 
@@ -66,7 +66,7 @@ All Watsons outlets.
 curl -s "https://api.jael.ee/JLEE/sg_retail_pharmacies?brand=watsons"
 ```
 
-Response, showing 2 of 33 rows:
+Response (33 rows, first 2 shown):
 
 ```json
 [
@@ -85,7 +85,7 @@ Response, showing 2 of 33 rows:
       "latitude": 1.299113,
       "longitude": 103.855411
     },
-    "source": "HSA Retail pharmacy locations (GEOJSON), data.gov.sg https://data.gov.sg/datasets/d_bb9...",
+    "source": "HSA Retail pharmacy locations (GEOJSON), data.gov.sg https://data.gov.sg/datasets/d_bb92615f43de22933e4479558b1f6c36/view. Singapore Open Data Licence.",
     "sourceupdated": "2026-10-04T00:00:00+00:00"
   },
   {
@@ -103,12 +103,21 @@ Response, showing 2 of 33 rows:
       "latitude": 1.436008,
       "longitude": 103.785689
     },
-    "source": "HSA Retail pharmacy locations (GEOJSON), data.gov.sg https://data.gov.sg/datasets/d_bb9...",
+    "source": "HSA Retail pharmacy locations (GEOJSON), data.gov.sg https://data.gov.sg/datasets/d_bb92615f43de22933e4479558b1f6c36/view. Singapore Open Data Licence.",
     "sourceupdated": "2026-10-04T00:00:00+00:00"
-  },
-  ...
+  }
 ]
 ```
+
+Another call:
+
+Outlets of any brand on Orchard Road.
+
+```bash
+curl -sg "https://api.jael.ee/JLEE/sg_retail_pharmacies?brand=*&address[street]=*Orchard*"
+```
+
+Returns 14 rows.
 
 ## Data source
 
