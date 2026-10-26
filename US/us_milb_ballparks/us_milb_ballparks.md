@@ -16,19 +16,19 @@ Ballparks used by Minor League Baseball clubs at the four full season levels: Tr
 
 ## Query parameters
 
-Required: none. Optional: 15 fields. Disallowed: 2 fields.
+Required: 1 field. Optional: 14 fields. Disallowed: 2 fields.
 
 Disallowed means the field is returned in the output but cannot be used as a filter.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
+| `level` | Required | Yes | No | Required. Allowed values: Triple-A (30); Double-A (30); High-A (30); Single-A (30). Use * to list all rows. |
 | `stadium` | Optional | Yes | No | Ballpark name. |
 | `club` | Optional | Yes | No | Minor league club name. |
 | `league` | Optional | Yes | No | League name, for example `*International*`. |
 | `parentclub` | Optional | Yes | No | MLB club the team is affiliated with. |
 | `address[street]` | Optional | Yes | No | Street address. |
 | `address[city]` | Optional | Yes | No | City. |
-| `level` | Optional | No | No | `Triple-A`, `Double-A`, `High-A` or `Single-A`. |
 | `division` | Optional | No | No | Division inside the league: `East`, `West`, `North`, `South`, `Northeast`, `Southwest` or `None`. |
 | `address[state]` | Optional | No | No | State or province, spelled out. |
 | `address[postalcode]` | Optional | No | No | ZIP or postal code. |
@@ -76,7 +76,7 @@ Triple-A ballparks with a capacity between 10,000 and 16,600.
 curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=10000..16600"
 ```
 
-Response, showing 2 of 21 rows:
+Response (21 rows, first 2 shown):
 
 ```json
 [
@@ -125,9 +125,18 @@ Response, showing 2 of 21 rows:
     },
     "websiteurl": "https://www.milb.com/charlotte",
     "recordupdated": "2026-10-06T00:00:00+00:00"
-  },
-  ...
+  }
 ]
 ```
+
+Another call:
+
+Ballparks of any level with Field in the name.
+
+```bash
+curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=*&stadium=*Field*"
+```
+
+Returns 32 rows.
 
 [Back to all APIs](../../README.md)
