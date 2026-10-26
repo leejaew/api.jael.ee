@@ -16,22 +16,22 @@ International and private schools in Singapore and in three Malaysian cities: Ku
 
 ## Query parameters
 
-Required: none. Optional: 4 fields. Disallowed: 9 fields.
+Required: 1 field. Optional: 9 fields. Disallowed: 3 fields.
 
 Disallowed means the field is returned in the output but cannot be used as a filter.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
+| `city` | Required | Yes | No | Required. Allowed values: Singapore (46); Kuala Lumpur (40); Johor Bahru (26); Penang (14). Use * to list all rows. |
 | `country` | Optional | No | No | `Singapore` or `Malaysia`. |
-| `city` | Optional | No | No | `Singapore`, `Kuala Lumpur`, `Johor Bahru` or `Penang`. |
 | `curriculum` | Optional | No | No | Curriculum label such as `British`, `American`, `IB`, `IB,British` or `mixed`. Exact match. |
 | `tag` | Optional | No | No | Lowercase version of `curriculum`, for example `ib,british`. |
-| `name` | Disallowed | No | No | School name. |
-| `address[street]` | Disallowed | No | No | Street address. |
-| `address[city]` | Disallowed | No | No | Local city or town, which can be more specific than `city`. |
-| `address[state]` | Disallowed | No | No | State, or `Singapore`. |
-| `address[postalcode]` | Disallowed | No | No | Postal code, as a number. Leading zeros are not kept. |
-| `phone` | Disallowed | No | No | Phone number with country code. Null when unknown. |
+| `name` | Optional | Yes | No | School name. |
+| `address[street]` | Optional | Yes | No | Street address. |
+| `address[city]` | Optional | Yes | No | Local city or town, which can be more specific than `city`. |
+| `address[state]` | Optional | No | No | State, or `Singapore`. |
+| `address[postalcode]` | Optional | No | No | Postal code, as a number. Leading zeros are not kept. |
+| `phone` | Optional | No | No | Phone number with country code. Null when unknown. |
 | `website` | Disallowed | No | No | School website. |
 | `source` | Disallowed | No | No | Where the row came from, such as a ministry list or the school site. |
 | `sourceupdated` | Disallowed | No | No | Date the row was last checked, in ISO 8601 format. |
@@ -68,7 +68,7 @@ International schools in Penang.
 curl -s "https://api.jael.ee/JLEE/sg_my_international_schools?country=Malaysia&city=Penang"
 ```
 
-Response, showing 2 of 14 rows:
+Response (14 rows, first 2 shown):
 
 ```json
 [
@@ -86,7 +86,7 @@ Response, showing 2 of 14 rows:
     },
     "phone": "+60 12 500 6830",
     "website": "https://assumption.edu.my",
-    "source": "EduSwasta school profile https://eduswasta.my/school/assumption-international-secondary...",
+    "source": "EduSwasta school profile https://eduswasta.my/school/assumption-international-secondary-school-bukit-mertajam/ (aggregator claiming SMIPS/KPM registration). Official SMIPS search https://smips.moe.gov.my/utama.cfm?cari=1 was unreachable from collector on 2026-10-03; verify registration on SMIPS / school site before relying on this row.",
     "sourceupdated": "2026-10-03T00:00:00+00:00"
   },
   {
@@ -103,11 +103,20 @@ Response, showing 2 of 14 rows:
     },
     "phone": "+60 4 685 2100",
     "website": "https://dalat.org",
-    "source": "https://dalat.org/; American college-prep; contact address on home page; SMIPS https://...",
+    "source": "https://dalat.org/; American college-prep; contact address on home page; SMIPS https://smips.moe.gov.my/ unreachable (TLS/connect fail) as of 2026-10-03; BPSWasta https://www.moe.gov.my/bpswasta points to SMIPS 3.0 (no public roster download)",
     "sourceupdated": "2026-10-03T00:00:00+00:00"
-  },
-  ...
+  }
 ]
 ```
+
+Another call:
+
+Schools of any city with American in the name.
+
+```bash
+curl -s "https://api.jael.ee/JLEE/sg_my_international_schools?city=*&name=*American*"
+```
+
+Returns 3 rows.
 
 [Back to all APIs](../../README.md)
