@@ -4,6 +4,8 @@ Free public JSON APIs for open and curated data sets: transport, places, sport, 
 
 ![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 22](https://img.shields.io/badge/APIs-22-lightgrey)
 
+**Total APIs: 22** across Singapore, Malaysia, United Arab Emirates, United States and Canada (counts update with every new API)
+
 **Base URL:** `https://api.jael.ee/JLEE/`
 
 An API URL is the base URL plus the API name, for example `https://api.jael.ee/JLEE/python_world_series`.
