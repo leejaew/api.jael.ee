@@ -70,9 +70,9 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 | [`sg_student_care_centres`](SG/sg_student_care_centres/sg_student_care_centres.md) | Registered student care centres in Singapore, with operator type, audit grade, monthly fee, enrolment and coordinates. | Singapore | 336 |
 | [`sg_sportsg_facilities`](SG/sg_sportsg_facilities/sg_sportsg_facilities.md) | Sport facilities listed by Sport Singapore: sport centres, pools, gyms, stadiums and pickleball and padel courts. | Singapore | 87 |
 | [`sg_my_international_schools`](SG/sg_my_international_schools/sg_my_international_schools.md) | International schools in Singapore, Kuala Lumpur, Johor Bahru and Penang, with curriculum and contact details. | Singapore and Malaysia | 126 |
-| [`jb_korean_restaurants`](JB/jb_korean_restaurants/jb_korean_restaurants.md) | Korean restaurants in Johor Bahru and Iskandar Puteri with menu highlights and contact details. | Malaysia | 46 |
-| [`kl_korean_restaurants`](KL/kl_korean_restaurants/kl_korean_restaurants.md) | Korean restaurants in Kuala Lumpur with menu highlights, atmosphere and contact details. | Malaysia | 122 |
-| [`dxb_metro_tram_stations`](DXB/dxb_metro_tram_stations/dxb_metro_tram_stations.md) | Stations on the Dubai Metro Red and Green lines and the Dubai Tram, with coordinates and exit descriptions. | United Arab Emirates | 66 |
+| [`jb_korean_restaurants`](MY/JB/jb_korean_restaurants/jb_korean_restaurants.md) | Korean restaurants in Johor Bahru and Iskandar Puteri with menu highlights and contact details. | Malaysia | 46 |
+| [`kl_korean_restaurants`](MY/KL/kl_korean_restaurants/kl_korean_restaurants.md) | Korean restaurants in Kuala Lumpur with menu highlights, atmosphere and contact details. | Malaysia | 122 |
+| [`dxb_metro_tram_stations`](UAE/DXB/dxb_metro_tram_stations/dxb_metro_tram_stations.md) | Stations on the Dubai Metro Red and Green lines and the Dubai Tram, with coordinates and exit descriptions. | United Arab Emirates | 66 |
 | [`python_world_series`](python_world_series/python_world_series.md) | Winner, loser and final game score of the MLB World Series, 1903 to 2022. | United States | 118 |
 | [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md) | Ballparks of 120 Minor League Baseball clubs from Single A to Triple A, with capacity and year opened. | United States and Canada | 120 |
 | [`us_stadiums`](US/us_stadiums/us_stadiums.md) | Home stadiums of 154 clubs in the NFL, MLB, NBA, NHL and MLS, with address and coordinates. | United States and Canada | 154 |
@@ -81,8 +81,8 @@ Browse by region:
 
 * **Singapore:** [`sg_community_clubs`](SG/sg_community_clubs/sg_community_clubs.md), [`sg_dementia_friendly_gtp`](SG/sg_dementia_friendly_gtp/sg_dementia_friendly_gtp.md), [`sg_family_service_centres`](SG/sg_family_service_centres/sg_family_service_centres.md), [`sg_hawker_centres`](SG/sg_hawker_centres/sg_hawker_centres.md), [`sg_hotels`](SG/sg_hotels/sg_hotels.md), [`sg_korean_restaurants`](SG/sg_korean_restaurants/sg_korean_restaurants.md), [`sg_lta_mrt_station_exit_geojson_api`](SG/sg_lta_mrt_station_exit_geojson_api/sg_lta_mrt_station_exit_geojson_api.md), [`sg_national_monuments`](SG/sg_national_monuments/sg_national_monuments.md), [`sg_retail_pharmacies`](SG/sg_retail_pharmacies/sg_retail_pharmacies.md), [`sg_social_service_agencies`](SG/sg_social_service_agencies/sg_social_service_agencies.md), [`sg_student_care_centres`](SG/sg_student_care_centres/sg_student_care_centres.md), [`sg_sportsg_facilities`](SG/sg_sportsg_facilities/sg_sportsg_facilities.md)
 * **Singapore and Malaysia:** [`sg_my_international_schools`](SG/sg_my_international_schools/sg_my_international_schools.md)
-* **Malaysia:** [`jb_korean_restaurants`](JB/jb_korean_restaurants/jb_korean_restaurants.md), [`kl_korean_restaurants`](KL/kl_korean_restaurants/kl_korean_restaurants.md)
-* **United Arab Emirates:** [`dxb_metro_tram_stations`](DXB/dxb_metro_tram_stations/dxb_metro_tram_stations.md)
+* **Malaysia:** [`jb_korean_restaurants`](MY/JB/jb_korean_restaurants/jb_korean_restaurants.md), [`kl_korean_restaurants`](MY/KL/kl_korean_restaurants/kl_korean_restaurants.md)
+* **United Arab Emirates:** [`dxb_metro_tram_stations`](UAE/DXB/dxb_metro_tram_stations/dxb_metro_tram_stations.md)
 * **United States:** [`python_world_series`](python_world_series/python_world_series.md)
 * **United States and Canada:** [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md), [`us_stadiums`](US/us_stadiums/us_stadiums.md)
 
