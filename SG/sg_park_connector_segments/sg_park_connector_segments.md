@@ -16,15 +16,15 @@ Segments of the NParks Park Connector Network in Singapore, one row per line seg
 
 ## Query parameters
 
-Required: none. Optional: 6 fields. Disallowed: 1 field.
+Required: 1 field. Optional: 5 fields. Disallowed: 1 field.
 
 Disallowed means the field is returned in the output but cannot be used as a filter.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
+| `loop` | Required | Yes | No | Required. Allowed values: Northern Explorer Loop (250); Central Urban Loop (188); Western Adventure Loop (164); Southern Ridges Loop (147); Eastern Coastal Loop (72); North Eastern Riverine Loop (49); Urban Central Loop (8). Use * to list all rows. |
 | `__id` | Optional | No | Yes | Row ID. Range supported, for example `__id=3..10`. |
 | `park` | Optional | Yes | No | Optional filter for the park or connector name, such as East Coast Park or Whampoa Park Connector; wildcards work. |
-| `loop` | Optional | No | No | Optional exact filter for the route loop, such as Northern Explorer Loop or Central Urban Loop (7 loops). |
 | `length_m` | Optional | No | Yes | Optional filter for the segment length in meters, computed from the line shape; from 0.1 to 14,010.2. |
 | `location[latitude]` | Optional | No | Yes | Optional filter for latitude in decimal degrees (WGS84); use a range to search a box. Values run from 1.2738 to 1.4613. |
 | `location[longitude]` | Optional | No | Yes | Optional filter for longitude in decimal degrees (WGS84); use a range to search a box. Values run from 103.6968 to 104.0227. |
@@ -90,7 +90,7 @@ Another call:
 Park connector segments on the Western Adventure Loop.
 
 ```bash
-curl -sg "https://api.jael.ee/JLEE/sg_park_connector_segments?park=*Connector*&loop=Western%20Adventure%20Loop"
+curl -s "https://api.jael.ee/JLEE/sg_park_connector_segments?park=*Connector*&loop=Western%20Adventure%20Loop"
 ```
 
 Returns 25 rows.
