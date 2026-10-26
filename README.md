@@ -4,7 +4,7 @@ Free public JSON APIs for open and curated data sets: transport, places, sport, 
 
 ![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 28](https://img.shields.io/badge/APIs-28-lightgrey)
 
-**Total APIs: 28** across Singapore, Malaysia, United Arab Emirates, United States and Canada (counts update with every new API)
+**Total APIs: 28** across Singapore, Malaysia, United Arab Emirates and United States (counts update with every new API)
 
 **Base URL:** `https://api.jael.ee/JLEE/`
 
@@ -85,8 +85,8 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 | [`kl_korean_restaurants`](MY/KL/kl_korean_restaurants/kl_korean_restaurants.md) | Korean restaurants in Kuala Lumpur with menu highlights, atmosphere and contact details. | Malaysia | 122 |
 | [`dxb_metro_tram_stations`](UAE/dxb_metro_tram_stations/dxb_metro_tram_stations.md) | Stations on the Dubai Metro Red and Green lines and the Dubai Tram, with coordinates and exit descriptions. | United Arab Emirates | 66 |
 | [`python_world_series`](python_world_series/python_world_series.md) | Winner, loser and final game score of the MLB World Series, 1903 to 2022. | United States | 118 |
-| [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md) | Ballparks of 120 Minor League Baseball clubs from Single A to Triple A, with capacity and year opened. | United States and Canada | 120 |
-| [`us_stadiums`](US/us_stadiums/us_stadiums.md) | Home stadiums of 154 clubs in the NFL, MLB, NBA, NHL and MLS, with address and coordinates. | United States and Canada | 154 |
+| [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md) | Ballparks of 120 Minor League Baseball clubs from Single A to Triple A, with capacity and year opened. | United States | 120 |
+| [`us_stadiums`](US/us_stadiums/us_stadiums.md) | Home stadiums of 154 clubs in the NFL, MLB, NBA, NHL and MLS, with address and coordinates. | United States | 154 |
 
 Browse by region:
 
@@ -94,8 +94,7 @@ Browse by region:
 * **Singapore and Malaysia:** [`sg_my_international_schools`](SG/sg_my_international_schools/sg_my_international_schools.md)
 * **Malaysia:** [`jb_korean_restaurants`](MY/JB/jb_korean_restaurants/jb_korean_restaurants.md), [`kl_korean_restaurants`](MY/KL/kl_korean_restaurants/kl_korean_restaurants.md)
 * **United Arab Emirates:** [`dxb_metro_tram_stations`](UAE/dxb_metro_tram_stations/dxb_metro_tram_stations.md)
-* **United States:** [`python_world_series`](python_world_series/python_world_series.md)
-* **United States and Canada:** [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md), [`us_stadiums`](US/us_stadiums/us_stadiums.md)
+* **United States:** [`python_world_series`](python_world_series/python_world_series.md), [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md), [`us_stadiums`](US/us_stadiums/us_stadiums.md)
 
 ## How filters work
 
