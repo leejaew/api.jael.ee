@@ -114,6 +114,7 @@ Each API page lists the query parameters it accepts. The rules below apply to al
 
 Notes:
 
+* `__id`, where an API returns it, accepts ranges such as `__id=3..10`.
 * A wildcard or range on a parameter that does not allow it returns an empty array, `[]`.
 * Curl treats `[` and `]` as a glob pattern. Add `-g` to the command when a URL has brackets.
 * Every API page lists all fields of the API. A parameter marked Disallowed is returned in the output but is rejected with a 400 error when you use it as a filter.
