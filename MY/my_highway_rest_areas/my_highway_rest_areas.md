@@ -42,8 +42,8 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `location[latitude]` | Optional | No | Yes | Optional filter for latitude in decimal degrees (WGS84); use a range to search a box. Values run from 1.6574 to 5.9662; blank for 16 rows with no safe map match. |
 | `location[longitude]` | Optional | No | Yes | Optional filter for longitude in decimal degrees (WGS84); use a range to search a box. Values run from 100.4177 to 103.507; blank for 16 rows with no safe map match. |
 | `osm_id` | Optional | No | No | Optional exact filter for the OpenStreetMap element used for the coordinates, such as w317665021 (w for way, n for node, r for relation); blank for 16 rows. |
-| `operator` | Disallowed | Yes | No | Optional filter for the highway operator; every row is PLUS Malaysia Berhad. |
-| `coordinate_match` | Disallowed | No | No | Optional exact filter for how the coordinates were matched: carriageway_side (40 rows), name_with_direction (11), name_shared_both_directions (8), name_single (7); blank for 16 rows. |
+| `operator` | Disallowed | No | No | The highway operator; every row is PLUS Malaysia Berhad. |
+| `coordinate_match` | Disallowed | No | No | The how the coordinates were matched: carriageway_side (40 rows), name_with_direction (11), name_shared_both_directions (8), name_single (7); blank for 16 rows. |
 
 * Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
 
