@@ -16,18 +16,18 @@ Sport facilities listed by Sport Singapore (SportSG). Each row is one facility w
 
 ## Query parameters
 
-Required: none. Optional: none. Disallowed: all 8 fields. No field can be used as a filter.
+Required: 1 field. Optional: 5 fields. Disallowed: 2 fields.
 
 Disallowed means the field is returned in the output but cannot be used as a filter.
 
 | Parameter | Filter | Wildcard | Range | Description |
 |---|---|---|---|---|
-| `name` | Disallowed | No | No | Facility name. |
-| `tag` | Disallowed | No | No | Facility type: `pickleball`, `sport_centre`, `padel`, `pool`, `gym`, `stadium`, `gym_pool`, `sport_park`, `clubhouse` or `playfield`. |
-| `address[street]` | Disallowed | No | No | Street address. Null for about a third of the rows. |
-| `address[postalcode]` | Disallowed | No | No | Six digit postal code, as a number. Leading zeros are not kept. |
-| `location[latitude]` | Disallowed | No | No | Latitude in decimal degrees. |
-| `location[longitude]` | Disallowed | No | No | Longitude in decimal degrees. |
+| `tag` | Required | Yes | No | Required. Allowed values: pickleball (31); sport_centre (27); padel (11); pool (6); gym (6); stadium (2); gym_pool (1); sport_park (1); clubhouse (1); playfield (1). Use * to list all rows. |
+| `name` | Optional | Yes | No | Facility name. |
+| `address[street]` | Optional | Yes | No | Street address. Null for about a third of the rows. |
+| `address[postalcode]` | Optional | No | No | Six digit postal code, as a number. Leading zeros are not kept. |
+| `location[latitude]` | Optional | No | Yes | Latitude in decimal degrees. |
+| `location[longitude]` | Optional | No | Yes | Longitude in decimal degrees. |
 | `source` | Disallowed | No | No | Name of the source data set, its coverage and licence. |
 | `sourceupdated` | Disallowed | No | No | Date or period the data covers, such as `2025-07` or `2024`. |
 
@@ -52,47 +52,56 @@ Nested objects are shown with dots, for example `address.street` is the `street`
 
 ## Example
 
-This API has no filters, so the call returns every row.
+All padel facilities.
 
 ```bash
-curl -s "https://api.jael.ee/JLEE/sg_sportsg_facilities"
+curl -s "https://api.jael.ee/JLEE/sg_sportsg_facilities?tag=padel"
 ```
 
-Response, showing 2 of 87 rows:
+Response (11 rows, first 2 shown):
 
 ```json
 [
   {
-    "name": "Bukit Canberra Sport Centre",
-    "tag": "sport_centre",
+    "name": "Hollandse Club",
+    "tag": "padel",
     "address": {
-      "street": "21 Canberra Link",
-      "postalcode": 756973
+      "street": "22 Camden Park",
+      "postalcode": 299814
     },
     "location": {
-      "latitude": 1.4482633618766256,
-      "longitude": 103.82276363764352
+      "latitude": 1.33,
+      "longitude": 103.817
     },
-    "source": "SportSG Sport Facilities (GEOJSON), data.gov.sg https://data.gov.sg/datasets/d_9b87bab5...",
-    "sourceupdated": "2025-07"
+    "source": "SportSG Sport Facilities National Census, data.gov.sg https://data.gov.sg/datasets/d_2cfb0867cdeb2b7303068995699dc33b/view. 2024 Sports Facilities National Census. Singapore Open Data Licence. Facility: Padel Court, venue Hollandse Club. Street: Hollandse Club https://www.hollandseclub.org.sg/contact-us (22 Camden Park, Singapore 299814).",
+    "sourceupdated": "2024"
   },
   {
-    "name": "Bukit Gombak Sport Centre",
-    "tag": "sport_centre",
+    "name": "Prime Padel Grand Copthorne",
+    "tag": "padel",
     "address": {
-      "street": "810 Bukit Batok West Avenue 5",
-      "postalcode": 659088
+      "street": "392 Havelock Road",
+      "postalcode": 169663
     },
     "location": {
-      "latitude": 1.359799534164251,
-      "longitude": 103.7521702228675
+      "latitude": 1.29,
+      "longitude": 103.835
     },
-    "source": "SportSG Sport Facilities (GEOJSON), data.gov.sg https://data.gov.sg/datasets/d_9b87bab5...",
-    "sourceupdated": "2025-07"
-  },
-  ...
+    "source": "SportSG Sport Facilities National Census, data.gov.sg https://data.gov.sg/datasets/d_2cfb0867cdeb2b7303068995699dc33b/view. 2024 Sports Facilities National Census. Singapore Open Data Licence. Facility: Padel Court, venue listed as \"Prime Pedal\" (Padel misspelled) postal 169663. Operator name and street: Prime Padel, Grand Copthorne Waterfront, https://www.primepadelsport.com/locations/singapore (392 Havelock Road, 6th Floor, Singapore 169663).",
+    "sourceupdated": "2024"
+  }
 ]
 ```
+
+Another call:
+
+Facilities of any type with Active in the name.
+
+```bash
+curl -s "https://api.jael.ee/JLEE/sg_sportsg_facilities?tag=*&name=*Active*"
+```
+
+Returns 12 rows.
 
 ## Data source
 
