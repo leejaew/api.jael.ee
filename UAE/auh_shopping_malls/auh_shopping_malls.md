@@ -16,7 +16,7 @@ Shopping malls and shopping centres in the emirate of Abu Dhabi, 43 rows from Op
 
 ## Query parameters
 
-Required: none. Optional: 16 fields. Disallowed: 1 field.
+Required: none. Optional: 12 fields. Disallowed: 5 fields.
 
 Disallowed means the field is returned in the output but cannot be used as a filter.
 
@@ -26,18 +26,18 @@ Disallowed means the field is returned in the output but cannot be used as a fil
 | `name` | Optional | Yes | No | Optional filter for the mall name, such as Yas Mall or Marina Mall. |
 | `name_ar` | Optional | Yes | No | Optional filter for the Arabic name, such as أبو ظبي مول or الفوعة مول; blank for 18 of 43 rows. |
 | `region` | Optional | No | No | Optional exact filter for the region of the emirate; values are Abu Dhabi (31), Al Ain (10), Al Dhafra (2). |
-| `address[street]` | Optional | Yes | No | Optional filter for the street from OSM address tags, such as شارع حمد البادي الظاهري or شارع الأَزْيَاء; blank for 38 of 43 rows. |
 | `address[area]` | Optional | Yes | No | Optional filter for the district; from the SDI layer where it has one, otherwise from reverse geocoding, such as Al Zahiyah or Al Bateen; blank for 8 of 43 rows. |
 | `address[city]` | Optional | Yes | No | Optional filter for the city; Abu Dhabi or Al Ain for most rows, and the town name for Al Dhafra; values are Abu Dhabi (31), Al Ain (10), Zayed City (1), Delma (1). |
 | `address[emirate]` | Optional | No | No | Optional exact filter for the emirate; Abu Dhabi for every row; values are Abu Dhabi (43). |
-| `opened_year` | Optional | No | Yes | Optional filter for the opening year taken from OSM or Wikipedia; values run from 2014 to 2014; blank for 42 of 43 rows. |
 | `number_of_stores` | Optional | No | Yes | Optional filter for the number of stores as stated by Wikipedia or OSM; values run from 20 to 400; blank for 35 of 43 rows. |
-| `gross_leasable_area_sqm` | Optional | No | Yes | Optional filter for gross leasable area in square meters; no source gave it, so it is empty; blank for every row. |
 | `phone` | Optional | No | No | Optional exact filter for the phone number as published, kept as text, such as +971 2 6454858 or +971 600 565464; blank for 37 of 43 rows. |
 | `location[latitude]` | Optional | No | Yes | Optional filter for latitude in decimal degrees (WGS84); use a range to search a box; values run from 23.659608 to 24.523702. |
 | `location[longitude]` | Optional | No | Yes | Optional filter for longitude in decimal degrees (WGS84); use a range to search a box; values run from 52.307753 to 55.807612. |
-| `source` | Optional | Yes | No | Optional filter for which sources fed the row; values are OpenStreetMap (24), OpenStreetMap; Abu Dhabi SDI (10), OpenStreetMap; Abu Dhabi SDI; Wikipedia (7), Abu Dhabi SDI (1). |
 | `osm_id` | Optional | No | No | Optional exact filter for the OSM object id, such as way/150781737 or way/102807888; blank for 1 of 43 rows. |
+| `address[street]` | Disallowed | No | No | The street from OSM address tags, such as شارع حمد البادي الظاهري or شارع الأَزْيَاء; blank for 38 of 43 rows. |
+| `opened_year` | Disallowed | No | No | The opening year taken from OSM or Wikipedia; values run from 2014 to 2014; blank for 42 of 43 rows. |
+| `gross_leasable_area_sqm` | Disallowed | No | No | Gross leasable area in square meters; no source gave it, so it is empty; blank for every row. |
+| `source` | Disallowed | No | No | Which sources fed the row; values are OpenStreetMap (24), OpenStreetMap; Abu Dhabi SDI (10), OpenStreetMap; Abu Dhabi SDI; Wikipedia (7), Abu Dhabi SDI (1). |
 | `website` | Disallowed | No | No | Mall website link; returned in results, not used as a filter, such as https://www.abudhabi-mall.com/ or https://www.bawabatalsharqmall.ae/; blank for 38 of 43 rows. |
 
 * Parameters are combined with AND. Text matches ignore case. See [How filters work](../../README.md#how-filters-work) for the wildcard and range syntax.
@@ -134,7 +134,7 @@ Another call:
 Yas Mall by name.
 
 ```bash
-curl -sg "https://api.jael.ee/JLEE/auh_shopping_malls?name=*Yas*"
+curl -s "https://api.jael.ee/JLEE/auh_shopping_malls?name=*Yas*"
 ```
 
 Returns 1 row.
