@@ -2,9 +2,9 @@
 
 Free public JSON APIs for open and curated data sets: transport, places, sport, food and baseball. Every API is a plain `GET` request. No sign up and no API key.
 
-![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 51](https://img.shields.io/badge/APIs-51-lightgrey)
+![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 52](https://img.shields.io/badge/APIs-52-lightgrey)
 
-**Total APIs: 51** across Australia, Singapore, Malaysia, United Arab Emirates, New Zealand, Taiwan, the United Kingdom and United States (counts update with every new API)
+**Total APIs: 52** across Australia, Hong Kong, Singapore, Malaysia, United Arab Emirates, New Zealand, Taiwan, the United Kingdom and United States (counts update with every new API)
 
 **Base URL:** `https://api.jael.ee/JLEE/`
 
@@ -103,6 +103,7 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 | [`dxb_shopping_malls`](UAE/dxb_shopping_malls/dxb_shopping_malls.md) | Shopping malls, centres and souks in Dubai, with Arabic name, area, opening year, store count, leasable area, phone, website and coordinates. | United Arab Emirates | 106 |
 | [`uae_museums`](UAE/uae_museums/uae_museums.md) | Museums across the UAE from OpenStreetMap and Wikidata, with emirate, city, theme, opening year, ticket price and coordinates. | United Arab Emirates | 82 |
 | [`au_tafe_campuses`](AU/au_tafe_campuses/au_tafe_campuses.md) | TAFE and public vocational college campuses across Australia, from 29 providers, with state, suburb, address, postcode, phone, campus type and coordinates. | Australia | 402 |
+| [`hk_boundary_control_points`](HK/hk_boundary_control_points/hk_boundary_control_points.md) | Every Hong Kong immigration control point (land, rail, sea, air), with English and Chinese names, mode, hours, status, cargo and passenger flags, address and coordinates. | Hong Kong | 16 |
 | [`nz_visitor_centres`](NZ/nz_visitor_centres/nz_visitor_centres.md) | The 13 Department of Conservation visitor centres in New Zealand, with region, address, phone, hours, wifi and booking flags and coordinates. | New Zealand | 13 |
 | [`tw_night_markets`](TW/tw_night_markets/tw_night_markets.md) | Night markets in Taiwan in English and Traditional Chinese, with city, district, address, open days, hours, stall count and coordinates. | Taiwan | 107 |
 | [`uk_motorway_service_areas`](UK/uk_motorway_service_areas/uk_motorway_service_areas.md) | Motorway service areas, rest areas and truck stops in the United Kingdom, with motorway, junction, operator, amenities and coordinates. | United Kingdom | 107 |
@@ -118,6 +119,7 @@ Browse by region:
 * **Malaysia:** [`jb_korean_restaurants`](MY/jb_korean_restaurants/jb_korean_restaurants.md), [`jb_night_markets`](MY/jb_night_markets/jb_night_markets.md), [`kl_korean_restaurants`](MY/kl_korean_restaurants/kl_korean_restaurants.md), [`kl_park_and_ride`](MY/kl_park_and_ride/kl_park_and_ride.md), [`my_bus_terminals`](MY/my_bus_terminals/my_bus_terminals.md), [`my_highway_rest_areas`](MY/my_highway_rest_areas/my_highway_rest_areas.md), [`my_national_parks`](MY/my_national_parks/my_national_parks.md)
 * **United Arab Emirates:** [`auh_public_parks`](UAE/auh_public_parks/auh_public_parks.md), [`auh_shopping_malls`](UAE/auh_shopping_malls/auh_shopping_malls.md), [`dxb_korean_restaurants`](UAE/dxb_korean_restaurants/dxb_korean_restaurants.md), [`dxb_metro_tram_stations`](UAE/dxb_metro_tram_stations/dxb_metro_tram_stations.md), [`dxb_public_parks`](UAE/dxb_public_parks/dxb_public_parks.md), [`dxb_shopping_malls`](UAE/dxb_shopping_malls/dxb_shopping_malls.md), [`uae_museums`](UAE/uae_museums/uae_museums.md)
 * **Australia:** [`au_tafe_campuses`](AU/au_tafe_campuses/au_tafe_campuses.md)
+* **Hong Kong:** [`hk_boundary_control_points`](HK/hk_boundary_control_points/hk_boundary_control_points.md)
 * **New Zealand:** [`nz_visitor_centres`](NZ/nz_visitor_centres/nz_visitor_centres.md)
 * **Taiwan:** [`tw_night_markets`](TW/tw_night_markets/tw_night_markets.md)
 * **United Kingdom:** [`uk_motorway_service_areas`](UK/uk_motorway_service_areas/uk_motorway_service_areas.md)
