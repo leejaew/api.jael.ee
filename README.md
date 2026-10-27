@@ -2,9 +2,9 @@
 
 Free public JSON APIs for open and curated data sets: transport, places, sport, food and baseball. Every API is a plain `GET` request. No sign up and no API key.
 
-![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 47](https://img.shields.io/badge/APIs-47-lightgrey)
+![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 47](https://img.shields.io/badge/APIs-48-lightgrey)
 
-**Total APIs: 47** across Singapore, Malaysia, United Arab Emirates and United States (counts update with every new API)
+**Total APIs: 48** across Singapore, Malaysia, United Arab Emirates, Taiwan and United States (counts update with every new API)
 
 **Base URL:** `https://api.jael.ee/JLEE/`
 
@@ -102,6 +102,7 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 | [`dxb_public_parks`](UAE/dxb_public_parks/dxb_public_parks.md) | Public parks, gardens, dog parks and nature reserves in Dubai from OpenStreetMap, with area, park type, fee, hours and coordinates. | United Arab Emirates | 183 |
 | [`dxb_shopping_malls`](UAE/dxb_shopping_malls/dxb_shopping_malls.md) | Shopping malls, centres and souks in Dubai, with Arabic name, area, opening year, store count, leasable area, phone, website and coordinates. | United Arab Emirates | 106 |
 | [`uae_museums`](UAE/uae_museums/uae_museums.md) | Museums across the UAE from OpenStreetMap and Wikidata, with emirate, city, theme, opening year, ticket price and coordinates. | United Arab Emirates | 82 |
+| [`tw_night_markets`](TW/tw_night_markets/tw_night_markets.md) | Night markets in Taiwan in English and Traditional Chinese, with city, district, address, open days, hours, stall count and coordinates. | Taiwan | 107 |
 | [`python_world_series`](python_world_series/python_world_series.md) | Winner, loser and final game score of the MLB World Series, 1903 to 2022. | United States | 118 |
 | [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md) | Ballparks of 120 Minor League Baseball clubs from Single A to Triple A, with capacity and year opened. | United States | 120 |
 | [`us_stadiums`](US/us_stadiums/us_stadiums.md) | Home stadiums of 154 clubs in the NFL, MLB, NBA, NHL and MLS, with address and coordinates. | United States | 154 |
@@ -113,6 +114,7 @@ Browse by region:
 * **Singapore and Malaysia:** [`sg_my_international_schools`](SG/sg_my_international_schools/sg_my_international_schools.md)
 * **Malaysia:** [`jb_korean_restaurants`](MY/jb_korean_restaurants/jb_korean_restaurants.md), [`jb_night_markets`](MY/jb_night_markets/jb_night_markets.md), [`kl_korean_restaurants`](MY/kl_korean_restaurants/kl_korean_restaurants.md), [`kl_park_and_ride`](MY/kl_park_and_ride/kl_park_and_ride.md), [`my_bus_terminals`](MY/my_bus_terminals/my_bus_terminals.md), [`my_highway_rest_areas`](MY/my_highway_rest_areas/my_highway_rest_areas.md), [`my_national_parks`](MY/my_national_parks/my_national_parks.md)
 * **United Arab Emirates:** [`auh_public_parks`](UAE/auh_public_parks/auh_public_parks.md), [`auh_shopping_malls`](UAE/auh_shopping_malls/auh_shopping_malls.md), [`dxb_korean_restaurants`](UAE/dxb_korean_restaurants/dxb_korean_restaurants.md), [`dxb_metro_tram_stations`](UAE/dxb_metro_tram_stations/dxb_metro_tram_stations.md), [`dxb_public_parks`](UAE/dxb_public_parks/dxb_public_parks.md), [`dxb_shopping_malls`](UAE/dxb_shopping_malls/dxb_shopping_malls.md), [`uae_museums`](UAE/uae_museums/uae_museums.md)
+* **Taiwan:** [`tw_night_markets`](TW/tw_night_markets/tw_night_markets.md)
 * **United States:** [`python_world_series`](python_world_series/python_world_series.md), [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md), [`us_stadiums`](US/us_stadiums/us_stadiums.md), [`us_uscis_offices`](US/us_uscis_offices/us_uscis_offices.md)
 
 ## How filters work
@@ -153,3 +155,5 @@ An error body looks like this:
   "message": "Your request is missing the following required parameters: tag. You did not supply any."
 }
 ```
+
+
