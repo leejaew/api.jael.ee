@@ -2,9 +2,9 @@
 
 Free public JSON APIs for open and curated data sets: transport, places, sport, food and baseball. Every API is a plain `GET` request. No sign up and no API key.
 
-![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 59](https://img.shields.io/badge/APIs-59-lightgrey)
+![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 60](https://img.shields.io/badge/APIs-60-lightgrey)
 
-**Total APIs: 59** across Australia, Hong Kong, Singapore, Malaysia, United Arab Emirates, New Zealand, Taiwan, the United Kingdom and United States (counts update with every new API)
+**Total APIs: 60** across Australia, Hong Kong, Singapore, Malaysia, United Arab Emirates, New Zealand, Taiwan, the United Kingdom and United States (counts update with every new API)
 
 **Base URL:** `https://api.jael.ee/JLEE/`
 
@@ -109,6 +109,7 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 | [`hk_elderly_care_homes`](HK/hk_elderly_care_homes/hk_elderly_care_homes.md) | Licensed residential care homes for the elderly in Hong Kong, with English and Chinese names and addresses, district, care type, accreditation and coordinates. | Hong Kong | 857 |
 | [`hk_licensed_hotels_guesthouses`](HK/hk_licensed_hotels_guesthouses/hk_licensed_hotels_guesthouses.md) | Licensed hotels and guesthouses in Hong Kong, with English and Chinese names and addresses, licence number, region, district, contacts and coordinates. | Hong Kong | 1807 |
 | [`nz_visitor_centres`](NZ/nz_visitor_centres/nz_visitor_centres.md) | The 13 Department of Conservation visitor centres in New Zealand, with region, address, phone, hours, wifi and booking flags and coordinates. | New Zealand | 13 |
+| [`tw_international_schools`](TW/tw_international_schools/tw_international_schools.md) | International schools for foreign residents in Taiwan, with English and Chinese names, city, district, address, national type, grades offered and coordinates. | Taiwan | 24 |
 | [`tw_mandarin_learning_centers`](TW/tw_mandarin_learning_centers/tw_mandarin_learning_centers.md) | Mandarin teaching centers at 70 universities in Taiwan, with English and Chinese names and addresses, city, district, 2025 foreign student counts and coordinates. | Taiwan | 71 |
 | [`tw_night_markets`](TW/tw_night_markets/tw_night_markets.md) | Night markets in Taiwan in English and Traditional Chinese, with city, district, address, open days, hours, stall count and coordinates. | Taiwan | 107 |
 | [`uk_motorway_service_areas`](UK/uk_motorway_service_areas/uk_motorway_service_areas.md) | Motorway service areas, rest areas and truck stops in the United Kingdom, with motorway, junction, operator, amenities and coordinates. | United Kingdom | 107 |
@@ -128,7 +129,7 @@ Browse by region:
 * **Australia:** [`au_aged_care_homes`](AU/au_aged_care_homes/au_aged_care_homes.md), [`au_tafe_campuses`](AU/au_tafe_campuses/au_tafe_campuses.md)
 * **Hong Kong:** [`hk_boundary_control_points`](HK/hk_boundary_control_points/hk_boundary_control_points.md), [`hk_elderly_care_homes`](HK/hk_elderly_care_homes/hk_elderly_care_homes.md), [`hk_licensed_hotels_guesthouses`](HK/hk_licensed_hotels_guesthouses/hk_licensed_hotels_guesthouses.md)
 * **New Zealand:** [`nz_visitor_centres`](NZ/nz_visitor_centres/nz_visitor_centres.md)
-* **Taiwan:** [`tw_mandarin_learning_centers`](TW/tw_mandarin_learning_centers/tw_mandarin_learning_centers.md), [`tw_night_markets`](TW/tw_night_markets/tw_night_markets.md)
+* **Taiwan:** [`tw_international_schools`](TW/tw_international_schools/tw_international_schools.md), [`tw_mandarin_learning_centers`](TW/tw_mandarin_learning_centers/tw_mandarin_learning_centers.md), [`tw_night_markets`](TW/tw_night_markets/tw_night_markets.md)
 * **United Kingdom:** [`uk_motorway_service_areas`](UK/uk_motorway_service_areas/uk_motorway_service_areas.md), [`uk_ofs_registered_providers`](UK/uk_ofs_registered_providers/uk_ofs_registered_providers.md), [`uk_youth_hostels`](UK/uk_youth_hostels/uk_youth_hostels.md)
 * **United States:** [`python_world_series`](python_world_series/python_world_series.md), [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md), [`us_stadiums`](US/us_stadiums/us_stadiums.md), [`us_uscis_offices`](US/us_uscis_offices/us_uscis_offices.md)
 
