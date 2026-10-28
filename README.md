@@ -2,7 +2,7 @@
 
 Free public JSON APIs for open and curated data sets: transport, places, sport, food and baseball. Every API is a plain `GET` request. No sign up and no API key.
 
-![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 58](https://img.shields.io/badge/APIs-59-lightgrey)
+![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 59](https://img.shields.io/badge/APIs-59-lightgrey)
 
 **Total APIs: 59** across Australia, Hong Kong, Singapore, Malaysia, United Arab Emirates, New Zealand, Taiwan, the United Kingdom and United States (counts update with every new API)
 
