@@ -2,9 +2,9 @@
 
 Free public JSON APIs for open and curated data sets: transport, places, sport, food and baseball. Every API is a plain `GET` request. No sign up and no API key.
 
-![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 58](https://img.shields.io/badge/APIs-58-lightgrey)
+![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 58](https://img.shields.io/badge/APIs-59-lightgrey)
 
-**Total APIs: 58** across Australia, Hong Kong, Singapore, Malaysia, United Arab Emirates, New Zealand, Taiwan, the United Kingdom and United States (counts update with every new API)
+**Total APIs: 59** across Australia, Hong Kong, Singapore, Malaysia, United Arab Emirates, New Zealand, Taiwan, the United Kingdom and United States (counts update with every new API)
 
 **Base URL:** `https://api.jael.ee/JLEE/`
 
@@ -113,6 +113,7 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 | [`tw_night_markets`](TW/tw_night_markets/tw_night_markets.md) | Night markets in Taiwan in English and Traditional Chinese, with city, district, address, open days, hours, stall count and coordinates. | Taiwan | 107 |
 | [`uk_motorway_service_areas`](UK/uk_motorway_service_areas/uk_motorway_service_areas.md) | Motorway service areas, rest areas and truck stops in the United Kingdom, with motorway, junction, operator, amenities and coordinates. | United Kingdom | 107 |
 | [`uk_ofs_registered_providers`](UK/uk_ofs_registered_providers/uk_ofs_registered_providers.md) | Every higher education provider on the Office for Students Register in England, with names, UKPRN, registration category, degree awarding powers, university title, TEF status, fee limit, address, region and postcode coordinates. | United Kingdom | 425 |
+| [`uk_youth_hostels`](UK/uk_youth_hostels/uk_youth_hostels.md) | Every YHA hostel in England and Wales and every Hostelling Scotland hostel, with operator, partner flag, nation, region, town, council area, address, postcode and coordinates. | United Kingdom | 141 |
 | [`python_world_series`](python_world_series/python_world_series.md) | Winner, loser and final game score of the MLB World Series, 1903 to 2022. | United States | 118 |
 | [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md) | Ballparks of 120 Minor League Baseball clubs from Single A to Triple A, with capacity and year opened. | United States | 120 |
 | [`us_stadiums`](US/us_stadiums/us_stadiums.md) | Home stadiums of 154 clubs in the NFL, MLB, NBA, NHL and MLS, with address and coordinates. | United States | 154 |
@@ -128,7 +129,7 @@ Browse by region:
 * **Hong Kong:** [`hk_boundary_control_points`](HK/hk_boundary_control_points/hk_boundary_control_points.md), [`hk_elderly_care_homes`](HK/hk_elderly_care_homes/hk_elderly_care_homes.md), [`hk_licensed_hotels_guesthouses`](HK/hk_licensed_hotels_guesthouses/hk_licensed_hotels_guesthouses.md)
 * **New Zealand:** [`nz_visitor_centres`](NZ/nz_visitor_centres/nz_visitor_centres.md)
 * **Taiwan:** [`tw_mandarin_learning_centers`](TW/tw_mandarin_learning_centers/tw_mandarin_learning_centers.md), [`tw_night_markets`](TW/tw_night_markets/tw_night_markets.md)
-* **United Kingdom:** [`uk_motorway_service_areas`](UK/uk_motorway_service_areas/uk_motorway_service_areas.md), [`uk_ofs_registered_providers`](UK/uk_ofs_registered_providers/uk_ofs_registered_providers.md)
+* **United Kingdom:** [`uk_motorway_service_areas`](UK/uk_motorway_service_areas/uk_motorway_service_areas.md), [`uk_ofs_registered_providers`](UK/uk_ofs_registered_providers/uk_ofs_registered_providers.md), [`uk_youth_hostels`](UK/uk_youth_hostels/uk_youth_hostels.md)
 * **United States:** [`python_world_series`](python_world_series/python_world_series.md), [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md), [`us_stadiums`](US/us_stadiums/us_stadiums.md), [`us_uscis_offices`](US/us_uscis_offices/us_uscis_offices.md)
 
 ## How filters work
