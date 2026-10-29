@@ -2,9 +2,9 @@
 
 Free public JSON APIs for open and curated data sets: transport, places, sport, food and baseball. Every API is a plain `GET` request. No sign up and no API key.
 
-![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 61](https://img.shields.io/badge/APIs-61-lightgrey)
+![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 62](https://img.shields.io/badge/APIs-62-lightgrey)
 
-**Total APIs: 61** across Australia, Hong Kong, Singapore, Malaysia, United Arab Emirates, New Zealand, Taiwan, the United Kingdom and United States (counts update with every new API)
+**Total APIs: 62** across Australia, Hong Kong, Singapore, Malaysia, United Arab Emirates, New Zealand, Taiwan, the United Kingdom and United States (counts update with every new API)
 
 **Base URL:** `https://api.jael.ee/JLEE/`
 
@@ -112,6 +112,7 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 | [`tw_international_schools`](TW/tw_international_schools/tw_international_schools.md) | International schools for foreign residents in Taiwan, with English and Chinese names, city, district, address, national type, grades offered and coordinates. | Taiwan | 24 |
 | [`tw_mandarin_learning_centers`](TW/tw_mandarin_learning_centers/tw_mandarin_learning_centers.md) | Mandarin teaching centers at 70 universities in Taiwan, with English and Chinese names and addresses, city, district, 2025 foreign student counts and coordinates. | Taiwan | 71 |
 | [`tw_night_markets`](TW/tw_night_markets/tw_night_markets.md) | Night markets in Taiwan in English and Traditional Chinese, with city, district, address, open days, hours, stall count and coordinates. | Taiwan | 107 |
+| [`uk_jobcentres`](UK/uk_jobcentres/uk_jobcentres.md) | Every active Jobcentre Plus office in Great Britain, with address, postcode, council area, DWP district and area, nation and coordinates. | United Kingdom | 633 |
 | [`uk_motorway_service_areas`](UK/uk_motorway_service_areas/uk_motorway_service_areas.md) | Motorway service areas, rest areas and truck stops in the United Kingdom, with motorway, junction, operator, amenities and coordinates. | United Kingdom | 107 |
 | [`uk_ofs_registered_providers`](UK/uk_ofs_registered_providers/uk_ofs_registered_providers.md) | Every higher education provider on the Office for Students Register in England, with names, UKPRN, registration category, degree awarding powers, university title, TEF status, fee limit, address, region and postcode coordinates. | United Kingdom | 425 |
 | [`uk_youth_hostels`](UK/uk_youth_hostels/uk_youth_hostels.md) | Every YHA hostel in England and Wales and every Hostelling Scotland hostel, with operator, partner flag, nation, region, town, council area, address, postcode and coordinates. | United Kingdom | 141 |
@@ -131,7 +132,7 @@ Browse by region:
 * **Hong Kong:** [`hk_boundary_control_points`](HK/hk_boundary_control_points/hk_boundary_control_points.md), [`hk_elderly_care_homes`](HK/hk_elderly_care_homes/hk_elderly_care_homes.md), [`hk_licensed_hotels_guesthouses`](HK/hk_licensed_hotels_guesthouses/hk_licensed_hotels_guesthouses.md)
 * **New Zealand:** [`nz_visitor_centres`](NZ/nz_visitor_centres/nz_visitor_centres.md)
 * **Taiwan:** [`tw_international_schools`](TW/tw_international_schools/tw_international_schools.md), [`tw_mandarin_learning_centers`](TW/tw_mandarin_learning_centers/tw_mandarin_learning_centers.md), [`tw_night_markets`](TW/tw_night_markets/tw_night_markets.md)
-* **United Kingdom:** [`uk_motorway_service_areas`](UK/uk_motorway_service_areas/uk_motorway_service_areas.md), [`uk_ofs_registered_providers`](UK/uk_ofs_registered_providers/uk_ofs_registered_providers.md), [`uk_youth_hostels`](UK/uk_youth_hostels/uk_youth_hostels.md)
+* **United Kingdom:** [`uk_jobcentres`](UK/uk_jobcentres/uk_jobcentres.md), [`uk_motorway_service_areas`](UK/uk_motorway_service_areas/uk_motorway_service_areas.md), [`uk_ofs_registered_providers`](UK/uk_ofs_registered_providers/uk_ofs_registered_providers.md), [`uk_youth_hostels`](UK/uk_youth_hostels/uk_youth_hostels.md)
 * **United States:** [`python_world_series`](python_world_series/python_world_series.md), [`us_cbp_ports_of_entry`](US/us_cbp_ports_of_entry/us_cbp_ports_of_entry.md), [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md), [`us_stadiums`](US/us_stadiums/us_stadiums.md), [`us_uscis_offices`](US/us_uscis_offices/us_uscis_offices.md)
 
 ## How filters work
