@@ -2,9 +2,9 @@
 
 Free public JSON APIs for open and curated data sets: transport, places, sport, food and baseball. Every API is a plain `GET` request. No sign up and no API key.
 
-![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 66](https://img.shields.io/badge/APIs-66-lightgrey)
+![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 67](https://img.shields.io/badge/APIs-67-lightgrey)
 
-**Total APIs: 66** across Australia, Hong Kong, Singapore, Malaysia, United Arab Emirates, New Zealand, Taiwan, the United Kingdom and United States (counts update with every new API)
+**Total APIs: 67** across Australia, Hong Kong, Singapore, Malaysia, United Arab Emirates, New Zealand, Taiwan, the United Kingdom and United States (counts update with every new API)
 
 **Base URL:** `https://api.jael.ee/JLEE/`
 
@@ -123,6 +123,7 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 | [`us_cbp_ports_of_entry`](US/us_cbp_ports_of_entry/us_cbp_ports_of_entry.md) | US Customs and Border Protection ports of entry, airports, seaports and land crossings, with port code, address, state, field office, port type and coordinates. | United States | 346 |
 | [`us_foreign_trade_zones`](US/us_foreign_trade_zones/us_foreign_trade_zones.md) | US Foreign Trade Zones from the FTZ Board's OFIS list, with grantee, approval date, status, CBP port, acres and coordinates. Filter by Census region. | United States | 260 |
 | [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md) | Ballparks of 120 Minor League Baseball clubs from Single A to Triple A, with capacity and year opened. | United States | 120 |
+| [`us_national_park_lodges`](US/us_national_park_lodges/us_national_park_lodges.md) | Concession lodges, cabins and hotels inside 33 US National Park Service units, with operator, season, status and coordinates. | United States | 92 |
 | [`us_stadiums`](US/us_stadiums/us_stadiums.md) | Home stadiums of 154 clubs in the NFL, MLB, NBA, NHL and MLS, with address and coordinates. | United States | 154 |
 | [`us_uscis_offices`](US/us_uscis_offices/us_uscis_offices.md) | USCIS field offices and application support centers in the United States and its territories. | United States | 220 |
 
@@ -137,7 +138,7 @@ Browse by region:
 * **New Zealand:** [`nz_visitor_centres`](NZ/nz_visitor_centres/nz_visitor_centres.md)
 * **Taiwan:** [`tw_international_schools`](TW/tw_international_schools/tw_international_schools.md), [`tw_mandarin_learning_centers`](TW/tw_mandarin_learning_centers/tw_mandarin_learning_centers.md), [`tw_night_markets`](TW/tw_night_markets/tw_night_markets.md)
 * **United Kingdom:** [`uk_jobcentres`](UK/uk_jobcentres/uk_jobcentres.md), [`uk_motorway_service_areas`](UK/uk_motorway_service_areas/uk_motorway_service_areas.md), [`uk_ofs_registered_providers`](UK/uk_ofs_registered_providers/uk_ofs_registered_providers.md), [`uk_youth_hostels`](UK/uk_youth_hostels/uk_youth_hostels.md)
-* **United States:** [`python_world_series`](python_world_series/python_world_series.md), [`us_cbp_ports_of_entry`](US/us_cbp_ports_of_entry/us_cbp_ports_of_entry.md), [`us_foreign_trade_zones`](US/us_foreign_trade_zones/us_foreign_trade_zones.md), [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md), [`us_stadiums`](US/us_stadiums/us_stadiums.md), [`us_uscis_offices`](US/us_uscis_offices/us_uscis_offices.md)
+* **United States:** [`python_world_series`](python_world_series/python_world_series.md), [`us_cbp_ports_of_entry`](US/us_cbp_ports_of_entry/us_cbp_ports_of_entry.md), [`us_foreign_trade_zones`](US/us_foreign_trade_zones/us_foreign_trade_zones.md), [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md), [`us_national_park_lodges`](US/us_national_park_lodges/us_national_park_lodges.md), [`us_stadiums`](US/us_stadiums/us_stadiums.md), [`us_uscis_offices`](US/us_uscis_offices/us_uscis_offices.md)
 
 ## How filters work
 
