@@ -2,9 +2,9 @@
 
 Free public JSON APIs for open and curated data sets: transport, places, sport, food and baseball. Every API is a plain `GET` request. No sign up and no API key.
 
-![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 72](https://img.shields.io/badge/APIs-72-lightgrey)
+![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 74](https://img.shields.io/badge/APIs-74-lightgrey)
 
-**Total APIs: 72** across Australia, Hong Kong, Singapore, Malaysia, United Arab Emirates, New Zealand, Taiwan, the United Kingdom and United States (counts update with every new API)
+**Total APIs: 74** across Australia, Hong Kong, Singapore, Malaysia, United Arab Emirates, New Zealand, Taiwan, the United Kingdom and United States (counts update with every new API)
 
 **Base URL:** `https://api.jael.ee/JLEE/`
 
@@ -107,6 +107,7 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 | [`uae_international_schools`](UAE/uae_international_schools/uae_international_schools.md) | International private schools in Dubai, Abu Dhabi and Sharjah, with English and Arabic names, emirate, area, curriculum, grades, fees, inspection rating, contacts and coordinates. | United Arab Emirates | 489 |
 | [`uae_museums`](UAE/uae_museums/uae_museums.md) | Museums across the UAE from OpenStreetMap and Wikidata, with emirate, city, theme, opening year, ticket price and coordinates. | United Arab Emirates | 82 |
 | [`au_aged_care_homes`](AU/au_aged_care_homes/au_aged_care_homes.md) | Government funded residential aged care homes across Australia, with provider, organisation type, places, address, state, remoteness, 2024-25 funding and coordinates. | Australia | 2590 |
+| [`au_headspace_centres`](AU/au_headspace_centres/au_headspace_centres.md) | All 177 headspace youth mental health centres in Australia, with state, suburb, address, phone, lead agency, PHN, services, opening hours, remoteness and coordinates. | Australia | 177 |
 | [`au_local_councils`](AU/au_local_councils/au_local_councils.md) | Every local council in Australia, 541 across the states, the NT and the Indian Ocean Territories, with ABS area code, council type, office address, phone, email, website and coordinates. | Australia | 541 |
 | [`au_tafe_campuses`](AU/au_tafe_campuses/au_tafe_campuses.md) | TAFE and public vocational college campuses across Australia, from 29 providers, with state, suburb, address, postcode, phone, campus type and coordinates. | Australia | 402 |
 | [`au_youth_hostels`](AU/au_youth_hostels/au_youth_hostels.md) | All open YHA Australia youth hostels, with state, region, town, address and coordinates. Free, non commercial use. | Australia | 18 |
@@ -118,6 +119,7 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 | [`tw_international_schools`](TW/tw_international_schools/tw_international_schools.md) | International schools for foreign residents in Taiwan, with English and Chinese names, city, district, address, national type, grades offered and coordinates. | Taiwan | 24 |
 | [`tw_mandarin_learning_centers`](TW/tw_mandarin_learning_centers/tw_mandarin_learning_centers.md) | Mandarin teaching centers at 70 universities in Taiwan, with English and Chinese names and addresses, city, district, 2025 foreign student counts and coordinates. | Taiwan | 71 |
 | [`tw_night_markets`](TW/tw_night_markets/tw_night_markets.md) | Night markets in Taiwan in English and Traditional Chinese, with city, district, address, open days, hours, stall count and coordinates. | Taiwan | 107 |
+| [`tw_universities`](TW/tw_universities/tw_universities.md) | All 139 universities, colleges and junior colleges in Taiwan for 2026 to 2027, from the MOE directory, in Chinese and English, with school code, public or private, system, city, district, address, phone, website and coordinates. | Taiwan | 139 |
 | [`uk_freeports`](UK/uk_freeports/uk_freeports.md) | All 68 UK Freeport tax and customs sites across 12 Freeports in England, Scotland and Wales, with local authority, designation date, legislation, customs operator and approximate coordinates. | United Kingdom | 68 |
 | [`uk_heritage_railways`](UK/uk_heritage_railways/uk_heritage_railways.md) | Heritage railways, tramways, cliff lifts and railway museums in the UK and Isle of Man from the Heritage Railway Association member map, with type, nation, council, town, postcode, gauge, website and coordinates. | United Kingdom | 166 |
 | [`uk_jobcentres`](UK/uk_jobcentres/uk_jobcentres.md) | Every active Jobcentre Plus office in Great Britain, with address, postcode, council area, DWP district and area, nation and coordinates. | United Kingdom | 633 |
@@ -138,10 +140,10 @@ Browse by region:
 * **Singapore and Malaysia:** [`sg_my_international_schools`](SG/sg_my_international_schools/sg_my_international_schools.md)
 * **Malaysia:** [`jb_korean_restaurants`](MY/jb_korean_restaurants/jb_korean_restaurants.md), [`jb_night_markets`](MY/jb_night_markets/jb_night_markets.md), [`kl_korean_restaurants`](MY/kl_korean_restaurants/kl_korean_restaurants.md), [`kl_park_and_ride`](MY/kl_park_and_ride/kl_park_and_ride.md), [`my_bus_terminals`](MY/my_bus_terminals/my_bus_terminals.md), [`my_highway_rest_areas`](MY/my_highway_rest_areas/my_highway_rest_areas.md), [`my_national_parks`](MY/my_national_parks/my_national_parks.md), [`my_public_hospitals`](MY/my_public_hospitals/my_public_hospitals.md)
 * **United Arab Emirates:** [`auh_public_parks`](UAE/auh_public_parks/auh_public_parks.md), [`auh_shopping_malls`](UAE/auh_shopping_malls/auh_shopping_malls.md), [`dxb_korean_restaurants`](UAE/dxb_korean_restaurants/dxb_korean_restaurants.md), [`dxb_metro_tram_stations`](UAE/dxb_metro_tram_stations/dxb_metro_tram_stations.md), [`dxb_public_parks`](UAE/dxb_public_parks/dxb_public_parks.md), [`dxb_shopping_malls`](UAE/dxb_shopping_malls/dxb_shopping_malls.md), [`uae_higher_education_institutions`](UAE/uae_higher_education_institutions/uae_higher_education_institutions.md), [`uae_international_schools`](UAE/uae_international_schools/uae_international_schools.md), [`uae_museums`](UAE/uae_museums/uae_museums.md)
-* **Australia:** [`au_aged_care_homes`](AU/au_aged_care_homes/au_aged_care_homes.md), [`au_local_councils`](AU/au_local_councils/au_local_councils.md), [`au_tafe_campuses`](AU/au_tafe_campuses/au_tafe_campuses.md), [`au_youth_hostels`](AU/au_youth_hostels/au_youth_hostels.md)
+* **Australia:** [`au_aged_care_homes`](AU/au_aged_care_homes/au_aged_care_homes.md), [`au_headspace_centres`](AU/au_headspace_centres/au_headspace_centres.md), [`au_local_councils`](AU/au_local_councils/au_local_councils.md), [`au_tafe_campuses`](AU/au_tafe_campuses/au_tafe_campuses.md), [`au_youth_hostels`](AU/au_youth_hostels/au_youth_hostels.md)
 * **Hong Kong:** [`hk_boundary_control_points`](HK/hk_boundary_control_points/hk_boundary_control_points.md), [`hk_elderly_care_homes`](HK/hk_elderly_care_homes/hk_elderly_care_homes.md), [`hk_licensed_hotels_guesthouses`](HK/hk_licensed_hotels_guesthouses/hk_licensed_hotels_guesthouses.md)
 * **New Zealand:** [`nz_visitor_centres`](NZ/nz_visitor_centres/nz_visitor_centres.md)
-* **Taiwan:** [`tw_emergency_hospitals`](TW/tw_emergency_hospitals/tw_emergency_hospitals.md), [`tw_international_schools`](TW/tw_international_schools/tw_international_schools.md), [`tw_mandarin_learning_centers`](TW/tw_mandarin_learning_centers/tw_mandarin_learning_centers.md), [`tw_night_markets`](TW/tw_night_markets/tw_night_markets.md)
+* **Taiwan:** [`tw_emergency_hospitals`](TW/tw_emergency_hospitals/tw_emergency_hospitals.md), [`tw_international_schools`](TW/tw_international_schools/tw_international_schools.md), [`tw_mandarin_learning_centers`](TW/tw_mandarin_learning_centers/tw_mandarin_learning_centers.md), [`tw_night_markets`](TW/tw_night_markets/tw_night_markets.md), [`tw_universities`](TW/tw_universities/tw_universities.md)
 * **United Kingdom:** [`uk_freeports`](UK/uk_freeports/uk_freeports.md), [`uk_heritage_railways`](UK/uk_heritage_railways/uk_heritage_railways.md), [`uk_jobcentres`](UK/uk_jobcentres/uk_jobcentres.md), [`uk_motorway_service_areas`](UK/uk_motorway_service_areas/uk_motorway_service_areas.md), [`uk_ofs_registered_providers`](UK/uk_ofs_registered_providers/uk_ofs_registered_providers.md), [`uk_youth_hostels`](UK/uk_youth_hostels/uk_youth_hostels.md)
 * **United States:** [`python_world_series`](python_world_series/python_world_series.md), [`us_cbp_ports_of_entry`](US/us_cbp_ports_of_entry/us_cbp_ports_of_entry.md), [`us_foreign_trade_zones`](US/us_foreign_trade_zones/us_foreign_trade_zones.md), [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md), [`us_national_park_lodges`](US/us_national_park_lodges/us_national_park_lodges.md), [`us_stadiums`](US/us_stadiums/us_stadiums.md), [`us_uscis_offices`](US/us_uscis_offices/us_uscis_offices.md)
 
@@ -183,5 +185,6 @@ An error body looks like this:
   "message": "Your request is missing the following required parameters: tag. You did not supply any."
 }
 ```
+
 
 
