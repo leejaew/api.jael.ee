@@ -2,9 +2,9 @@
 
 Free public JSON APIs for open and curated data sets: transport, places, sport, food and baseball. Every API is a plain `GET` request. No sign up and no API key.
 
-![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 82](https://img.shields.io/badge/APIs-82-lightgrey)
+![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![APIs 83](https://img.shields.io/badge/APIs-83-lightgrey)
 
-**Total APIs: 82** across Australia, Hong Kong, Singapore, Malaysia, United Arab Emirates, New Zealand, Taiwan, the United Kingdom and United States (counts update with every new API)
+**Total APIs: 83** across Australia, Hong Kong, Singapore, Malaysia, United Arab Emirates, New Zealand, Taiwan, the United Kingdom and United States (counts update with every new API)
 
 **Base URL:** `https://api.jael.ee/JLEE/`
 
@@ -140,6 +140,7 @@ curl -s "https://api.jael.ee/JLEE/us_milb_ballparks?level=Triple-A&capacity=1000
 | [`us_museums`](US/us_museums/us_museums.md) | Museums and related groups in the 50 states and DC from the IMLS Museum Data Files (2018, no longer updated), with type, address, phone, website, county, IRS income and coordinates. | United States | 30176 |
 | [`us_national_park_lodges`](US/us_national_park_lodges/us_national_park_lodges.md) | Concession lodges, cabins and hotels inside 33 US National Park Service units, with operator, season, status and coordinates. | United States | 92 |
 | [`us_stadiums`](US/us_stadiums/us_stadiums.md) | Home stadiums of 154 clubs in the NFL, MLB, NBA, NHL and MLS, with address and coordinates. | United States | 154 |
+| [`us_state_veterans_homes`](US/us_state_veterans_homes/us_state_veterans_homes.md) | State Veterans Homes on the VA per diem list in all 50 states and Puerto Rico, with VA region, urban or rural, FY26 and FY27 per diem rates and coordinates. | United States | 173 |
 | [`us_uscis_offices`](US/us_uscis_offices/us_uscis_offices.md) | USCIS field offices and application support centers in the United States and its territories. | United States | 220 |
 
 Browse by region:
@@ -153,7 +154,7 @@ Browse by region:
 * **New Zealand:** [`nz_rest_homes`](NZ/nz_rest_homes/nz_rest_homes.md), [`nz_visitor_centres`](NZ/nz_visitor_centres/nz_visitor_centres.md)
 * **Taiwan:** [`tw_emergency_hospitals`](TW/tw_emergency_hospitals/tw_emergency_hospitals.md), [`tw_international_schools`](TW/tw_international_schools/tw_international_schools.md), [`tw_mandarin_learning_centers`](TW/tw_mandarin_learning_centers/tw_mandarin_learning_centers.md), [`tw_night_markets`](TW/tw_night_markets/tw_night_markets.md), [`tw_universities`](TW/tw_universities/tw_universities.md)
 * **United Kingdom:** [`uk_freeports`](UK/uk_freeports/uk_freeports.md), [`uk_heritage_railways`](UK/uk_heritage_railways/uk_heritage_railways.md), [`uk_jobcentres`](UK/uk_jobcentres/uk_jobcentres.md), [`uk_motorway_service_areas`](UK/uk_motorway_service_areas/uk_motorway_service_areas.md), [`uk_ofs_registered_providers`](UK/uk_ofs_registered_providers/uk_ofs_registered_providers.md), [`uk_youth_hostels`](UK/uk_youth_hostels/uk_youth_hostels.md)
-* **United States:** [`python_world_series`](python_world_series/python_world_series.md), [`us_cbp_ports_of_entry`](US/us_cbp_ports_of_entry/us_cbp_ports_of_entry.md), [`us_foreign_trade_zones`](US/us_foreign_trade_zones/us_foreign_trade_zones.md), [`us_job_corps_centers`](US/us_job_corps_centers/us_job_corps_centers.md), [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md), [`us_museums`](US/us_museums/us_museums.md), [`us_national_park_lodges`](US/us_national_park_lodges/us_national_park_lodges.md), [`us_stadiums`](US/us_stadiums/us_stadiums.md), [`us_uscis_offices`](US/us_uscis_offices/us_uscis_offices.md)
+* **United States:** [`python_world_series`](python_world_series/python_world_series.md), [`us_cbp_ports_of_entry`](US/us_cbp_ports_of_entry/us_cbp_ports_of_entry.md), [`us_foreign_trade_zones`](US/us_foreign_trade_zones/us_foreign_trade_zones.md), [`us_job_corps_centers`](US/us_job_corps_centers/us_job_corps_centers.md), [`us_milb_ballparks`](US/us_milb_ballparks/us_milb_ballparks.md), [`us_museums`](US/us_museums/us_museums.md), [`us_national_park_lodges`](US/us_national_park_lodges/us_national_park_lodges.md), [`us_stadiums`](US/us_stadiums/us_stadiums.md), [`us_state_veterans_homes`](US/us_state_veterans_homes/us_state_veterans_homes.md), [`us_uscis_offices`](US/us_uscis_offices/us_uscis_offices.md)
 
 ## How filters work
 
