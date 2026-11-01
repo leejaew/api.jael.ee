@@ -170,7 +170,7 @@ Each API page lists the query parameters it accepts. The rules below apply to al
 Notes:
 
 * `__id`, where an API returns it, accepts ranges such as `__id=3..10`.
-* A wildcard or range on a parameter that does not allow it returns an empty array, `[]`.
+* An unsupported wildcard or range on a text field returns an empty list `[]`, and on a number or date field returns an HTTP 400 error.
 * Curl treats `[` and `]` as a glob pattern. Add `-g` to the command when a URL has brackets.
 * Every API page lists all fields of the API. A parameter marked Disallowed is returned in the output but is rejected with a 400 error when you use it as a filter.
 * Add `.xml` to the API name to get XML instead of JSON, for example `/JLEE/python_world_series.xml`. XML is not available for `us_stadiums` and the three Korean restaurant APIs, because some of their keys clash in XML.
