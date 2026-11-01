@@ -1,6 +1,6 @@
 # Malaysia Public Hospitals
 
-![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![records 166](https://img.shields.io/badge/records-166-lightgrey) ![updated 2026-10-29](https://img.shields.io/badge/updated-2026--10--29-orange) ![license CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-green)
+![access public](https://img.shields.io/badge/access-public-brightgreen) ![format JSON](https://img.shields.io/badge/format-JSON-blue) ![method GET](https://img.shields.io/badge/method-GET-informational) ![records 166](https://img.shields.io/badge/records-166-lightgrey) ![updated 2026-10-29](https://img.shields.io/badge/updated-2026--10--29-orange)
 
 Every public hospital in Malaysia, 166 hospitals from the Ministry of Health (MoH) registry of 31 December 2025: 151 run by the Ministry of Health, 10 university teaching hospitals and 5 armed forces hospitals. Each row has the facility code, name, type, agency, state, district, address, postcode and map coordinates. Bed, ICU and ventilator counts and use rates from 3 September 2024 are filled for 108 hospitals.
 
@@ -152,11 +152,11 @@ curl -sG "https://api.jael.ee/JLEE/my_public_hospitals" --data-urlencode "state=
 
 ## Data source
 
-The data comes from the Ministry of Health Malaysia (Kementerian Kesihatan Malaysia, KKM) repository [data-resources-public](https://github.com/MoH-Malaysia/data-resources-public): the facilities list `facilities_master.csv` (as of 31 December 2025) joined with the bed use file `bedutil_facility.csv` (3 September 2024). MoH data on [KKMNOW](https://data.moh.gov.my) and [data.gov.my](https://data.gov.my) is open under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). We added English labels and corrected two coordinates with [OpenStreetMap](https://www.openstreetmap.org/copyright) points. The Ministry of Health Malaysia does not endorse this API.
+The data comes from the Ministry of Health Malaysia (Kementerian Kesihatan Malaysia, KKM) repository [data-resources-public](https://github.com/MoH-Malaysia/data-resources-public): the facilities list `facilities_master.csv` (as of 31 December 2025) joined with the bed use file `bedutil_facility.csv` (3 September 2024). The source repository names no license for these files, asks users to credit the Ministry of Health Malaysia, and points to Government of Malaysia open data policies. MoH data on [KKMNOW](https://data.moh.gov.my) and [data.gov.my](https://data.gov.my) is published under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). That license is named for those sites, and the repository does not say it covers these files. We added English labels and corrected two coordinates with [OpenStreetMap](https://www.openstreetmap.org/copyright) points. The Ministry of Health Malaysia does not endorse this API.
 
 Credit lines:
 
-* Source: Ministry of Health Malaysia (KKM), data-resources-public, via KKMNOW. Licensed under CC BY 4.0.
+* Source: Ministry of Health Malaysia (KKM), data-resources-public, via KKMNOW.
 * Two map points © OpenStreetMap contributors, available under the Open Database License (ODbL).
 
 [Back to the API list](../../README.md)
